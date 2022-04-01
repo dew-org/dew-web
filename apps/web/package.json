@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@dew-org/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.6-beta.5",
     "next": "12.0.8",
     "react": "18.0.0",
     "react-dom": "18.0.0"
