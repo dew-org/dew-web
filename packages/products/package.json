@@ -1,0 +1,16 @@
+{
+  "name": "@dew-org/products",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "config": "*",
+    "tsconfig": "*",
+    "typescript": "^4.6.3"
+  }
+}
