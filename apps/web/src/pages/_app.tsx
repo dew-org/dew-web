@@ -8,10 +8,14 @@ const App = ({ Component, pageProps }) => {
   const { locale, defaultLocale } = useRouter()
 
   return (
-    <IntlProvider locale={locale} defaultLocale={defaultLocale}>
+    <IntlProvider
+      locale={locale}
+      defaultLocale={defaultLocale}
+      messages={pageProps.intlMessages}
+    >
       <NextThemesProvider
-        defaultTheme='system'
-        attribute='class'
+        defaultTheme="system"
+        attribute="class"
         value={{
           light: lightTheme.className,
           dark: darkTheme.className,

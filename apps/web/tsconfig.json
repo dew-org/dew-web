@@ -7,7 +7,8 @@
     "paths": {
       "@dew-org/*": ["./src/*"],
       "@dew-org/theme/*": ["./src/theme/*"],
-      "@dew-org/components/*": ["./src/components/*"]
+      "@dew-org/components/*": ["./src/components/*"],
+      "@dew-org/utils/*": ["./src/utils/*"]
     }
   }
 }

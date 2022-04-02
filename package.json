@@ -38,9 +38,11 @@
   "packageManager": "yarn@1.22.15",
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
+      "prettier --write \"**/*.{ts,tsx,md}\"",
       "eslint --fix"
     ],
     "packages/**/**/*.{js,ts,jsx,tsx}": [
+      "prettier --write \"**/*.{ts,tsx,md}\"",
       "eslint --fix"
     ],
     "*.json": [
