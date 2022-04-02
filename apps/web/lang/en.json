@@ -1,0 +1,50 @@
+{
+  "CMoWFL": {
+    "defaultMessage": "Sell price must be a number"
+  },
+  "CmVXRM": {
+    "defaultMessage": "Sell price is required"
+  },
+  "Fsk3WQ": {
+    "defaultMessage": "Sell price"
+  },
+  "Gvxoji": {
+    "defaultMessage": "Name is required"
+  },
+  "HAlOn1": {
+    "defaultMessage": "Name"
+  },
+  "Iq0cJ9": {
+    "defaultMessage": "Stock is required"
+  },
+  "LqGuKm": {
+    "defaultMessage": "Buy price is required"
+  },
+  "Q8Qw5B": {
+    "defaultMessage": "Description"
+  },
+  "QvDSiM": {
+    "defaultMessage": "Buy price must be a number"
+  },
+  "Z0kULb": {
+    "defaultMessage": "Register Product"
+  },
+  "h2vipu": {
+    "defaultMessage": "Code"
+  },
+  "jvo0vs": {
+    "defaultMessage": "Save"
+  },
+  "l25Fiw": {
+    "defaultMessage": "Code is required"
+  },
+  "n63Tl+": {
+    "defaultMessage": "Buy price"
+  },
+  "nLTAGL": {
+    "defaultMessage": "Stock must be a number"
+  },
+  "vuKrlW": {
+    "defaultMessage": "Stock"
+  }
+}
