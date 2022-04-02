@@ -8,6 +8,7 @@
       "@dew-org/*": ["./src/*"],
       "@dew-org/theme/*": ["./src/theme/*"],
       "@dew-org/components/*": ["./src/components/*"],
+      "@dew-org/layouts/*": ["./src/layouts/*"],
       "@dew-org/utils/*": ["./src/utils/*"]
     }
   }

@@ -1,5 +1,7 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import DashboardLayout from '@dew-org/layouts/dashboard'
 import { Product, ProductForm } from '@dew-org/products'
+import withLayout from '@dew-org/utils/hocs/with-layout'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
 import { Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
@@ -38,4 +40,7 @@ const RegisterProductPage = () => {
   )
 }
 
-export default withPageAuthRequired(RegisterProductPage)
+export default withLayout(
+  withPageAuthRequired(RegisterProductPage),
+  DashboardLayout,
+)
