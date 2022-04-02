@@ -1,3 +1,4 @@
+import { UserProvider } from '@auth0/nextjs-auth0'
 import { darkTheme, lightTheme } from '@dew-org/theme'
 import { NextUIProvider } from '@nextui-org/react'
 import { useRouter } from 'next/router'
@@ -22,7 +23,9 @@ const App = ({ Component, pageProps }) => {
         }}
       >
         <NextUIProvider>
-          <Component {...pageProps} />
+          <UserProvider>
+            <Component {...pageProps} />
+          </UserProvider>
         </NextUIProvider>
       </NextThemesProvider>
     </IntlProvider>

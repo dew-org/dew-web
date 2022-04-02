@@ -1,3 +1,4 @@
+import { withApiAuthRequired } from '@auth0/nextjs-auth0'
 import { ProductService } from '@dew-org/products'
 import { NextApiRequest, NextApiResponse } from 'next'
 
@@ -25,4 +26,4 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   response.status(405).end()
 }
 
-export default handler
+export default withApiAuthRequired(handler)

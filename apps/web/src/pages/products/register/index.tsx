@@ -1,3 +1,4 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Product, ProductForm } from '@dew-org/products'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
 import { Spacer, Text } from '@nextui-org/react'
@@ -37,4 +38,4 @@ const RegisterProductPage = () => {
   )
 }
 
-export default RegisterProductPage
+export default withPageAuthRequired(RegisterProductPage)
