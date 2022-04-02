@@ -1,0 +1,41 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import { Customer, CustomerForm } from '@dew-org/customers'
+import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
+import { Spacer, Text } from '@nextui-org/react'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+import { FormattedMessage } from 'react-intl'
+
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
+
+const RegisterCustomerPage = () => {
+  const router = useRouter()
+
+  const handleSubmit = async (values: Customer) => {
+    await axios.post('/api/customers', values)
+    await router.push('/customers')
+  }
+
+  return (
+    <>
+      <Text h2>
+        <FormattedMessage defaultMessage="Register Customer" />
+      </Text>
+
+      <Spacer y={1} />
+
+      <CustomerForm onSubmit={handleSubmit} />
+    </>
+  )
+}
+
+export default withPageAuthRequired(RegisterCustomerPage)

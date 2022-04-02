@@ -1,6 +1,7 @@
 // @ts-check
 const withTM = require('next-transpile-modules')([
   '@dew-org/shared',
+  '@dew-org/customers',
   '@dew-org/products',
 ])
 
