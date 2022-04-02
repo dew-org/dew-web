@@ -15,6 +15,7 @@
     "@formatjs/cli": "^4.8.3",
     "@nextui-org/react": "^1.0.6-beta.5",
     "next": "12.0.8",
+    "next-themes": "^0.1.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hook-form": "^7.29.0",
