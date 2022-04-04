@@ -3,7 +3,11 @@ import useSWR from 'swr'
 
 import { Product } from '../types'
 
-const useProducts = (): [Product[] | undefined, boolean, Error | undefined] => {
+export const useProducts = (): [
+  Product[] | undefined,
+  boolean,
+  Error | undefined,
+] => {
   const { data, isValidating, error } = useSWR<Product[]>(
     '/api/products',
     fetcher,

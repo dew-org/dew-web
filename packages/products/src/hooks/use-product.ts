@@ -3,7 +3,7 @@ import useSWR from 'swr'
 
 import { Product } from '../types'
 
-const useProduct = (
+export const useProduct = (
   code: string,
 ): [Product | undefined, boolean, Error | undefined] => {
   const { data, isValidating, error } = useSWR<Product>(

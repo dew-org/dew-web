@@ -1,3 +1,5 @@
 export { default as ProductForm } from './components/form'
+export * from './hooks/use-product'
+export * from './hooks/use-products'
 export * from './service'
 export * from './types'
