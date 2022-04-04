@@ -11,6 +11,10 @@ export const ProductService = {
     const { data } = await HttpClient.get<Product>(`/products/${code}`)
     return data
   },
+  fetchAll: async () => {
+    const { data } = await HttpClient.get<Product[]>('/products')
+    return data
+  },
 }
 
 export default ProductService

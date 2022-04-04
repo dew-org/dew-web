@@ -45,4 +45,9 @@ describe('products service', () => {
     expect(HttpClient.get).toHaveBeenCalledWith(`/products/${productCode}`)
     expect(product).toBeTruthy()
   })
+
+  it('should be get all products', function () {
+    ProductService.fetchAll()
+    expect(HttpClient.get).toHaveBeenCalledWith('/products')
+  })
 })
