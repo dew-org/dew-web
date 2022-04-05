@@ -4,10 +4,10 @@ import useSWR from 'swr'
 import { Customer } from '../types'
 
 export const useCustomer = (
-  id: string,
+  id?: string,
 ): [Customer | undefined, boolean, Error | undefined] => {
   const { data, isValidating, error } = useSWR<Customer | undefined>(
-    `/api/customers/${id}`,
+    id !== undefined ? `/api/customers/${id}` : undefined,
     fetcher,
     {
       revalidateOnFocus: false,
