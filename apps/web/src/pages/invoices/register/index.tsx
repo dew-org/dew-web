@@ -1,9 +1,11 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
-import { InvoiceForm } from '@dew-org/invoices'
+import { Invoice, InvoiceForm } from '@dew-org/invoices'
 import DashboardLayout from '@dew-org/layouts/dashboard'
 import withLayout from '@dew-org/utils/hocs/with-layout'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
 import { Spacer, Text } from '@nextui-org/react'
+import axios from 'axios'
+import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
 
 export const getStaticProps = async context => {
@@ -18,6 +20,13 @@ export const getStaticProps = async context => {
 }
 
 const RegisterInvoicePage = () => {
+  const router = useRouter()
+
+  const handleSubmit = async (values: Invoice) => {
+    await axios.post('/api/invoices', values)
+    await router.push('/invoices')
+  }
+
   return (
     <>
       <Text h2>
@@ -26,7 +35,7 @@ const RegisterInvoicePage = () => {
 
       <Spacer y={1} />
 
-      <InvoiceForm />
+      <InvoiceForm onSubmit={handleSubmit} />
     </>
   )
 }
