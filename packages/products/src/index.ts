@@ -1,3 +1,4 @@
+export { default as ProductCard } from './components/card'
 export { default as ProductForm } from './components/form'
 export * from './hooks/use-product'
 export * from './hooks/use-products'

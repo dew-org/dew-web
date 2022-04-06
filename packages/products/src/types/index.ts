@@ -5,4 +5,5 @@ export type Product = {
   sellPrice: number
   stock: number
   description: string
+  createdAt: number
 }
