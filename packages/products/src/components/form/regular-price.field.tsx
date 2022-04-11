@@ -4,11 +4,11 @@ import { useIntl } from 'react-intl'
 
 import { Product } from '../../types'
 
-const BuyPriceField = () => {
+const RegularPriceField = () => {
   const {
     register,
     formState: {
-      errors: { buyPrice: buyPriceError },
+      errors: { regularPrice: regularPriceError },
     },
   } = useFormContext<Product>()
 
@@ -17,23 +17,23 @@ const BuyPriceField = () => {
   return (
     <Input
       label={intl.formatMessage({
-        defaultMessage: 'Buy price',
+        defaultMessage: 'Regular price',
       })}
       type="number"
-      helperText={buyPriceError?.message}
+      helperText={regularPriceError?.message}
       helperColor="error"
       width="100%"
-      {...register('buyPrice', {
+      {...register('regularPrice', {
         required: {
           value: true,
           message: intl.formatMessage({
-            defaultMessage: 'Buy price is required',
+            defaultMessage: 'Regular price is required',
           }),
         },
         pattern: {
           value: /^\d+(\.\d{1,2})?$/,
           message: intl.formatMessage({
-            defaultMessage: 'Buy price must be a number',
+            defaultMessage: 'Regular price must be a number',
           }),
         },
       })}
@@ -41,4 +41,4 @@ const BuyPriceField = () => {
   )
 }
 
-export default BuyPriceField
+export default RegularPriceField

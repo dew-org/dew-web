@@ -22,7 +22,7 @@ const InvoiceItemForm: FC<Props> = ({ onSubmit, product }) => {
         code: product.code,
         name: product.name,
       },
-      price: product.sellPrice,
+      price: product.salePrice,
       quantity: 1,
       discount: 0,
       tax: 0,

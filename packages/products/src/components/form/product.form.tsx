@@ -4,26 +4,39 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { FormattedMessage } from 'react-intl'
 
 import { Product } from '../../types'
-import BuyPriceField from './buy-price.field'
 import CodeField from './code.field'
 import DescriptionField from './description.field'
+import DiscountField from './discount.field'
 import NameField from './name.field'
-import SellPriceField from './sell-price.field'
+import RegularPriceField from './regular-price.field'
+import SalePriceField from './sale-price.field'
+import SkuField from './sku.field'
 import StockField from './stock.field'
+import TaxField from './tax.field'
 
 type Props = {
   onSubmit: (product: Product) => void
 }
 
 const ProductForm: FC<Props> = ({ onSubmit }) => {
-  const productForm = useForm<Product>()
+  const productForm = useForm<Product>({
+    defaultValues: {
+      discount: 0,
+      tax: 0,
+      stock: 0,
+    },
+  })
 
   return (
     <FormProvider {...productForm}>
       <form onSubmit={productForm.handleSubmit(onSubmit)}>
         <Grid.Container gap={2}>
-          <Grid xs={12}>
+          <Grid xs={12} md={6}>
             <CodeField />
+          </Grid>
+
+          <Grid xs={12} md={6}>
+            <SkuField />
           </Grid>
 
           <Grid xs={12}>
@@ -31,14 +44,22 @@ const ProductForm: FC<Props> = ({ onSubmit }) => {
           </Grid>
 
           <Grid xs={12} md={6}>
-            <BuyPriceField />
+            <RegularPriceField />
           </Grid>
           <Grid xs={12} md={6}>
-            <SellPriceField />
+            <SalePriceField />
           </Grid>
 
-          <Grid xs={12}>
+          <Grid xs={12} md={4}>
             <StockField />
+          </Grid>
+
+          <Grid xs={6} md={4}>
+            <DiscountField />
+          </Grid>
+
+          <Grid xs={6} md={4}>
+            <TaxField />
           </Grid>
 
           <Grid xs={12}>

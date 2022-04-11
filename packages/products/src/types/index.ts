@@ -1,9 +1,14 @@
 export type Product = {
   code: string
+  sku: string
   name: string
-  buyPrice: number
-  sellPrice: number
+  description?: string
+  regularPrice: number
+  salePrice: number
   stock: number
-  description: string
-  createdAt: number
+  discount: number
+  tax: number
+
+  createdAt?: number
+  updatedAt?: number
 }

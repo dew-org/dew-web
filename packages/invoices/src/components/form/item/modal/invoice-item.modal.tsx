@@ -34,7 +34,7 @@ const InvoiceItemModal: FC<Props> = ({ open, product, onSubmit, onClose }) => {
               <Text>{product.name}</Text>
 
               <Text css={{ color: '$accents4', fontWeight: '$semibold' }}>
-                $<FormattedNumber value={product.sellPrice} />
+                $<FormattedNumber value={product.salePrice} />
               </Text>
 
               <Tooltip content={'Stock'}>

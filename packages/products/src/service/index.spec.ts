@@ -15,11 +15,15 @@ describe('products service', () => {
       Promise.resolve({
         data: {
           code: faker.datatype.uuid(),
+          sku: faker.commerce.productName(),
           name: faker.commerce.productName(),
-          buyPrice: faker.datatype.number(),
-          sellPrice: faker.datatype.number(),
-          stock: faker.datatype.number(),
           description: faker.lorem.paragraph(),
+          regularPrice: faker.datatype.number(),
+          salePrice: faker.datatype.number(),
+          stock: faker.datatype.number(),
+          discount: faker.datatype.number(),
+          tax: faker.datatype.number(),
+          createdAt: faker.date.past().getMilliseconds(),
         } as Product,
       }),
     )
@@ -28,11 +32,15 @@ describe('products service', () => {
   it('should be save a product', () => {
     const product: Product = {
       code: faker.datatype.uuid(),
+      sku: faker.commerce.productName(),
       name: faker.commerce.productName(),
-      buyPrice: faker.datatype.number(),
-      sellPrice: faker.datatype.number(),
-      stock: faker.datatype.number(),
       description: faker.lorem.paragraph(),
+      regularPrice: faker.datatype.number(),
+      salePrice: faker.datatype.number(),
+      stock: faker.datatype.number(),
+      discount: faker.datatype.number(),
+      tax: faker.datatype.number(),
+      createdAt: faker.date.past().getMilliseconds(),
     }
     ProductService.save(product)
     expect(HttpClient.post).toHaveBeenCalledWith('/products', product)

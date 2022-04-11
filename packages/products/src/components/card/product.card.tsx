@@ -37,7 +37,7 @@ const ProductCard: FC<Props> = ({ product, onClick }) => {
           </Tooltip>
 
           <Text css={{ color: '$accents4', fontWeight: '$semibold' }}>
-            $<FormattedNumber value={product.sellPrice} />
+            $<FormattedNumber value={product.salePrice} />
           </Text>
         </Row>
       </Card.Body>
