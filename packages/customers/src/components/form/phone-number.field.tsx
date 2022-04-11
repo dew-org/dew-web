@@ -21,7 +21,8 @@ const PhoneNumberField = () => {
       })}
       helperText={phoneNumberError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('phoneNumber', {
         pattern: {
           value: /^\+?[0-9]{10,15}$/,

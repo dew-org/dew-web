@@ -21,7 +21,8 @@ const IdField = () => {
       })}
       helperText={idError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('id', {
         required: {
           value: true,

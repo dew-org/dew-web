@@ -21,7 +21,8 @@ const NameField = () => {
       })}
       helperText={nameError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('name', {
         required: {
           value: true,

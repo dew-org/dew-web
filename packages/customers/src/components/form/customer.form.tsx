@@ -12,10 +12,16 @@ import PhoneNumberField from './phone-number.field'
 
 type Props = {
   onSubmit: (customer: Customer) => void
+
+  id?: string
 }
 
-const CustomerForm: FC<Props> = ({ onSubmit }) => {
-  const customerForm = useForm<Customer>()
+const CustomerForm: FC<Props> = ({ onSubmit, id }) => {
+  const customerForm = useForm<Customer>({
+    defaultValues: {
+      id,
+    },
+  })
 
   return (
     <FormProvider {...customerForm}>
