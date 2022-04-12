@@ -36,7 +36,7 @@ const QuantityField: FC<Props> = ({ max }) => {
           }),
         },
         pattern: {
-          value: /^[0-9]*$/,
+          value: /^\d*$/,
           message: intl.formatMessage({
             defaultMessage: 'Quantity must be a number',
           }),

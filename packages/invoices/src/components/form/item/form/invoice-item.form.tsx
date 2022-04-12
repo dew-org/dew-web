@@ -5,9 +5,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { FormattedMessage } from 'react-intl'
 
 import { InvoiceItem } from '../../../../types'
-import DiscountField from './discount.field'
 import QuantityField from './quantity.field'
-import TaxField from './tax.field'
 
 type Props = {
   product: Product
@@ -24,8 +22,8 @@ const InvoiceItemForm: FC<Props> = ({ onSubmit, product }) => {
       },
       price: product.salePrice,
       quantity: 1,
-      discount: 0,
-      tax: 0,
+      discount: product.discount * 100,
+      tax: product.tax * 100,
     },
   })
 
@@ -37,30 +35,23 @@ const InvoiceItemForm: FC<Props> = ({ onSubmit, product }) => {
             <QuantityField max={product.stock} />
           </Grid>
 
-          <Grid xs={12} md={6}>
-            <TaxField />
-          </Grid>
+          <Spacer y={1} />
 
-          <Grid xs={12} md={6}>
-            <DiscountField />
+          <Grid xs={12}>
+            <Button
+              disabled={itemForm.formState.isSubmitting}
+              type="submit"
+              color="primary"
+              css={{ width: '100%' }}
+            >
+              {itemForm.formState.isSubmitting ? (
+                <Loading color="currentColor" size="sm" />
+              ) : (
+                <FormattedMessage defaultMessage="Add" />
+              )}
+            </Button>
           </Grid>
         </Grid.Container>
-
-        <Spacer y={1} />
-
-        <Button
-          disabled={itemForm.formState.isSubmitting}
-          type="submit"
-          color="primary"
-          shadow
-          css={{ width: '100%' }}
-        >
-          {itemForm.formState.isSubmitting ? (
-            <Loading color="currentColor" size="sm" />
-          ) : (
-            <FormattedMessage defaultMessage="Add" />
-          )}
-        </Button>
       </form>
     </FormProvider>
   )

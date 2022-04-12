@@ -18,13 +18,13 @@ const ItemCard: FC<Props> = ({ item }) => {
         <Text css={{ color: '$accents4', fontWeight: '$semibold' }}>
           $<FormattedNumber value={item.price} />
         </Text>
-
-        <Tooltip content={<FormattedMessage defaultMessage="Quantity" />}>
-          <Chart />
-          <Spacer x={0.2} />
-          {item.quantity}
-        </Tooltip>
       </Row>
+
+      <Tooltip content={<FormattedMessage defaultMessage="Quantity" />}>
+        <Chart />
+        <Spacer x={0.2} />
+        {item.quantity}
+      </Tooltip>
 
       <Spacer y={0.5} />
 

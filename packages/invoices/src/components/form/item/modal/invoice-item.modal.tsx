@@ -1,7 +1,7 @@
 import { Product } from '@dew-org/products'
 import { Modal, Row, Spacer, Text, Tooltip } from '@nextui-org/react'
 import { FC } from 'react'
-import { Chart } from 'react-iconly'
+import { Bookmark, Chart, Discount } from 'react-iconly'
 import { FormattedMessage, FormattedNumber } from 'react-intl'
 
 import { InvoiceItem } from '../../../../types'
@@ -33,14 +33,54 @@ const InvoiceItemModal: FC<Props> = ({ open, product, onSubmit, onClose }) => {
             <Row wrap="wrap" justify="space-between">
               <Text>{product.name}</Text>
 
-              <Text css={{ color: '$accents4', fontWeight: '$semibold' }}>
-                $<FormattedNumber value={product.salePrice} />
-              </Text>
+              <div style={{ display: 'flex' }}>
+                <Text
+                  del={product.discount > 0}
+                  css={{ color: '$accents4', fontWeight: '$semibold' }}
+                >
+                  $<FormattedNumber value={product.salePrice} />
+                </Text>
+                {product.discount > 0 && (
+                  <>
+                    <Spacer x={0.5} />
 
-              <Tooltip content={'Stock'}>
-                <Chart />
+                    <Text css={{ color: '$accents4', fontWeight: '$semibold' }}>
+                      $
+                      <FormattedNumber
+                        value={product.salePrice * (1 - product.discount)}
+                      />
+                    </Text>
+                  </>
+                )}
+              </div>
+            </Row>
+
+            <Tooltip
+              css={{ zIndex: '$max' }}
+              content={<FormattedMessage defaultMessage="Stock" />}
+            >
+              <Chart />
+              <Spacer x={0.2} />
+              {product.stock}
+            </Tooltip>
+
+            <Row wrap="wrap" justify="space-between">
+              <Tooltip
+                css={{ zIndex: '$max' }}
+                content={<FormattedMessage defaultMessage="Discount" />}
+              >
+                <Discount />
                 <Spacer x={0.2} />
-                {product.stock}
+                {product.discount * 100}%
+              </Tooltip>
+
+              <Tooltip
+                css={{ zIndex: '$max' }}
+                content={<FormattedMessage defaultMessage="Tax" />}
+              >
+                <Bookmark />
+                <Spacer x={0.2} />
+                {product.tax * 100}%
               </Tooltip>
             </Row>
           </>
