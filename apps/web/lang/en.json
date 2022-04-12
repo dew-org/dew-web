@@ -1,12 +1,42 @@
 {
-  "CMoWFL": {
-    "defaultMessage": "Sell price must be a number"
+  "/RLvL4": {
+    "defaultMessage": "Tax is required"
   },
-  "CmVXRM": {
-    "defaultMessage": "Sell price is required"
+  "0XhgAx": {
+    "defaultMessage": "Total: {total}"
   },
-  "Fsk3WQ": {
-    "defaultMessage": "Sell price"
+  "1z+0TS": {
+    "defaultMessage": "Id must be a number"
+  },
+  "2/2yg+": {
+    "defaultMessage": "Add"
+  },
+  "28C0Aj": {
+    "defaultMessage": "Discount"
+  },
+  "2O2sfp": {
+    "defaultMessage": "Finish"
+  },
+  "4LRDBC": {
+    "defaultMessage": "Regular price is required"
+  },
+  "5WgK3Y": {
+    "defaultMessage": "Invalid email address"
+  },
+  "6KppbL": {
+    "defaultMessage": "Invoice Item"
+  },
+  "7NFfmz": {
+    "defaultMessage": "Products"
+  },
+  "7zoC6M": {
+    "defaultMessage": "Tax must be less than 100"
+  },
+  "AwzkSM": {
+    "defaultMessage": "Tax"
+  },
+  "AyltOX": {
+    "defaultMessage": "Sku is required"
   },
   "Gvxoji": {
     "defaultMessage": "Name is required"
@@ -14,37 +44,136 @@
   "HAlOn1": {
     "defaultMessage": "Name"
   },
+  "HAyFhM": {
+    "defaultMessage": "Sale price"
+  },
+  "HgoO43": {
+    "defaultMessage": "Subtotal: {subTotal}"
+  },
+  "HtNqED": {
+    "defaultMessage": "Sale price must be a number"
+  },
   "Iq0cJ9": {
     "defaultMessage": "Stock is required"
   },
-  "LqGuKm": {
-    "defaultMessage": "Buy price is required"
+  "J3HQl7": {
+    "defaultMessage": "Register invoice"
+  },
+  "MqyZ5D": {
+    "defaultMessage": "Tax must be greater than 0"
+  },
+  "Pc+tM3": {
+    "defaultMessage": "Generate"
   },
   "Q8Qw5B": {
     "defaultMessage": "Description"
   },
-  "QvDSiM": {
-    "defaultMessage": "Buy price must be a number"
+  "QA0hIL": {
+    "defaultMessage": "Discount must be greater than 0"
+  },
+  "R3hmdN": {
+    "defaultMessage": "Id is required"
+  },
+  "Ryr4CL": {
+    "defaultMessage": "Quantity must be a number"
+  },
+  "Tbo377": {
+    "defaultMessage": "Billing"
+  },
+  "TkYZBT": {
+    "defaultMessage": "Customers"
+  },
+  "VK0jfg": {
+    "defaultMessage": "Discount must be less than 100"
+  },
+  "W6Tn0A": {
+    "defaultMessage": "Quantity must be less than {max}"
   },
   "Z0kULb": {
     "defaultMessage": "Register Product"
   },
+  "bU+E9Z": {
+    "defaultMessage": "Discount is required"
+  },
+  "dSlWxb": {
+    "defaultMessage": "Register Customer"
+  },
   "h2vipu": {
     "defaultMessage": "Code"
+  },
+  "hkENym": {
+    "defaultMessage": "Customer"
+  },
+  "hzF82H": {
+    "defaultMessage": "Subtotal: {subtotal}"
+  },
+  "jdJhOL": {
+    "defaultMessage": "Phone number"
   },
   "jvo0vs": {
     "defaultMessage": "Save"
   },
+  "jySCml": {
+    "defaultMessage": "Register product"
+  },
+  "kGGU2D": {
+    "defaultMessage": "Id"
+  },
+  "kQAf2d": {
+    "defaultMessage": "Select"
+  },
   "l25Fiw": {
     "defaultMessage": "Code is required"
   },
-  "n63Tl+": {
-    "defaultMessage": "Buy price"
+  "mE+NeJ": {
+    "defaultMessage": "Register Invoice"
   },
   "nLTAGL": {
     "defaultMessage": "Stock must be a number"
   },
+  "nxGZ0T": {
+    "defaultMessage": "Register customer"
+  },
+  "oR2Zwh": {
+    "defaultMessage": "Phone number is invalid"
+  },
+  "qVGRIE": {
+    "defaultMessage": "Quantity"
+  },
+  "sy+pv5": {
+    "defaultMessage": "Email"
+  },
+  "t5a1IE": {
+    "defaultMessage": "Sku"
+  },
+  "txUL0F": {
+    "defaultMessage": "Last name"
+  },
+  "ujzQLw": {
+    "defaultMessage": "Quantity must be greater than 0"
+  },
   "vuKrlW": {
     "defaultMessage": "Stock"
+  },
+  "wKrkcP": {
+    "defaultMessage": "Quantity is required"
+  },
+  "x3IBIW": {
+    "defaultMessage": "Regular price must be a number"
+  },
+  "xmcVZ0": {
+    "defaultMessage": "Search"
+  },
+  "yNmV/R": {
+    "defaultMessage": "Items"
+  },
+  "yos4hi": {
+    "defaultMessage": "Last name is required"
+  },
+  "ys89ix": {
+    "defaultMessage": "Sale price is required"
+  },
+  "ys8gnW": {
+    "defaultMessage": "Regular price"
   }
 }
