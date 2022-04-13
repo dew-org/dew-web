@@ -9,16 +9,19 @@ type Props = {
   level: number
   title: string
   routes: SidebarRoute[]
+  isMobile: boolean
 }
 
 const defaultProps = {
   level: 1,
+  isMobile: false,
 }
 
 const Category: FC<PropsWithChildren<Props>> = ({
   level,
   title,
   routes,
+  isMobile,
   children,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -33,8 +36,8 @@ const Category: FC<PropsWithChildren<Props>> = ({
   const margin = 18
 
   const postsHeight = useMemo(
-    () => routes.length * 26 + margin * (routes.length - 1),
-    [routes],
+    () => routes.length * (isMobile ? 32 : 26) + margin * (routes.length - 1),
+    [routes, isMobile],
   )
 
   return (
@@ -62,7 +65,6 @@ const Category: FC<PropsWithChildren<Props>> = ({
         .label-container {
           display: flex;
           align-items: center;
-          justify-content: space-between;
         }
 
         .label {

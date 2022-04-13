@@ -17,6 +17,8 @@ type Props = {
   level: number
   route: NavLinkProps
   isMobile: boolean
+
+  onClick?: () => void
 }
 
 const defaultProps = {
@@ -32,6 +34,7 @@ const Post: FC<PropsWithChildren<PostProps>> = ({
   isMobile,
   route,
   level = 1,
+  onClick,
 }) => {
   const selectedRef = useRef<HTMLDivElement>(null)
   const ref = route.selected ? selectedRef : null
@@ -59,7 +62,7 @@ const Post: FC<PropsWithChildren<PostProps>> = ({
 
   return (
     <div ref={ref} className={cn('link', `level-${level}`)}>
-      <NavLink {...route} color={linkColor} />
+      <NavLink {...route} color={linkColor} onClick={onClick} />
       <style jsx>{`
         .link {
           margin: 18px 0;

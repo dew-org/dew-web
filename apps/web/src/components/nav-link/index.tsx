@@ -61,6 +61,7 @@ const NavLink: FC<NavLinkProps> = ({
   title,
   color,
   selected,
+  onClick,
 }) => {
   const router = useRouter()
   const onlyHashChange = pathname === router.pathname
@@ -84,6 +85,7 @@ const NavLink: FC<NavLinkProps> = ({
       <BaseLink
         href={pathname}
         selected={selected}
+        onClick={(e: any) => onClick && onClick(e)}
         css={{
           color: color || 'inherit',
         }}
