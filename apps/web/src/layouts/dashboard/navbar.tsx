@@ -1,3 +1,4 @@
+import AccountAvatar from '@dew-org/components/account-avatar'
 import ThemeToggle from '@dew-org/components/theme-toggle'
 import {
   StyledNavContainer,
@@ -68,7 +69,7 @@ const DashboardNavbar = () => {
 
                 <Spacer x={1} />
 
-                <>Accout</>
+                <AccountAvatar />
               </Row>
             </Row>
           </Col>
