@@ -8,6 +8,15 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
 
   const [routes] = useState<SidebarRoute[]>([
     {
+      title: intl.formatMessage({ defaultMessage: 'Catalogue' }),
+      routes: [
+        {
+          title: intl.formatMessage({ defaultMessage: 'Register product' }),
+          path: '/catalogue/register',
+        },
+      ],
+    },
+    {
       title: intl.formatMessage({ defaultMessage: 'Products' }),
       routes: [
         {
