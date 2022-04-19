@@ -4,7 +4,12 @@ import useSWR from 'swr'
 import { Product } from '../types'
 
 type Products = Product[] | undefined
-type UseCatalog = [Products, boolean, Error | undefined]
+
+type UseCatalog = {
+  products: Products
+  isLoading: boolean
+  error: Error | undefined
+}
 
 export const useCatalogue = (): UseCatalog => {
   const { data, isValidating, error } = useSWR<Products>(
@@ -12,7 +17,11 @@ export const useCatalogue = (): UseCatalog => {
     fetcher,
   )
 
-  return [data, isValidating, error]
+  return {
+    products: data,
+    isLoading: isValidating,
+    error,
+  }
 }
 
 export default useCatalogue

@@ -28,13 +28,13 @@ describe('use catalog hook', () => {
   it('should be return catalog', async () => {
     const { result, waitForNextUpdate } = renderHook(() => useCatalogue())
 
-    expect(result.current[0]).toEqual(undefined)
-    expect(result.current[1]).toEqual(true)
+    expect(result.current.products).toEqual(undefined)
+    expect(result.current.isLoading).toEqual(true)
 
     await waitForNextUpdate()
 
-    expect(result.current[0]).toBeTruthy()
-    expect(result.current[1]).toEqual(false)
-    expect(result.current[0]?.length).toEqual(1)
+    expect(result.current.products).toBeTruthy()
+    expect(result.current.isLoading).toEqual(false)
+    expect(result.current.products?.length).toEqual(1)
   })
 })
