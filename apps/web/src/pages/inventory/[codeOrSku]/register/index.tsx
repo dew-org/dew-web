@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
 
-export const getStaticProps = async context => {
+export const getServerSideProps = async context => {
   return {
     props: {
       intlMessages: await loadI18nMessages({
