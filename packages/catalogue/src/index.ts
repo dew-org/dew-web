@@ -1,4 +1,5 @@
 export { default as ProductForm } from './components/form'
+export { default as CatalogueTable } from './components/table'
 export * from './hooks/use-catalogue'
 export * from './hooks/use-product'
 export * from './service'

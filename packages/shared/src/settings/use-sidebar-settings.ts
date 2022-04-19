@@ -14,6 +14,10 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
           title: intl.formatMessage({ defaultMessage: 'Register product' }),
           path: '/catalogue/register',
         },
+        {
+          title: intl.formatMessage({ defaultMessage: 'Products' }),
+          path: '/catalogue',
+        },
       ],
     },
     {
