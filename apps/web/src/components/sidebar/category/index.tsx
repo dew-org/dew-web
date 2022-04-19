@@ -2,6 +2,7 @@ import { SidebarRoute } from '@dew-org/shared'
 import withDefaults from '@dew-org/utils/with-defaults'
 import { useTheme } from '@nextui-org/react'
 import cn from 'classnames'
+import { motion } from 'framer-motion'
 import { FC, memo, PropsWithChildren, useMemo, useRef, useState } from 'react'
 import { ChevronRight } from 'react-iconly'
 
@@ -15,6 +16,11 @@ type Props = {
 const defaultProps = {
   level: 1,
   isMobile: false,
+}
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0 },
 }
 
 const Category: FC<PropsWithChildren<Props>> = ({
@@ -41,105 +47,107 @@ const Category: FC<PropsWithChildren<Props>> = ({
   )
 
   return (
-    <div ref={ref} className={cn('category', levelClass, { open: toggle })}>
-      <div className="label-container" onClick={toggleCategory}>
-        <span className="label noselect">{title}</span>
-        <ChevronRight size="small" />
-      </div>
-      <div className="posts">{children}</div>
-      <style jsx>{`
-        .category {
-          margin: ${margin}px 0;
-          cursor: pointer;
-        }
-
-        .category:last-child {
-          margin-bottom: 0;
-        }
-
-        :global(.category-image) {
-          opacity: 0;
-          animation: appear 200ms 100ms ease forwards;
-        }
-
-        .label-container {
-          display: flex;
-          align-items: center;
-        }
-
-        .label {
-          font-size: 1rem;
-          line-height: 1.5rem;
-          font-weight: 400;
-          margin-left: 10px;
-          cursor: pointer;
-          color: ${theme?.colors?.accents7?.value};
-          transition: all 200ms ease 0ms;
-        }
-
-        .label-container :global(svg) {
-          margin-top: 1px;
-          margin-left: 14px;
-          transition: transform 0.15s ease;
-        }
-
-        .selected .label {
-          font-weight: 600;
-          color: ${theme?.colors?.accents8?.value};
-        }
-
-        .open .label {
-          color: ${theme?.colors?.accents8?.value};
-        }
-
-        .open .label-container :global(svg) {
-          margin-right: 1px;
-          margin-left: 13px;
-          transform: rotate(90deg);
-        }
-
-        .level-2 .label-container {
-          text-transform: none;
-          letter-spacing: 0;
-        }
-
-        .label:hover {
-          opacity: 0.8;
-        }
-
-        .separated {
-          margin-bottom: 32px;
-        }
-
-        .posts {
-          margin-top: ${margin}px;
-          height: 0;
-          overflow: hidden;
-          padding-left: 19px;
-          margin-left: 3px;
-          transition: height 200ms ease;
-        }
-
-        .open .posts {
-          height: ${postsHeight}px;
-        }
-
-        @keyframes appear {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @media screen and (max-width: ${theme?.breakpoints?.md}) {
+    <motion.div variants={item}>
+      <div ref={ref} className={cn('category', levelClass, { open: toggle })}>
+        <div className="label-container" onClick={toggleCategory}>
+          <span className="label noselect">{title}</span>
+          <ChevronRight size="small" />
+        </div>
+        <div className="posts">{children}</div>
+        <style jsx>{`
           .category {
-            margin: 24px 0;
+            margin: ${margin}px 0;
+            cursor: pointer;
           }
-        }
-      `}</style>
-    </div>
+
+          .category:last-child {
+            margin-bottom: 0;
+          }
+
+          :global(.category-image) {
+            opacity: 0;
+            animation: appear 200ms 100ms ease forwards;
+          }
+
+          .label-container {
+            display: flex;
+            align-items: center;
+          }
+
+          .label {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            margin-left: 10px;
+            cursor: pointer;
+            color: ${theme?.colors?.accents7?.value};
+            transition: all 200ms ease 0ms;
+          }
+
+          .label-container :global(svg) {
+            margin-top: 1px;
+            margin-left: 14px;
+            transition: transform 0.15s ease;
+          }
+
+          .selected .label {
+            font-weight: 600;
+            color: ${theme?.colors?.accents8?.value};
+          }
+
+          .open .label {
+            color: ${theme?.colors?.accents8?.value};
+          }
+
+          .open .label-container :global(svg) {
+            margin-right: 1px;
+            margin-left: 13px;
+            transform: rotate(90deg);
+          }
+
+          .level-2 .label-container {
+            text-transform: none;
+            letter-spacing: 0;
+          }
+
+          .label:hover {
+            opacity: 0.8;
+          }
+
+          .separated {
+            margin-bottom: 32px;
+          }
+
+          .posts {
+            margin-top: ${margin}px;
+            height: 0;
+            overflow: hidden;
+            padding-left: 19px;
+            margin-left: 3px;
+            transition: height 200ms ease;
+          }
+
+          .open .posts {
+            height: ${postsHeight}px;
+          }
+
+          @keyframes appear {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @media screen and (max-width: ${theme?.breakpoints?.md}) {
+            .category {
+              margin: 24px 0;
+            }
+          }
+        `}</style>
+      </div>
+    </motion.div>
   )
 }
 

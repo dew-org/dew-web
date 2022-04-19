@@ -3,6 +3,8 @@ import Category from '@dew-org/components/sidebar/category'
 import Post from '@dew-org/components/sidebar/post'
 import { useIsMobile } from '@dew-org/hooks/use-media-query'
 import { SidebarRoute } from '@dew-org/shared'
+import withDefaults from '@dew-org/utils/with-defaults'
+import { motion } from 'framer-motion'
 import { FC, HTMLAttributes } from 'react'
 
 type Props = {
@@ -20,10 +22,25 @@ type NativeAttrs = Omit<HTMLAttributes<unknown>, keyof Props>
 
 export type SidebarProps = Props & typeof defaultProps & NativeAttrs
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
 const Sidebar: FC<SidebarProps> = ({ routes, level, onPostClick }) => {
   const isMobile = useIsMobile()
   return (
-    <>
+    <motion.div
+      className="container"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       {routes?.map(({ path, title, routes }) => {
         if (routes) {
           return (
@@ -58,8 +75,8 @@ const Sidebar: FC<SidebarProps> = ({ routes, level, onPostClick }) => {
           />
         )
       })}
-    </>
+    </motion.div>
   )
 }
 
-export default Sidebar
+export default withDefaults(Sidebar, defaultProps)
