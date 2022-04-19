@@ -34,3 +34,7 @@ yarn-error.log*
 
 # i18n
 compiled-lang
+
+# IDEs
+.idea
+.vscode
