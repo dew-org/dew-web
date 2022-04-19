@@ -4,9 +4,9 @@ import useSWR from 'swr'
 import { Product } from '../types'
 
 type UseProduct = {
-  product: Product | undefined
+  product?: Product
   isLoading: boolean
-  error: Error | undefined
+  error?: Error
 }
 
 export const useProduct = (codeOrSku: string): UseProduct => {
