@@ -24,7 +24,7 @@ const RegisterProductPage = () => {
 
   const handleSubmit = async (values: Product) => {
     await axios.post('/api/catalogue', values)
-    await router.push('/catalogue')
+    await router.push(`/inventory/${values.code}/register`)
   }
 
   return (
