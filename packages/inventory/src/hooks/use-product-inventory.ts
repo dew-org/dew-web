@@ -9,9 +9,11 @@ type UseProductInventory = {
   error?: Error
 }
 
-export const useProductInventory = (codeOrSku: string): UseProductInventory => {
+export const useProductInventory = (
+  codeOrSku?: string,
+): UseProductInventory => {
   const { data, isValidating, error } = useSWR<ProductInventory>(
-    `/api/inventory/${codeOrSku}`,
+    codeOrSku ? `/api/inventory/${codeOrSku}` : undefined,
     fetcher,
   )
 
