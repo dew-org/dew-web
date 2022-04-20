@@ -1,4 +1,4 @@
-import { Product, ProductCard, useProducts } from '@dew-org/products'
+import { Product, ProductCard, useCatalogue } from '@dew-org/catalogue'
 import {
   Button,
   Container,
@@ -19,7 +19,7 @@ type Props = {
 }
 
 const AddItemsStep: FC<Props> = ({ onFinish }) => {
-  const [products, loadingProducts, productsError] = useProducts()
+  const { products, isLoading, error } = useCatalogue()
   const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
     undefined,
   )
@@ -51,8 +51,8 @@ const AddItemsStep: FC<Props> = ({ onFinish }) => {
       />
       <Grid.Container gap={2}>
         <Grid xs={12} md={8}>
-          {loadingProducts && <Loading />}
-          {productsError && <div>{productsError.message}</div>}
+          {isLoading && <Loading />}
+          {error && <div>{error.message}</div>}
           {products && (
             <Grid.Container gap={1} justify="center">
               <Grid xs={12} justify="center">
@@ -64,7 +64,7 @@ const AddItemsStep: FC<Props> = ({ onFinish }) => {
                 <Grid key={product.code}>
                   <ProductCard
                     product={product}
-                    onClick={product => handleSelectProduct(product)}
+                    onClick={() => handleSelectProduct(product)}
                   />
                 </Grid>
               ))}
