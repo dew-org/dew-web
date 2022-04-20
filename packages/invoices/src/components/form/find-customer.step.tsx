@@ -5,6 +5,7 @@ import {
 } from '@dew-org/customers'
 import { Button, Grid, Input, Loading, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import { FC, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FormattedMessage } from 'react-intl'
@@ -72,11 +73,15 @@ const FindCustomerStep: FC<Props> = ({ onSelect }) => {
 
           <Spacer y={1} />
 
-          <Grid xs={12} justify="center">
+          <Grid xs={12} justify="flex-start">
             {loadingCustomer && <Loading>Loading customer</Loading>}
             {customerError && <div>{customerError.message}</div>}
-            {customer && (
-              <div>
+            {!loadingCustomer && customer && !customerError && (
+              <motion.div
+                initial={{ x: -20 }}
+                animate={{ x: 0 }}
+                exit={{ opacity: 0 }}
+              >
                 <Text h3>
                   {`${customer.id}, ${customer.name} ${customer.lastName}`}
                 </Text>
@@ -87,13 +92,12 @@ const FindCustomerStep: FC<Props> = ({ onSelect }) => {
 
                 <Button
                   color="success"
-                  rounded
-                  css={{ m: '0 auto' }}
+                  size="sm"
                   onClick={() => onSelect(customer)}
                 >
                   <FormattedMessage defaultMessage="Select" />
                 </Button>
-              </div>
+              </motion.div>
             )}
           </Grid>
         </Grid.Container>

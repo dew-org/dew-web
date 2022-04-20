@@ -7,6 +7,7 @@ import {
   Spacer,
   Text,
 } from '@nextui-org/react'
+import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 
@@ -16,6 +17,21 @@ import InvoiceItemModal from './item/modal'
 
 type Props = {
   onFinish: (items: InvoiceItem[]) => void
+}
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
 }
 
 const AddItemsStep: FC<Props> = ({ onFinish }) => {
@@ -54,21 +70,30 @@ const AddItemsStep: FC<Props> = ({ onFinish }) => {
           {isLoading && <Loading />}
           {error && <div>{error.message}</div>}
           {products && (
-            <Grid.Container gap={1} justify="center">
-              <Grid xs={12} justify="center">
-                <Text h4>
-                  <FormattedMessage defaultMessage="Products" />
-                </Text>
-              </Grid>
-              {products.map(product => (
-                <Grid key={product.code}>
-                  <ProductCard
-                    product={product}
-                    onClick={() => handleSelectProduct(product)}
-                  />
+            <motion.div
+              className="container"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
+              <Grid.Container gap={1} justify="space-around">
+                <Grid xs={12} justify="center">
+                  <Text h4>
+                    <FormattedMessage defaultMessage="Products" />
+                  </Text>
                 </Grid>
-              ))}
-            </Grid.Container>
+                {products.map(product => (
+                  <Grid key={product.code}>
+                    <motion.div variants={item}>
+                      <ProductCard
+                        product={product}
+                        onClick={() => handleSelectProduct(product)}
+                      />
+                    </motion.div>
+                  </Grid>
+                ))}
+              </Grid.Container>
+            </motion.div>
           )}
         </Grid>
 

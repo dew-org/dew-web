@@ -1,5 +1,6 @@
 import { Customer } from '@dew-org/customers'
 import { Spacer } from '@nextui-org/react'
+import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -38,13 +39,35 @@ const InvoiceForm: FC<Props> = ({ onSubmit }) => {
       <Spacer y={1} />
       <FormProvider {...invoiceForm}>
         {currentPage === 1 && (
-          <FindCustomerStep onSelect={handleSelectCustomer} />
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <FindCustomerStep onSelect={handleSelectCustomer} />
+          </motion.div>
         )}
 
-        {currentPage === 2 && <AddItemsStep onFinish={handleAddItems} />}
+        {currentPage === 2 && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <AddItemsStep onFinish={handleAddItems} />
+          </motion.div>
+        )}
 
         <form onSubmit={invoiceForm.handleSubmit(onSubmit)}>
-          {currentPage === 3 && <GenerateInvoiceStep />}
+          {currentPage === 3 && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+            >
+              <GenerateInvoiceStep />
+            </motion.div>
+          )}
         </form>
       </FormProvider>
     </>
