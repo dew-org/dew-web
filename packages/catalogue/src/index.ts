@@ -1,4 +1,5 @@
 export { default as ProductCard } from './components/card'
+export { default as ProductDetail } from './components/detail'
 export { default as ProductForm } from './components/form'
 export { default as CatalogueTable } from './components/table'
 export * from './hooks/use-catalogue'

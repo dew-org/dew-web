@@ -1,5 +1,8 @@
-import { Table } from '@nextui-org/react'
-import { useIntl } from 'react-intl'
+import { Col, Link, Row, Table, Tooltip } from '@nextui-org/react'
+import NextLink from 'next/link'
+import { Key } from 'react'
+import { Show } from 'react-iconly'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 import useCatalogue from '../../hooks/use-catalogue'
 import { Product } from '../../types'
@@ -33,7 +36,36 @@ const CatalogueTable = () => {
       key: 'tax',
       label: intl.formatMessage({ defaultMessage: 'Tax' }),
     },
+    {
+      key: 'actions',
+      label: intl.formatMessage({ defaultMessage: 'Actions' }),
+    },
   ]
+
+  const renderCell = (product: Product, columnKey: Key) => {
+    const cellValue = product[columnKey as keyof Product]
+    switch (columnKey) {
+      case 'discount':
+      case 'tax':
+        return `${(cellValue as number) * 100}%`
+      case 'actions':
+        return (
+          <Row justify="center" align="center">
+            <Col css={{ d: 'flex' }}>
+              <Tooltip content={<FormattedMessage defaultMessage="Details" />}>
+                <NextLink href={`/catalogue/${product.code}`} passHref>
+                  <Link>
+                    <Show />
+                  </Link>
+                </NextLink>
+              </Tooltip>
+            </Col>
+          </Row>
+        )
+      default:
+        return cellValue
+    }
+  }
 
   return (
     <>
@@ -42,7 +74,13 @@ const CatalogueTable = () => {
         <Table aria-label="catalogue" containerCss={{ overflowX: 'auto' }}>
           <Table.Header columns={columns}>
             {column => (
-              <Table.Column key={column.key}>{column.label}</Table.Column>
+              <Table.Column
+                key={column.key}
+                hideHeader={column.key === 'actions'}
+                align={column.key === 'actions' ? 'center' : 'start'}
+              >
+                {column.label}
+              </Table.Column>
             )}
           </Table.Header>
           <Table.Body
@@ -52,11 +90,7 @@ const CatalogueTable = () => {
             {item => (
               <Table.Row key={item.code}>
                 {columnKey => (
-                  <Table.Cell>
-                    {['discount', 'tax'].includes(columnKey as string)
-                      ? `${(item[columnKey as keyof Product] as number) * 100}%`
-                      : item[columnKey as keyof Product]}
-                  </Table.Cell>
+                  <Table.Cell>{renderCell(item, columnKey)}</Table.Cell>
                 )}
               </Table.Row>
             )}
