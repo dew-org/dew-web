@@ -9,7 +9,7 @@
   "devDependencies": {
     "@nextui-org/react": "^1.0.6-beta.5",
     "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
+    "@types/react-dom": "^18.0.2",
     "config": "*",
     "react-hook-form": "^7.29.0",
     "react-iconly": "^2.2.5",
