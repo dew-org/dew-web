@@ -26,7 +26,7 @@
     "react-dom": "18.0.0",
     "react-hook-form": "^7.29.0",
     "react-iconly": "^2.2.5",
-    "react-intl": "^5.24.8",
+    "react-intl": "^5.25.0",
     "swr": "^1.2.2"
   },
   "devDependencies": {
