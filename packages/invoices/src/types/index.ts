@@ -18,6 +18,7 @@ export type InvoiceItem = {
 }
 
 export type Invoice = {
+  id: string
   customer: Customer
   items: InvoiceItem[]
 
@@ -25,5 +26,5 @@ export type Invoice = {
   tax?: number
   discount?: number
   total?: number
-  createdAt?: Date
+  createdAt?: number
 }

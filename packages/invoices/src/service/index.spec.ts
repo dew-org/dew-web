@@ -10,6 +10,12 @@ import { InvoiceService } from './index'
 describe('invoice service', () => {
   beforeEach(() => {
     jest.spyOn(HttpClient, 'post').mockImplementation(() => Promise.resolve({}))
+
+    jest.spyOn(HttpClient, 'get').mockImplementation(() =>
+      Promise.resolve({
+        data: [],
+      }),
+    )
   })
 
   it('should be save an invoice', () => {
@@ -34,5 +40,11 @@ describe('invoice service', () => {
 
     InvoiceService.save(invoice)
     expect(HttpClient.post).toHaveBeenCalledWith('/invoices', invoice)
+  })
+
+  it('should be return all invoices', async () => {
+    const invoices = await InvoiceService.fetchAll()
+
+    expect(invoices).toEqual([])
   })
 })

@@ -45,6 +45,10 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
           title: intl.formatMessage({ defaultMessage: 'Register invoice' }),
           path: '/invoices/register',
         },
+        {
+          title: intl.formatMessage({ defaultMessage: 'Invoices' }),
+          path: '/invoices',
+        },
       ],
     },
   ])
