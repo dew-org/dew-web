@@ -11,7 +11,7 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^18.0.2",
     "config": "*",
-    "react-hook-form": "^7.29.0",
+    "react-hook-form": "^7.30.0",
     "react-iconly": "^2.2.5",
     "react-intl": "^5.25.0",
     "swr": "^1.2.2",
