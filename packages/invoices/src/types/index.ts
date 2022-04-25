@@ -18,7 +18,7 @@ export type InvoiceItem = {
 }
 
 export type Invoice = {
-  id: string
+  id?: string
   customer: Customer
   items: InvoiceItem[]
 

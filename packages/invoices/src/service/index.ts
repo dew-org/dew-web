@@ -11,4 +11,8 @@ export const InvoiceService = {
     const { data } = await HttpClient.get<Invoice[]>('/invoices')
     return data
   },
+  find: async (id: string) => {
+    const { data } = await HttpClient.get<Invoice>(`/invoices/${id}`)
+    return data
+  },
 }
