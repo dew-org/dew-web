@@ -71,14 +71,14 @@ const InvoicesTable = () => {
           </Row>
         )
       default:
-        return cellValue
+        return <>cellValue</>
     }
   }
 
   return (
     <>
       {error && <div>{error.message}</div>}
-      {!error && (
+      {!error && invoices && (
         <Table aria-label="invoices" containerCss={{ overflowX: 'auto' }}>
           <Table.Header columns={columns}>
             {column => (
