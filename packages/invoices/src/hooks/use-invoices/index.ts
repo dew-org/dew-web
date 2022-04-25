@@ -10,7 +10,10 @@ type UseInvoices = {
 }
 
 export const useInvoices = (): UseInvoices => {
-  const { data, isValidating, error } = useSWR<Invoice[]>('/invoices', fetcher)
+  const { data, isValidating, error } = useSWR<Invoice[]>(
+    '/api/invoices',
+    fetcher,
+  )
 
   return {
     invoices: data,
