@@ -1,11 +1,9 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
-import DashboardLayout from '@dew-org/layouts/dashboard'
-import withLayout from '@dew-org/utils/hocs/with-layout'
+import Hero from '@dew-org/components/hero'
 
 const App = () => (
-  <div>
-    <h1>Web</h1>
-  </div>
+  <>
+    <Hero />
+  </>
 )
 
-export default withLayout(withPageAuthRequired(App), DashboardLayout)
+export default App
