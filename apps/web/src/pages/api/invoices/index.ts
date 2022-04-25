@@ -8,7 +8,17 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     const { body } = request
 
     await InvoiceService.save(body)
-    response.status(201).json({ message: 'Invoice saved' })
+
+    response.status(201).json({ message: 'success' })
+
+    return
+  }
+
+  if (request.method === 'GET') {
+    const invoices = await InvoiceService.fetchAll()
+
+    response.status(200).json(invoices)
+
     return
   }
 
