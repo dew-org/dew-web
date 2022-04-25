@@ -1,10 +1,10 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import SimpleAnimation from '@dew-org/components/animations/simple'
 import { InvoiceDetail } from '@dew-org/invoices'
 import DashboardLayout from '@dew-org/layouts/dashboard'
 import withLayout from '@dew-org/utils/hocs/with-layout'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
 import { Spacer, Text } from '@nextui-org/react'
-import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
 
@@ -24,11 +24,7 @@ const InvoiceDetailPage = () => {
   const { id } = router.query
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-    >
+    <SimpleAnimation>
       <Text h3>
         <FormattedMessage defaultMessage="Invoice detail" />
       </Text>
@@ -36,7 +32,7 @@ const InvoiceDetailPage = () => {
       <Spacer y={1} x={0} />
 
       <InvoiceDetail id={id as string} />
-    </motion.div>
+    </SimpleAnimation>
   )
 }
 

@@ -1,4 +1,5 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import SimpleAnimation from '@dew-org/components/animations/simple'
 import { Customer, CustomerForm } from '@dew-org/customers'
 import DashboardLayout from '@dew-org/layouts/dashboard'
 import withLayout from '@dew-org/utils/hocs/with-layout'
@@ -28,7 +29,7 @@ const RegisterCustomerPage = () => {
   }
 
   return (
-    <>
+    <SimpleAnimation>
       <Text h2>
         <FormattedMessage defaultMessage="Register Customer" />
       </Text>
@@ -36,7 +37,7 @@ const RegisterCustomerPage = () => {
       <Spacer y={1} />
 
       <CustomerForm onSubmit={handleSubmit} />
-    </>
+    </SimpleAnimation>
   )
 }
 
