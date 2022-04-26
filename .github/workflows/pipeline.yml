@@ -1,0 +1,87 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  avoid_reduncy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: cancel previous redundant builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: "16.x"
+
+      - name: install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: "16.x"
+
+      - name: install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: apps/web/.next/
+
+  test:
+    needs: [ lint, build ]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: "16.x"
+
+      - name: install packages
+        run: yarn install --frozen-lockfile
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: apps/web/.next/
+
+      - name: test
+        run: yarn test:coverage
+
+      - name: codecov
+        uses: codecov/codecov-action@v1
