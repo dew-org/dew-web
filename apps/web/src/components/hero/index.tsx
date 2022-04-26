@@ -18,6 +18,7 @@ import {
 import { motion } from 'framer-motion'
 import NextLink from 'next/link'
 import { Buy, Discount, ShieldDone } from 'react-iconly'
+import { FormattedMessage } from 'react-intl'
 
 // Hero page for billing app
 const Hero = () => {
@@ -75,7 +76,7 @@ const Hero = () => {
             <StyledTitle>software.</StyledTitle>
 
             <StyledSubtitle>
-              A modern, secure, and easy to use billing software.
+              <FormattedMessage defaultMessage="A modern, secure, and easy to use billing software." />
             </StyledSubtitle>
 
             <Spacer y={1.5} />
@@ -90,7 +91,7 @@ const Hero = () => {
               }}
             >
               <Grid xs={12} sm={3}>
-                <NextLink href="/api/auth/login" passHref>
+                <NextLink href="/invoices/register" passHref>
                   <Button
                     auto
                     rounded
@@ -103,7 +104,7 @@ const Hero = () => {
                       },
                     }}
                   >
-                    Get Started
+                    <FormattedMessage defaultMessage="Get Started" />
                   </Button>
                 </NextLink>
               </Grid>
