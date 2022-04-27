@@ -1,3 +1,4 @@
+import Community from '@dew-org/components/community'
 import FeaturesGrid from '@dew-org/components/features-grid'
 import Hero from '@dew-org/components/hero'
 import Navbar from '@dew-org/components/landing/navbar'
@@ -29,6 +30,14 @@ const App = () => (
     <Section>
       <FeaturesGrid features={landing.features} />
     </Section>
+
+    <Spacer y={6} />
+
+    <Section>
+      <Community />
+    </Section>
+
+    <Spacer y={4} />
   </>
 )
 
