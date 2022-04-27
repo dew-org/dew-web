@@ -22,7 +22,8 @@ const SalePriceField = () => {
       type="number"
       helperText={salePriceError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('salePrice', {
         required: {
           value: true,

@@ -22,7 +22,8 @@ const RegularPriceField = () => {
       type="number"
       helperText={regularPriceError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('regularPrice', {
         required: {
           value: true,

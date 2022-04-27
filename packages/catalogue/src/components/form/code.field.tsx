@@ -21,7 +21,8 @@ const CodeField = () => {
       })}
       helperText={codeError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('code', {
         required: {
           value: true,

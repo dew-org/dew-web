@@ -22,6 +22,7 @@ const TaxField = () => {
       type="number"
       labelLeft="%"
       fullWidth
+      bordered
       {...register('tax', {
         required: {
           value: true,

@@ -21,7 +21,8 @@ const DescriptionField = () => {
       })}
       helperText={descriptionError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       rows={5}
       {...register('description')}
     />

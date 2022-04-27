@@ -22,6 +22,7 @@ const DiscountField = () => {
       type="number"
       labelLeft="%"
       fullWidth
+      bordered
       {...register('discount', {
         required: {
           value: true,

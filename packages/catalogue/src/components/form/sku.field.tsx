@@ -21,7 +21,8 @@ const SkuField = () => {
       })}
       helperText={skuError?.message}
       helperColor="error"
-      width="100%"
+      fullWidth
+      bordered
       {...register('sku', {
         required: {
           value: true,
