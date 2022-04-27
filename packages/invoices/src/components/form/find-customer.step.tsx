@@ -8,6 +8,7 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 import { FC, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Search } from 'react-iconly'
 import { FormattedMessage } from 'react-intl'
 
 type Props = {
@@ -56,19 +57,18 @@ const FindCustomerStep: FC<Props> = ({ onSelect }) => {
       />
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid.Container gap={1}>
-          <Grid xs={12} md={8}>
+        <Grid.Container gap={2}>
+          <Grid xs={12}>
             <Input
-              width="100%"
-              labelPlaceholder="Customer id"
+              fullWidth
+              clearable
+              size="lg"
+              label="Customer id"
+              autoFocus
+              contentRight={<Search size={24} />}
+              helperText="Enter customer id and press enter"
               {...register('customerId', { required: true })}
             />
-          </Grid>
-
-          <Grid xs={12} md={4}>
-            <Button type="submit">
-              <FormattedMessage defaultMessage="Search" />
-            </Button>
           </Grid>
 
           <Spacer y={1} />
