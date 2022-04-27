@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <StyledNavMainContainer>
-      <StyledNavContainer>
+      <StyledNavContainer showBlur>
         <Container lg as="nav" display="flex" wrap="nowrap" alignItems="center">
           <Col
             css={{

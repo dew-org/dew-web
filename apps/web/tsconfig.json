@@ -9,7 +9,9 @@
       "@dew-org/theme/*": ["./src/theme/*"],
       "@dew-org/components/*": ["./src/components/*"],
       "@dew-org/layouts/*": ["./src/layouts/*"],
-      "@dew-org/utils/*": ["./src/utils/*"]
+      "@dew-org/utils/*": ["./src/utils/*"],
+      "@dew-org/pages/*": ["./src/pages/*"],
+      "@dew-org/content/*": ["./src/content/*"]
     }
   }
 }
