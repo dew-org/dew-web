@@ -14,5 +14,7 @@ export type IconProps = {
 
 export const Icon = styled('svg', {})
 
+export { default as Github } from './github'
 export { default as Moon } from './moon'
 export { default as Sun } from './sun'
+export { default as Twitter } from './twitter'
