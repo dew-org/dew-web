@@ -24,28 +24,28 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const Layout = Component.defaultProps?.Layout || DefaultLayout
 
   return (
-    <IntlProvider
-      locale={locale}
-      defaultLocale={defaultLocale}
-      messages={pageProps.intlMessages}
+    <NextThemesProvider
+      defaultTheme="system"
+      attribute="class"
+      value={{
+        light: lightTheme.className,
+        dark: darkTheme.className,
+      }}
     >
-      <NextThemesProvider
-        defaultTheme="system"
-        attribute="class"
-        value={{
-          light: lightTheme.className,
-          dark: darkTheme.className,
-        }}
-      >
-        <NextUIProvider>
+      <NextUIProvider>
+        <IntlProvider
+          locale={locale}
+          defaultLocale={defaultLocale}
+          messages={pageProps.intlMessages}
+        >
           <UserProvider>
             <Layout>
               <Component {...pageProps} />
             </Layout>
           </UserProvider>
-        </NextUIProvider>
-      </NextThemesProvider>
-    </IntlProvider>
+        </IntlProvider>
+      </NextUIProvider>
+    </NextThemesProvider>
   )
 }
 

@@ -7,9 +7,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^18.0.2",
-    "@nextui-org/react": "^1.0.6-beta.5",
+    "@nextui-org/react": "^1.0.0-beta.6",
+    "@types/react": "18.0.7",
+    "@types/react-dom": "18.0.0",
     "config": "*",
     "tsconfig": "*",
     "typescript": "^4.6.3"
