@@ -36,7 +36,6 @@ const AccountAvatar = () => {
           <Grid xs={12} direction="column">
             <Button light icon={<UserIcon />} size="sm">
               <FormattedMessage defaultMessage="Profile" />
-              <FormattedMessage defaultMessage="Heelo" />
             </Button>
           </Grid>
 
