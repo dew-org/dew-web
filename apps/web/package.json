@@ -16,7 +16,7 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
     "@formatjs/cli": "^4.8.3",
-    "@nextui-org/react": "^1.0.6-beta.5",
+    "@nextui-org/react": "^1.0.0-beta.6",
     "axios": "^0.27.1",
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.2",
@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.27",
-    "@types/react": "17.0.37",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.0",
     "babel-plugin-formatjs": "^10.3.19",
     "config": "*",
     "eslint": "^8.14.0",
