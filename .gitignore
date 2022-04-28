@@ -38,3 +38,4 @@ compiled-lang
 # IDEs
 .idea
 .vscode
+.vercel
