@@ -17,7 +17,7 @@
     "@auth0/nextjs-auth0": "^1.7.0",
     "@formatjs/cli": "^4.8.3",
     "@nextui-org/react": "^1.0.0-beta.6",
-    "axios": "^0.27.1",
+    "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.2",
     "next": "latest",
