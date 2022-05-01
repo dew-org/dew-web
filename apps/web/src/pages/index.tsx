@@ -5,8 +5,20 @@ import Navbar from '@dew-org/components/landing/navbar'
 import { Section } from '@dew-org/components/primitives'
 import landing from '@dew-org/content/landing'
 import { levitating } from '@dew-org/utils/animations'
+import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
 import { Row, Spacer } from '@nextui-org/react'
 import { ChevronDown } from 'react-iconly'
+
+export const getStaticProps = async context => {
+  return {
+    props: {
+      intlMessages: await loadI18nMessages({
+        locale: context.locale,
+        defaultLocale: context.defaultLocale,
+      }),
+    },
+  }
+}
 
 const App = () => (
   <>
