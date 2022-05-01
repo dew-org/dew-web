@@ -2,6 +2,9 @@
   "/7XQ/r": {
     "defaultMessage": "Precio de venta: {salePrice} $"
   },
+  "/OzczE": {
+    "defaultMessage": "Un software de facturación moderno, seguro y fácil de usar."
+  },
   "/RLvL4": {
     "defaultMessage": "El impuesto es requerido"
   },
@@ -50,6 +53,9 @@
   "7zoC6M": {
     "defaultMessage": "El impuesto debe ser menor o igual a 100"
   },
+  "9QXm1E": {
+    "defaultMessage": "Empezar"
+  },
   "AbXVP4": {
     "defaultMessage": "Creado el"
   },
@@ -58,6 +64,12 @@
   },
   "AyltOX": {
     "defaultMessage": "Sku es requerido"
+  },
+  "C81/uG": {
+    "defaultMessage": "Cerrar sesión"
+  },
+  "D3idYv": {
+    "defaultMessage": "Configuraciones"
   },
   "Gvxoji": {
     "defaultMessage": "El nombre es requerido"
@@ -131,6 +143,9 @@
   "U2napd": {
     "defaultMessage": "Catálogo"
   },
+  "Ub+AGc": {
+    "defaultMessage": "Iniciar sesión"
+  },
   "VK0jfg": {
     "defaultMessage": "El descuento debe ser menor que 100"
   },
@@ -172,6 +187,9 @@
   },
   "hzF82H": {
     "defaultMessage": "Subtotal: {subtotal}"
+  },
+  "itPgxd": {
+    "defaultMessage": "Perfil"
   },
   "jdJhOL": {
     "defaultMessage": "Número de teléfono"
