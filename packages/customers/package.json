@@ -1,6 +1,6 @@
 {
   "name": "@dew-org/customers",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
     "test": "jest"
