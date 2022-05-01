@@ -1,5 +1,6 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import AccountAvatar from '@dew-org/components/account-avatar'
+import Badge from '@dew-org/components/badge'
 import ThemeToggle from '@dew-org/components/theme-toggle'
 import {
   StyledNavContainer,
@@ -36,6 +37,18 @@ const Navbar = () => {
               <NextLink href="/" passHref>
                 <Text h3>Dew</Text>
               </NextLink>
+              <Spacer x={0.4} />
+              <Badge
+                css={{
+                  px: '$4',
+                  '@mdMax': {
+                    display: 'none',
+                  },
+                }}
+                type="secondary"
+              >
+                Beta
+              </Badge>
             </Row>
           </Col>
 

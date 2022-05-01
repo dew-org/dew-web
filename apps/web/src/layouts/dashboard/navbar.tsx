@@ -1,4 +1,5 @@
 import AccountAvatar from '@dew-org/components/account-avatar'
+import Badge from '@dew-org/components/badge'
 import MenuToggle from '@dew-org/components/menu-toggle'
 import Box from '@dew-org/components/primitives/box'
 import ThemeToggle from '@dew-org/components/theme-toggle'
@@ -57,11 +58,23 @@ const DashboardNavbar = () => {
             }}
           >
             <Row justify="flex-start" align="center">
-              <NextLink href="/">
+              <NextLink href="/" passHref>
                 <Link href="/">
                   <Text h3>Dew</Text>
                 </Link>
               </NextLink>
+              <Spacer x={0.4} />
+              <Badge
+                css={{
+                  px: '$4',
+                  '@mdMax': {
+                    display: 'none',
+                  },
+                }}
+                type="secondary"
+              >
+                Beta
+              </Badge>
             </Row>
           </Col>
           <Col className="navbar__search-container">
