@@ -17,7 +17,7 @@ env:
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
-  avoid_reduncy:
+  avoid_redundancy:
     runs-on: ubuntu-latest
 
     steps:
