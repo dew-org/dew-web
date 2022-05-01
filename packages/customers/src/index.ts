@@ -1,0 +1,5 @@
+export { default as CustomerForm } from './components/form'
+export { default as RegisterCustomerModal } from './components/register-modal'
+export * from './hooks/use-customer'
+export * from './service'
+export * from './types'

@@ -1,0 +1,17 @@
+{
+  "name": "@dew-org/invoices",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nextui-org/react": "^1.0.0-beta.6",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.0",
+    "config": "*",
+    "tsconfig": "*",
+    "typescript": "^4.6.4"
+  }
+}

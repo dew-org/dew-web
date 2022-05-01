@@ -1,5 +1,17 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@dew-org/*": ["./src/*"],
+      "@dew-org/theme/*": ["./src/theme/*"],
+      "@dew-org/components/*": ["./src/components/*"],
+      "@dew-org/layouts/*": ["./src/layouts/*"],
+      "@dew-org/utils/*": ["./src/utils/*"],
+      "@dew-org/pages/*": ["./src/pages/*"],
+      "@dew-org/content/*": ["./src/content/*"]
+    }
+  }
 }

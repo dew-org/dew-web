@@ -1,0 +1,260 @@
+{
+  "/7XQ/r": {
+    "defaultMessage": "Precio de venta: {salePrice} $"
+  },
+  "/RLvL4": {
+    "defaultMessage": "El impuesto es requerido"
+  },
+  "0J1Wxe": {
+    "defaultMessage": "Precio regular: {regularPrice} $"
+  },
+  "0XhgAx": {
+    "defaultMessage": "Total: {total}"
+  },
+  "1z+0TS": {
+    "defaultMessage": "Id debe ser un número"
+  },
+  "2/2yg+": {
+    "defaultMessage": "Añadir"
+  },
+  "28C0Aj": {
+    "defaultMessage": "Descuento"
+  },
+  "2O2sfp": {
+    "defaultMessage": "Finalizar"
+  },
+  "2aX2Q3": {
+    "defaultMessage": "Producto: {code} - {name}"
+  },
+  "4EzLc1": {
+    "defaultMessage": "Descuento: {discount}"
+  },
+  "4LRDBC": {
+    "defaultMessage": "Precio regular es requerido"
+  },
+  "5WgK3Y": {
+    "defaultMessage": "Dirección de email inválida"
+  },
+  "5Wwopw": {
+    "defaultMessage": "Precios"
+  },
+  "6KppbL": {
+    "defaultMessage": "Item de factura"
+  },
+  "6dqYnF": {
+    "defaultMessage": "Facturas"
+  },
+  "7NFfmz": {
+    "defaultMessage": "Productos"
+  },
+  "7zoC6M": {
+    "defaultMessage": "El impuesto debe ser menor o igual a 100"
+  },
+  "AbXVP4": {
+    "defaultMessage": "Creado el"
+  },
+  "AwzkSM": {
+    "defaultMessage": "Impuesto"
+  },
+  "AyltOX": {
+    "defaultMessage": "Sku es requerido"
+  },
+  "Gvxoji": {
+    "defaultMessage": "El nombre es requerido"
+  },
+  "HAlOn1": {
+    "defaultMessage": "Nombre"
+  },
+  "HAyFhM": {
+    "defaultMessage": "Precio de venta"
+  },
+  "HgoO43": {
+    "defaultMessage": "Subtotal: {subTotal}"
+  },
+  "HtNqED": {
+    "defaultMessage": "El precio de venta debe ser un número"
+  },
+  "Iq0cJ9": {
+    "defaultMessage": "El stock es requerido"
+  },
+  "J3HQl7": {
+    "defaultMessage": "Registrar factura"
+  },
+  "Jm23bC": {
+    "defaultMessage": "Factura #{id}"
+  },
+  "KhKQjV": {
+    "defaultMessage": "Precio: {price}"
+  },
+  "L8seEc": {
+    "defaultMessage": "Subtotal"
+  },
+  "Lv0zJu": {
+    "defaultMessage": "Detalles"
+  },
+  "MEkTSF": {
+    "defaultMessage": "Impuesto y descuento"
+  },
+  "MJ2jZQ": {
+    "defaultMessage": "Total"
+  },
+  "MlzEfB": {
+    "defaultMessage": "Inventario"
+  },
+  "MqyZ5D": {
+    "defaultMessage": "El impuesto debe ser mayor que 0"
+  },
+  "PVN7PL": {
+    "defaultMessage": "Registrar stock"
+  },
+  "Pc+tM3": {
+    "defaultMessage": "Generar"
+  },
+  "Q8Qw5B": {
+    "defaultMessage": "Descripción"
+  },
+  "QA0hIL": {
+    "defaultMessage": "Descuento debe ser mayor que 0"
+  },
+  "R3hmdN": {
+    "defaultMessage": "Id es requerido"
+  },
+  "Ryr4CL": {
+    "defaultMessage": "Cantidad debe ser un número"
+  },
+  "Tbo377": {
+    "defaultMessage": "Facturación"
+  },
+  "TkYZBT": {
+    "defaultMessage": "Clientes"
+  },
+  "U2napd": {
+    "defaultMessage": "Catálogo"
+  },
+  "VK0jfg": {
+    "defaultMessage": "El descuento debe ser menor que 100"
+  },
+  "W6Tn0A": {
+    "defaultMessage": "Cantidad debe ser menor que {max}"
+  },
+  "XFKV5Z": {
+    "defaultMessage": "Creado el: {date}"
+  },
+  "YT6TEY": {
+    "defaultMessage": "{discount}% de descuento"
+  },
+  "YTI6Sn": {
+    "defaultMessage": "Impuesto: {tax}%"
+  },
+  "Z0kULb": {
+    "defaultMessage": "Registrar producto"
+  },
+  "bU+E9Z": {
+    "defaultMessage": "Descuento requerido"
+  },
+  "cCKaPK": {
+    "defaultMessage": "Detalle de factura"
+  },
+  "dD0IKh": {
+    "defaultMessage": "Impuesto: {tax}"
+  },
+  "dSlWxb": {
+    "defaultMessage": "Registrar cliente"
+  },
+  "h2vipu": {
+    "defaultMessage": "Código"
+  },
+  "hUdu9c": {
+    "defaultMessage": "Detalle del producto"
+  },
+  "hkENym": {
+    "defaultMessage": "Cliente"
+  },
+  "hzF82H": {
+    "defaultMessage": "Subtotal: {subtotal}"
+  },
+  "jdJhOL": {
+    "defaultMessage": "Número de teléfono"
+  },
+  "jvo0vs": {
+    "defaultMessage": "Guardar"
+  },
+  "jySCml": {
+    "defaultMessage": "Registrar producto"
+  },
+  "kGGU2D": {
+    "defaultMessage": "Id"
+  },
+  "kQAf2d": {
+    "defaultMessage": "Seleccionar"
+  },
+  "l25Fiw": {
+    "defaultMessage": "Código requerido"
+  },
+  "l9Lq/A": {
+    "defaultMessage": "Descuento: {discount}%"
+  },
+  "mE+NeJ": {
+    "defaultMessage": "Registrar factura"
+  },
+  "nLTAGL": {
+    "defaultMessage": "Stock debe ser un número"
+  },
+  "nxGZ0T": {
+    "defaultMessage": "Registrar cliente"
+  },
+  "o8eQik": {
+    "defaultMessage": "Disponible: {available}"
+  },
+  "oR2Zwh": {
+    "defaultMessage": "Número de teléfono inválido"
+  },
+  "qVGRIE": {
+    "defaultMessage": "Cantidad"
+  },
+  "sAYNYt": {
+    "defaultMessage": "Precio final: {price} $"
+  },
+  "sy+pv5": {
+    "defaultMessage": "Email"
+  },
+  "t5a1IE": {
+    "defaultMessage": "Sku"
+  },
+  "txUL0F": {
+    "defaultMessage": "Apellido"
+  },
+  "ujzQLw": {
+    "defaultMessage": "Cantidad debe ser mayor que 0"
+  },
+  "vuKrlW": {
+    "defaultMessage": "Stock"
+  },
+  "wFMlsH": {
+    "defaultMessage": "Actualizado el"
+  },
+  "wKrkcP": {
+    "defaultMessage": "Cantidad es requerida"
+  },
+  "wL7VAE": {
+    "defaultMessage": "Acciones"
+  },
+  "x3IBIW": {
+    "defaultMessage": "Precio regular debe ser un número"
+  },
+  "xD3Bn3": {
+    "defaultMessage": "Cantidad: {quantity}"
+  },
+  "yNmV/R": {
+    "defaultMessage": "Items"
+  },
+  "yos4hi": {
+    "defaultMessage": "Apellido requerido"
+  },
+  "ys89ix": {
+    "defaultMessage": "Precio de venta requerido"
+  },
+  "ys8gnW": {
+    "defaultMessage": "Precio regular"
+  }
+}

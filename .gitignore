@@ -31,3 +31,11 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+# i18n
+compiled-lang
+
+# IDEs
+.idea
+.vscode
+.vercel

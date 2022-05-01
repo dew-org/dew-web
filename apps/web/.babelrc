@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "ignore": [
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "**/*.spec.js",
+    "**/*.spec.jsx"
+  ],
+  "plugins": [
+    [
+      "formatjs",
+      {
+        "ast": true
+      }
+    ]
+  ]
+}

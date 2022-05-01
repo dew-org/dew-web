@@ -1,26 +1,43 @@
 {
-  "name": "web",
-  "version": "0.0.0",
+  "name": "@dew-org/web",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
+    "predev": "npm run i18n:compile",
     "dev": "next dev",
+    "prebuild": "npm run i18n:compile",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --passWithNoTests",
+    "i18n:extract": "formatjs extract 'src/pages/**/*.ts*' 'components/**/*.ts*' '../../packages/**/!(*.d).ts*' --out-file lang/en.json",
+    "i18n:compile": "formatjs compile-folder lang compiled-lang"
   },
   "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "ui": "*"
+    "@auth0/nextjs-auth0": "^1.7.0",
+    "@formatjs/cli": "^4.8.3",
+    "@nextui-org/react": "^1.0.0-beta.6",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6.3.2",
+    "next": "12.1.5",
+    "next-themes": "^0.1.1",
+    "react": "^18.0.0",
+    "react-dom": "18.1.0",
+    "react-hook-form": "^7.30.0",
+    "react-iconly": "^2.2.5",
+    "react-intl": "^5.25.1",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
+    "@types/node": "17.0.29",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.0",
+    "babel-plugin-formatjs": "^10.3.19",
     "config": "*",
-    "eslint": "7.32.0",
+    "eslint": "^8.14.0",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
-    "@types/node": "^17.0.12",
-    "@types/react": "17.0.37",
-    "typescript": "^4.5.3"
+    "typescript": "4.6.4"
   }
 }
