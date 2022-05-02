@@ -2,6 +2,9 @@
   "/7XQ/r": {
     "defaultMessage": "Sale price: {salePrice} $"
   },
+  "/OzczE": {
+    "defaultMessage": "A modern, secure, and easy to use billing software."
+  },
   "/RLvL4": {
     "defaultMessage": "Tax is required"
   },
@@ -50,6 +53,9 @@
   "7zoC6M": {
     "defaultMessage": "Tax must be less than 100"
   },
+  "9QXm1E": {
+    "defaultMessage": "Get Started"
+  },
   "AbXVP4": {
     "defaultMessage": "Created at"
   },
@@ -58,6 +64,12 @@
   },
   "AyltOX": {
     "defaultMessage": "Sku is required"
+  },
+  "C81/uG": {
+    "defaultMessage": "Logout"
+  },
+  "D3idYv": {
+    "defaultMessage": "Settings"
   },
   "Gvxoji": {
     "defaultMessage": "Name is required"
@@ -131,6 +143,9 @@
   "U2napd": {
     "defaultMessage": "Catalogue"
   },
+  "Ub+AGc": {
+    "defaultMessage": "Sign In"
+  },
   "VK0jfg": {
     "defaultMessage": "Discount must be less than 100"
   },
@@ -172,6 +187,9 @@
   },
   "hzF82H": {
     "defaultMessage": "Subtotal: {subtotal}"
+  },
+  "itPgxd": {
+    "defaultMessage": "Profile"
   },
   "jdJhOL": {
     "defaultMessage": "Phone number"
