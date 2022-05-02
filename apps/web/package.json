@@ -19,7 +19,7 @@
     "@nextui-org/react": "^1.0.0-beta.6",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
-    "framer-motion": "^6.3.2",
+    "framer-motion": "^6.3.3",
     "next": "12.1.5",
     "next-themes": "^0.1.1",
     "react": "^18.0.0",
