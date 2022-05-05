@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
-    "@formatjs/cli": "^4.8.3",
+    "@formatjs/cli": "^4.8.4",
     "@nextui-org/react": "^1.0.0-beta.6",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
