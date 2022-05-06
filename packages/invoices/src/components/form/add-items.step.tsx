@@ -17,6 +17,8 @@ import InvoiceItemModal from './item/modal'
 
 type Props = {
   onFinish: (items: InvoiceItem[]) => void
+
+  currency: string
 }
 
 const container = {
@@ -34,7 +36,7 @@ const item = {
   show: { opacity: 1, y: 0 },
 }
 
-const AddItemsStep: FC<Props> = ({ onFinish }) => {
+const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
   const { products, isLoading, error } = useCatalogue()
   const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
     undefined,
@@ -104,7 +106,11 @@ const AddItemsStep: FC<Props> = ({ onFinish }) => {
             </Text>
 
             {items.map(item => (
-              <ItemCard item={item} key={item.product.code} />
+              <ItemCard
+                item={item}
+                key={item.product.code}
+                currency={currency}
+              />
             ))}
 
             <Spacer y={1} />

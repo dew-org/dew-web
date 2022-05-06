@@ -1,14 +1,16 @@
 import { Card, Grid, Row } from '@nextui-org/react'
 import { FC } from 'react'
+import { FormattedNumber } from 'react-intl'
 
 import { InvoiceItem } from '../../../../types'
 import { StyledCard, StyledPrice, StyledTitle } from './styles'
 
 type Props = {
   item: InvoiceItem
+  currency: string
 }
 
-const ItemCard: FC<Props> = ({ item }) => {
+const ItemCard: FC<Props> = ({ item, currency }) => {
   return (
     <StyledCard key={item.product.code}>
       <Card.Body css={{ px: '$8', position: 'relative', ov: 'visible' }}>
@@ -20,11 +22,16 @@ const ItemCard: FC<Props> = ({ item }) => {
               </StyledTitle>
 
               <StyledPrice>
-                $
-                {item.price *
-                  (1 + item.tax / 100) *
-                  (1 - item.discount / 100) *
-                  item.quantity}
+                <FormattedNumber
+                  value={
+                    item.price *
+                    (1 + item.tax / 100) *
+                    (1 - item.discount / 100) *
+                    item.quantity
+                  }
+                  style="currency"
+                  currency={currency}
+                />
               </StyledPrice>
             </Row>
           </Grid>

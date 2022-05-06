@@ -21,6 +21,7 @@ export type Invoice = {
   id?: string
   customer: Customer
   items: InvoiceItem[]
+  currency: String
 
   subtotal?: number
   tax?: number
