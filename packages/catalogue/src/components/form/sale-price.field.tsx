@@ -7,6 +7,7 @@ import { Product } from '../../types'
 const SalePriceField = () => {
   const {
     register,
+    watch,
     formState: {
       errors: { salePrice: salePriceError },
     },
@@ -20,11 +21,12 @@ const SalePriceField = () => {
         defaultMessage: 'Sale price',
       })}
       type="number"
-      helperText={salePriceError?.message}
+      helperText={salePriceError?.amount?.message}
       helperColor="error"
+      labelLeft={watch('salePrice.currency')}
       fullWidth
       bordered
-      {...register('salePrice', {
+      {...register('salePrice.amount', {
         required: {
           value: true,
           message: intl.formatMessage({
