@@ -1,6 +1,6 @@
 {
   "name": "@dew-org/invoices",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "src/index.ts",
   "scripts": {
     "test": "jest"
