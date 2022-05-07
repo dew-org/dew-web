@@ -1,4 +1,5 @@
 import { Customer } from '@dew-org/customers'
+import { useCurrency } from '@dew-org/shared'
 import { Spacer } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
@@ -14,7 +15,13 @@ type Props = {
 }
 
 const InvoiceForm: FC<Props> = ({ onSubmit }) => {
-  const invoiceForm = useForm<Invoice>()
+  const currency = useCurrency()
+
+  const invoiceForm = useForm<Invoice>({
+    defaultValues: {
+      currency,
+    },
+  })
 
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -54,7 +61,7 @@ const InvoiceForm: FC<Props> = ({ onSubmit }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
-            <AddItemsStep onFinish={handleAddItems} />
+            <AddItemsStep onFinish={handleAddItems} currency={currency} />
           </motion.div>
         )}
 

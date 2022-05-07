@@ -1,3 +1,4 @@
+import { useCurrency } from '@dew-org/shared'
 import { Button, Grid, Loading, Spacer } from '@nextui-org/react'
 import { FC } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -18,10 +19,18 @@ type Props = {
 }
 
 const ProductForm: FC<Props> = ({ onSubmit }) => {
+  const currency = useCurrency()
+
   const productForm = useForm<Product>({
     defaultValues: {
       discount: 0,
       tax: 0,
+      regularPrice: {
+        currency,
+      },
+      salePrice: {
+        currency,
+      },
     },
   })
 

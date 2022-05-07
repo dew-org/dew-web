@@ -2,10 +2,10 @@ import { Col, Link, Row, Table, Tooltip } from '@nextui-org/react'
 import NextLink from 'next/link'
 import { Key } from 'react'
 import { Show } from 'react-iconly'
-import { FormattedMessage, useIntl } from 'react-intl'
+import { FormattedMessage, FormattedNumber, useIntl } from 'react-intl'
 
 import useCatalogue from '../../hooks/use-catalogue'
-import { Product } from '../../types'
+import { Price, Product } from '../../types'
 
 const CatalogueTable = () => {
   const { products, isLoading, error } = useCatalogue()
@@ -48,6 +48,18 @@ const CatalogueTable = () => {
       case 'discount':
       case 'tax':
         return `${(cellValue as number) * 100}%`
+      case 'regularPrice':
+      case 'salePrice': {
+        const price = cellValue as Price
+
+        return (
+          <FormattedNumber
+            value={price.amount}
+            style="currency"
+            currency={price.currency}
+          />
+        )
+      }
       case 'actions':
         return (
           <Row justify="center" align="center">
@@ -63,7 +75,7 @@ const CatalogueTable = () => {
           </Row>
         )
       default:
-        return cellValue
+        return <span>cellValue</span>
     }
   }
 

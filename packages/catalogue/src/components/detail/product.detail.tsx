@@ -2,7 +2,7 @@ import { useProductInventory } from '@dew-org/inventory'
 import { Divider, Loading, Spacer, Text } from '@nextui-org/react'
 import { motion } from 'framer-motion'
 import { FC } from 'react'
-import { FormattedDate, FormattedMessage } from 'react-intl'
+import { FormattedDate, FormattedMessage, FormattedNumber } from 'react-intl'
 
 import useProduct from '../../hooks/use-product'
 
@@ -70,7 +70,15 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
           >
             <FormattedMessage
               defaultMessage="Regular price: {regularPrice} $"
-              values={{ regularPrice: product.regularPrice }}
+              values={{
+                regularPrice: (
+                  <FormattedNumber
+                    value={product.regularPrice.amount}
+                    style="currency"
+                    currency={product.regularPrice.currency}
+                  />
+                ),
+              }}
             />
           </Text>
 
@@ -81,7 +89,15 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
           >
             <FormattedMessage
               defaultMessage="Sale price: {salePrice} $"
-              values={{ salePrice: product.salePrice }}
+              values={{
+                salePrice: (
+                  <FormattedNumber
+                    value={product.salePrice.amount}
+                    style="currency"
+                    currency={product.salePrice.currency}
+                  />
+                ),
+              }}
             />
           </Text>
 
@@ -119,10 +135,17 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
             <FormattedMessage
               defaultMessage="Final price: {price} $"
               values={{
-                price:
-                  product.salePrice *
-                  (1 + product.tax) *
-                  (1 - product.discount),
+                price: (
+                  <FormattedNumber
+                    value={
+                      product.salePrice.amount *
+                      (1 + product.tax) *
+                      (1 - product.discount)
+                    }
+                    style="currency"
+                    currency={product.salePrice.currency}
+                  />
+                ),
               }}
             />
           </Text>

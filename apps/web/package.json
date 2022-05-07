@@ -1,6 +1,6 @@
 {
   "name": "@dew-org/web",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "predev": "npm run i18n:compile",
@@ -21,7 +21,7 @@
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.3",
     "next": "12.1.6",
-    "next-themes": "^0.1.1",
+    "next-themes": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.30.0",

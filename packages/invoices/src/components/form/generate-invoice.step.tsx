@@ -26,7 +26,7 @@ const GenerateInvoiceStep = () => {
       <Grid.Container gap={2}>
         {items.map(item => (
           <Grid xs={12} md={4} key={item.product.code}>
-            <ItemCard item={item} />
+            <ItemCard item={item} currency={watch('currency')} />
           </Grid>
         ))}
       </Grid.Container>
@@ -44,6 +44,8 @@ const GenerateInvoiceStep = () => {
                     (acc, item) => acc + item.quantity * item.price,
                     0,
                   )}
+                  style="currency"
+                  currency={watch('currency')}
                 />
               ),
             }}
@@ -65,6 +67,8 @@ const GenerateInvoiceStep = () => {
                         (1 - item.discount / 100),
                     0,
                   )}
+                  style="currency"
+                  currency={watch('currency')}
                 />
               ),
             }}

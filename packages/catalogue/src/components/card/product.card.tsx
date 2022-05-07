@@ -1,6 +1,6 @@
 import { Button, Card, Col, Grid, Row } from '@nextui-org/react'
 import { FC } from 'react'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedNumber } from 'react-intl'
 
 import { Product } from '../../types'
 import {
@@ -47,16 +47,25 @@ const ProductCard: FC<Props> = ({ product, onClick }) => {
 
               <Row css={{ py: '$4' }}>
                 <StyledPrice>
-                  $
-                  {product.salePrice *
-                    (1 + product.tax) *
-                    (1 - product.discount)}
+                  <FormattedNumber
+                    value={
+                      product.salePrice.amount *
+                      (1 + product.tax) *
+                      (1 - product.discount)
+                    }
+                    style="currency"
+                    currency={product.salePrice.currency}
+                  />
                 </StyledPrice>
 
                 {product.discount > 0 && (
                   <>
                     <StyledOldPrice>
-                      ${product.salePrice * (1 + product.tax)}
+                      <FormattedNumber
+                        value={product.salePrice.amount * (1 + product.tax)}
+                        style="currency"
+                        currency={product.salePrice.currency}
+                      />
                     </StyledOldPrice>
 
                     <StyledDiscount>
