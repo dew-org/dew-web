@@ -75,7 +75,7 @@ const CatalogueTable = () => {
           </Row>
         )
       default:
-        return <>${cellValue}</>
+        return <>{cellValue}</>
     }
   }
 
