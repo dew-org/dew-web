@@ -2,7 +2,12 @@ import { Col, Link, Row, Table, Tooltip } from '@nextui-org/react'
 import NextLink from 'next/link'
 import { Key } from 'react'
 import { Show } from 'react-iconly'
-import { FormattedDate, FormattedMessage, useIntl } from 'react-intl'
+import {
+  FormattedDate,
+  FormattedMessage,
+  FormattedNumber,
+  useIntl,
+} from 'react-intl'
 
 import useInvoices from '../../hooks/use-invoices'
 import { Customer, Invoice } from '../../types'
@@ -52,6 +57,17 @@ const InvoicesTable = () => {
       }
       case 'createdAt':
         return <FormattedDate value={cellValue as number} />
+      case 'subtotal':
+      case 'total':
+      case 'tax':
+      case 'discount':
+        return (
+          <FormattedNumber
+            value={cellValue as number}
+            style="currency"
+            currency={invoice.currency}
+          />
+        )
       case 'actions':
         return (
           <Row justify="center" align="center">
@@ -71,7 +87,7 @@ const InvoicesTable = () => {
           </Row>
         )
       default:
-        return <>cellValue</>
+        return <>{cellValue}</>
     }
   }
 

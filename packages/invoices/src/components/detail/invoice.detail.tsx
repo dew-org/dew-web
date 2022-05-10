@@ -12,8 +12,6 @@ type Props = {
 const InvoiceDetail: FC<Props> = ({ id }) => {
   const { invoice, isLoading, error } = useInvoice(id)
 
-  console.log(invoice)
-
   return (
     <>
       {isLoading && <Loading />}
@@ -92,7 +90,13 @@ const InvoiceDetail: FC<Props> = ({ id }) => {
                       <FormattedMessage
                         defaultMessage="Price: {price}"
                         values={{
-                          price: <FormattedNumber value={item.price} />,
+                          price: (
+                            <FormattedNumber
+                              value={item.price}
+                              style="currency"
+                              currency={invoice.currency}
+                            />
+                          ),
                         }}
                       />
                     </Text>
@@ -133,23 +137,43 @@ const InvoiceDetail: FC<Props> = ({ id }) => {
             <FormattedMessage
               defaultMessage="Subtotal: {subtotal}"
               values={{
-                subtotal: <FormattedNumber value={invoice.subtotal || 0} />,
+                subtotal: (
+                  <FormattedNumber
+                    value={invoice.subtotal || 0}
+                    style="currency"
+                    currency={invoice.currency}
+                  />
+                ),
               }}
             />
           </Text>
 
           <Text>
             <FormattedMessage
-              defaultMessage="Tax: {tax}"
-              values={{ tax: <FormattedNumber value={invoice.tax || 0} /> }}
+              defaultMessage="Tax: +{tax}"
+              values={{
+                tax: (
+                  <FormattedNumber
+                    value={invoice.tax || 0}
+                    style="currency"
+                    currency={invoice.currency}
+                  />
+                ),
+              }}
             />
           </Text>
 
           <Text>
             <FormattedMessage
-              defaultMessage="Discount: {discount}"
+              defaultMessage="Discount: -{discount}"
               values={{
-                discount: <FormattedNumber value={invoice.discount || 0} />,
+                discount: (
+                  <FormattedNumber
+                    value={invoice.discount || 0}
+                    style="currency"
+                    currency={invoice.currency}
+                  />
+                ),
               }}
             />
           </Text>
@@ -157,7 +181,15 @@ const InvoiceDetail: FC<Props> = ({ id }) => {
           <Text h3>
             <FormattedMessage
               defaultMessage="Total: {total}"
-              values={{ total: invoice.total }}
+              values={{
+                total: (
+                  <FormattedNumber
+                    value={invoice.total || 0}
+                    style="currency"
+                    currency={invoice.currency}
+                  />
+                ),
+              }}
             />
           </Text>
         </motion.div>
