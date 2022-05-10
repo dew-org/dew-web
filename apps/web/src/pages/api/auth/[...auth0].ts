@@ -1,3 +1,15 @@
-import { handleAuth } from '@auth0/nextjs-auth0'
+import { handleAuth, handleLogin } from '@auth0/nextjs-auth0'
 
-export default handleAuth()
+export default handleAuth({
+  async login(request, response) {
+    try {
+      await handleLogin(request, response, {
+        authorizationParams: {
+          audience: process.env.AUTH0_AUDIENCE,
+        },
+      })
+    } catch (error) {
+      response.status(error.status || 400).end(error.message)
+    }
+  },
+})
