@@ -1,5 +1,6 @@
 import { withApiAuthRequired } from '@auth0/nextjs-auth0'
 import { InvoiceService } from '@dew-org/invoices/src/service'
+import withBearerToken from '@dew-org/utils/api/auth/with-bearer-token'
 import withErrorHandler from '@dew-org/utils/api/with-error-handler'
 import { NextApiRequest, NextApiResponse } from 'next'
 
@@ -26,4 +27,4 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   response.status(405).end()
 }
 
-export default withApiAuthRequired(withErrorHandler(handler))
+export default withApiAuthRequired(withErrorHandler(withBearerToken(handler)))
