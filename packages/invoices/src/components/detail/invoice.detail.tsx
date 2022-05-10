@@ -12,8 +12,6 @@ type Props = {
 const InvoiceDetail: FC<Props> = ({ id }) => {
   const { invoice, isLoading, error } = useInvoice(id)
 
-  console.log(invoice)
-
   return (
     <>
       {isLoading && <Loading />}
