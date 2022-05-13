@@ -49,6 +49,10 @@ const ProductForm: FC<Props> = ({ onSubmit }) => {
             <NameField />
           </Grid>
 
+          <Grid xs={12}>
+            <DescriptionField />
+          </Grid>
+
           <Grid xs={12} md={6}>
             <RegularPriceField />
           </Grid>
@@ -61,10 +65,6 @@ const ProductForm: FC<Props> = ({ onSubmit }) => {
           </Grid>
           <Grid xs={6}>
             <TaxField />
-          </Grid>
-
-          <Grid xs={12}>
-            <DescriptionField />
           </Grid>
         </Grid.Container>
 
