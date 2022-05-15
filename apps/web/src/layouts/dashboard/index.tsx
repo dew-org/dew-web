@@ -1,6 +1,6 @@
 import Fixed from '@dew-org/components/fixed'
+import Navbar from '@dew-org/components/navbar'
 import Sidebar from '@dew-org/components/sidebar'
-import DashboardNavbar from '@dew-org/layouts/dashboard/navbar'
 import Header from '@dew-org/layouts/header'
 import { useSidebarSettings } from '@dew-org/shared'
 import { Col, Container, Row } from '@nextui-org/react'
@@ -12,7 +12,7 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div id="app-container">
       <Header />
-      <DashboardNavbar />
+      <Navbar />
       <Container
         lg
         as="main"
