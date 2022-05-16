@@ -2,9 +2,9 @@ import { styled } from '@nextui-org/react'
 
 export const StyledNavMainContainer = styled('nav', {
   top: 0,
-  height: 'content',
+  minHeight: '76px',
+  height: '100%',
   position: 'sticky',
-  pt: '1rem',
   background: 'transparent',
   zIndex: '$max',
 })

@@ -1,38 +1,46 @@
-import { useUser } from '@auth0/nextjs-auth0'
 import NavbarActions from '@dew-org/components/navbar/NavbarActions'
 import NavbarMainContent from '@dew-org/components/navbar/NavbarMainContent'
 import {
   StyledNavContainer,
   StyledNavMainContainer,
 } from '@dew-org/components/navbar/styles'
-import { Container, Row, Spacer } from '@nextui-org/react'
+import { useMediaQuery } from '@dew-org/hooks/use-media-query'
+import { useSidebarSettings } from '@dew-org/shared'
+import { Container, Grid, Row } from '@nextui-org/react'
 import { useRouter } from 'next/router'
 
 const EXCLUDED_ACTIONS_PAGES = ['/']
 
 const Navbar = () => {
-  const { user } = useUser()
+  const isMobile = useMediaQuery(960)
   const router = useRouter()
 
-  const showActions = !EXCLUDED_ACTIONS_PAGES.includes(router.pathname)
+  const showActions =
+    !isMobile && !EXCLUDED_ACTIONS_PAGES.includes(router.pathname)
+
+  const [routes] = useSidebarSettings()
 
   return (
-    <StyledNavMainContainer>
+    <StyledNavMainContainer id="navbar-container">
       <StyledNavContainer detached={true} showBlur={true}>
-        <Container lg gap={0} as="nav">
+        <Container
+          lg={true}
+          as="nav"
+          display="flex"
+          alignItems="center"
+          css={{ pt: '$8', pb: showActions ? '$2' : '$8' }}
+        >
           <Row>
             <NavbarMainContent />
           </Row>
 
-          <Spacer y={0.5} x={0} />
-
-          {showActions && user && (
-            <Row justify="center">
-              <NavbarActions />
+          {showActions && (
+            <Row align="center" justify="center">
+              <Grid.Container gap={1} justify="center">
+                <NavbarActions routes={routes} />
+              </Grid.Container>
             </Row>
           )}
-
-          <Spacer y={0.5} x={0} />
         </Container>
       </StyledNavContainer>
     </StyledNavMainContainer>

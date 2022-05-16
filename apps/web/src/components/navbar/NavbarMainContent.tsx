@@ -9,7 +9,6 @@ import { useMediaQuery } from '@dew-org/hooks/use-media-query'
 import {
   Button,
   Col,
-  Container,
   Link,
   Loading,
   Row,
@@ -42,7 +41,7 @@ const NavbarMainContent = () => {
   const { user, isLoading } = useUser()
 
   return (
-    <Container lg as="nav" display="flex" wrap="nowrap" alignItems="center">
+    <>
       <Col
         className="navbar__logo-container"
         css={{
@@ -162,7 +161,7 @@ const NavbarMainContent = () => {
           }}
         />
       )}
-    </Container>
+    </>
   )
 }
 
