@@ -1,18 +1,13 @@
-import Fixed from '@dew-org/components/fixed'
-import Sidebar from '@dew-org/components/sidebar'
-import DashboardNavbar from '@dew-org/layouts/dashboard/navbar'
+import Navbar from '@dew-org/components/navbar'
 import Header from '@dew-org/layouts/header'
-import { useSidebarSettings } from '@dew-org/shared'
 import { Col, Container, Row } from '@nextui-org/react'
 import { FC, PropsWithChildren } from 'react'
 
 const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
-  const [settings] = useSidebarSettings()
-
   return (
     <div id="app-container">
       <Header />
-      <DashboardNavbar />
+      <Navbar />
       <Container
         lg
         as="main"
@@ -30,35 +25,12 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
           }}
         >
           <Col
-            css={{
-              width: '32%',
-              display: 'none',
-              '@md': {
-                display: 'block',
-              },
-            }}
-          >
-            <Fixed
-              offset={92}
-              className="docs__left-sidebar"
-              css={{
-                maxHeight: 'calc(100vh - 4rem)',
-                overflow: 'auto',
-                zIndex: '$2',
-                pb: '$28',
-                '&::-webkit-scrollbar': {
-                  width: '0px',
-                },
-              }}
-            >
-              <>{settings && <Sidebar routes={settings} />}</>
-            </Fixed>
-          </Col>
-          <Col
             className="dashboard__center"
             css={{
               zIndex: '$10',
               maxWidth: '100%',
+              pt: '$7',
+              pb: '$10',
               '@xsMax': {
                 p: 0,
               },

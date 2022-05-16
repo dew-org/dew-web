@@ -1,7 +1,6 @@
 import Community from '@dew-org/components/community'
 import FeaturesGrid from '@dew-org/components/features-grid'
 import Hero from '@dew-org/components/hero'
-import Navbar from '@dew-org/components/landing/navbar'
 import { Section } from '@dew-org/components/primitives'
 import landing from '@dew-org/content/landing'
 import { levitating } from '@dew-org/utils/animations'
@@ -22,7 +21,6 @@ export const getStaticProps = async context => {
 
 const App = () => (
   <>
-    <Navbar />
     <Hero />
 
     <Spacer y={1.5} />
