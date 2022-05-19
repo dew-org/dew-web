@@ -520,6 +520,17 @@
     tslib "^2.1.0"
     typescript "^4.5"
 
+"@formatjs/ts-transformer@3.9.6":
+  version "3.9.6"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.6.tgz#06a7fd8cbf83ce354960c88eaabee2b39598ac21"
+  integrity sha512-8x78/oSvWPOFneq+Hlc+EnAnhbGpUnvcoV5oYKc6W/ZnNqvJFKnTYAfDX15T/mSQwdr5Y9U17RmDBboQKVGssA==
+  dependencies:
+    "@formatjs/icu-messageformat-parser" "2.1.2"
+    "@types/node" "14 || 16 || 17"
+    chalk "^4.0.0"
+    tslib "2.4.0"
+    typescript "^4.5"
+
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
@@ -2080,21 +2091,21 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-formatjs@^10.3.20:
-  version "10.3.20"
-  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.20.tgz#0d3072241751be319003d7f85cf29d9a9d3d4ae5"
-  integrity sha512-TZEDmnH3DbkUmbfw1QAviUILj7YOqD31boHkpvReKEfvRD2M/3T2h/cFm5GCBU1pamm0yNbzvt6USXELGZ0WJw==
+babel-plugin-formatjs@^10.3.22:
+  version "10.3.22"
+  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.22.tgz#ab4a56d8ba5b70e56827c24d848ebf62ec7fc157"
+  integrity sha512-RK1yDBVN0sMIyB1SFKMCadTgsCPBxhzTw+0n9HYT8iK7f55xQ4Lmsp/7TomvwSLA1gKKXLl3BhsjhYLjYiL+fA==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/helper-plugin-utils" "^7.10.4"
     "@babel/plugin-syntax-jsx" "7"
     "@babel/traverse" "7"
     "@babel/types" "^7.12.11"
-    "@formatjs/icu-messageformat-parser" "2.1.0"
-    "@formatjs/ts-transformer" "3.9.4"
+    "@formatjs/icu-messageformat-parser" "2.1.2"
+    "@formatjs/ts-transformer" "3.9.6"
     "@types/babel__core" "^7.1.7"
     "@types/babel__helper-plugin-utils" "^7.10.0"
-    tslib "^2.1.0"
+    tslib "2.4.0"
 
 babel-plugin-istanbul@^6.0.0, babel-plugin-istanbul@^6.1.1:
   version "6.1.1"
