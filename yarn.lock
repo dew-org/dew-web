@@ -509,17 +509,6 @@
     intl-messageformat "10.0.1"
     tslib "2.4.0"
 
-"@formatjs/ts-transformer@3.9.4":
-  version "3.9.4"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.4.tgz#14b43628d082cb8cd8bc15c4893197b59903ec2c"
-  integrity sha512-S5q/zsTodaKtxVxNvbRQ9APenJtm5smXE76usS+5yF2vWQdZHkagmOKWfgvfIbesP4SR2B+i3koqlnlpqSIp5w==
-  dependencies:
-    "@formatjs/icu-messageformat-parser" "2.1.0"
-    "@types/node" "14 || 16 || 17"
-    chalk "^4.0.0"
-    tslib "^2.1.0"
-    typescript "^4.5"
-
 "@formatjs/ts-transformer@3.9.6":
   version "3.9.6"
   resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.6.tgz#06a7fd8cbf83ce354960c88eaabee2b39598ac21"
@@ -528,6 +517,19 @@
     "@formatjs/icu-messageformat-parser" "2.1.2"
     "@types/node" "14 || 16 || 17"
     chalk "^4.0.0"
+    tslib "2.4.0"
+    typescript "^4.5"
+
+"@formatjs/ts-transformer@3.9.7":
+  version "3.9.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.7.tgz#c97d354199a9b41edb4e0c63c5601e9ea917eca7"
+  integrity sha512-H7sYU+B+5MHKfzZzmKUMgpmiCC963hcb7WA8kGCHKkHxo4rEqAPyTbv87yO+eiEZ8SQFYKdmj4yFaSYQ/x/kaA==
+  dependencies:
+    "@formatjs/icu-messageformat-parser" "2.1.2"
+    "@types/json-stable-stringify" "^1.0.32"
+    "@types/node" "14 || 16 || 17"
+    chalk "^4.0.0"
+    json-stable-stringify "^1.0.1"
     tslib "2.4.0"
     typescript "^4.5"
 
@@ -1610,6 +1612,11 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
+"@types/json-stable-stringify@^1.0.32":
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/@types/json-stable-stringify/-/json-stable-stringify-1.0.34.tgz#c0fb25e4d957e0ee2e497c1f553d7f8bb668fd75"
+  integrity sha512-s2cfwagOQAS8o06TcwKfr9Wx11dNGbH2E9vJz1cqV+a/LOyhWNLUNd6JSRYNzvB4d29UuJX2M0Dj9vE1T8fRXw==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -2058,10 +2065,10 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-formatjs@^10.3.22:
-  version "10.3.22"
-  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.22.tgz#ab4a56d8ba5b70e56827c24d848ebf62ec7fc157"
-  integrity sha512-RK1yDBVN0sMIyB1SFKMCadTgsCPBxhzTw+0n9HYT8iK7f55xQ4Lmsp/7TomvwSLA1gKKXLl3BhsjhYLjYiL+fA==
+babel-plugin-formatjs@^10.3.23:
+  version "10.3.23"
+  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.23.tgz#c3e9920183fb023ec4b4fdf89488275497e5428c"
+  integrity sha512-WWfBgfOUdmnpFOxiYPr4kMWZsgJvbLbEn1DznW6rzFGTdCMu93knyu4DN8t1eA68AIdG7UBjToqjzJhtch9bFQ==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/helper-plugin-utils" "^7.10.4"
@@ -2069,7 +2076,7 @@ babel-plugin-formatjs@^10.3.22:
     "@babel/traverse" "7"
     "@babel/types" "^7.12.11"
     "@formatjs/icu-messageformat-parser" "2.1.2"
-    "@formatjs/ts-transformer" "3.9.6"
+    "@formatjs/ts-transformer" "3.9.7"
     "@types/babel__core" "^7.1.7"
     "@types/babel__helper-plugin-utils" "^7.10.0"
     tslib "2.4.0"
@@ -4842,6 +4849,13 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
 
+json-stable-stringify@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz#9a759d39c5f2ff503fd5300646ed445f88c4f9af"
+  integrity sha1-mnWdOcXy/1A/1TAGRu1EX4jE+a8=
+  dependencies:
+    jsonify "~0.0.0"
+
 json5@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
@@ -4853,6 +4867,11 @@ json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
+
+jsonify@~0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
+  integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
 "jsx-ast-utils@^2.4.1 || ^3.0.0", jsx-ast-utils@^3.2.1:
   version "3.2.2"
