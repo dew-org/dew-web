@@ -395,10 +395,10 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.3.1.tgz#1ae963dd40405450a2945408cba553e1afa3e0fb"
   integrity sha512-8YXBE2ZcU/pImVOHX7MWrSR/X5up7t6rPWZlk34RwZEcdr3ua6X+32pSd6XuOQRN+vbuvYNfA6iey8NbrjuMFQ==
 
-"@formatjs/cli@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-5.0.0.tgz#187032b9b32b47f1c5be170203dd7b04d8728615"
-  integrity sha512-OnWTtofeJ+eK9eN9cn935MRFEzDtxO3T6V4+hTqX5yStDvHvM1rxgP95tixRSX+4HSLElQC2F7pZbsZ/gupNig==
+"@formatjs/cli@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-5.0.1.tgz#52d0316df059ca3b631ee88239e347f2e954558b"
+  integrity sha512-gscMwNHaGTgNRYPNUT1gH32iCbOZrhzcvdNc4Wi11LL36M2z+0D57iTWdL0pnaz0zsU0g/vUTlbBg6iVLG8nNg==
 
 "@formatjs/ecma402-abstract@1.11.4":
   version "1.11.4"
@@ -508,17 +508,6 @@
     "@formatjs/intl-listformat" "7.0.1"
     intl-messageformat "10.0.1"
     tslib "2.4.0"
-
-"@formatjs/ts-transformer@3.9.6":
-  version "3.9.6"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.9.6.tgz#06a7fd8cbf83ce354960c88eaabee2b39598ac21"
-  integrity sha512-8x78/oSvWPOFneq+Hlc+EnAnhbGpUnvcoV5oYKc6W/ZnNqvJFKnTYAfDX15T/mSQwdr5Y9U17RmDBboQKVGssA==
-  dependencies:
-    "@formatjs/icu-messageformat-parser" "2.1.2"
-    "@types/node" "14 || 16 || 17"
-    chalk "^4.0.0"
-    tslib "2.4.0"
-    typescript "^4.5"
 
 "@formatjs/ts-transformer@3.9.7":
   version "3.9.7"
