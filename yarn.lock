@@ -2065,10 +2065,10 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-formatjs@^10.3.22:
-  version "10.3.22"
-  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.22.tgz#ab4a56d8ba5b70e56827c24d848ebf62ec7fc157"
-  integrity sha512-RK1yDBVN0sMIyB1SFKMCadTgsCPBxhzTw+0n9HYT8iK7f55xQ4Lmsp/7TomvwSLA1gKKXLl3BhsjhYLjYiL+fA==
+babel-plugin-formatjs@^10.3.23:
+  version "10.3.23"
+  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.3.23.tgz#c3e9920183fb023ec4b4fdf89488275497e5428c"
+  integrity sha512-WWfBgfOUdmnpFOxiYPr4kMWZsgJvbLbEn1DznW6rzFGTdCMu93knyu4DN8t1eA68AIdG7UBjToqjzJhtch9bFQ==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/helper-plugin-utils" "^7.10.4"
@@ -2076,7 +2076,7 @@ babel-plugin-formatjs@^10.3.22:
     "@babel/traverse" "7"
     "@babel/types" "^7.12.11"
     "@formatjs/icu-messageformat-parser" "2.1.2"
-    "@formatjs/ts-transformer" "3.9.6"
+    "@formatjs/ts-transformer" "3.9.7"
     "@types/babel__core" "^7.1.7"
     "@types/babel__helper-plugin-utils" "^7.10.0"
     tslib "2.4.0"
