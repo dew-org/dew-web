@@ -1,5 +1,6 @@
 import Navbar from '@dew-org/components/navbar'
 import Header from '@dew-org/layouts/header'
+import Progress from '@dew-org/layouts/progress'
 import { Col, Container, Row } from '@nextui-org/react'
 import { FC, PropsWithChildren } from 'react'
 
@@ -7,6 +8,7 @@ const DashboardLayout: FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div id="app-container">
       <Header />
+      <Progress />
       <Navbar />
       <Container
         lg
