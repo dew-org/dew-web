@@ -1,5 +1,5 @@
+import { ArchiveIcon, PlusIcon, StackIcon } from '@radix-ui/react-icons'
 import { useState } from 'react'
-import { AddUser, Filter, Paper, PaperPlus, Plus } from 'react-iconly'
 import { useIntl } from 'react-intl'
 
 import { SidebarRoute } from './types'
@@ -14,12 +14,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register product' }),
           path: '/catalogue/register',
-          icon: <Plus />,
+          icon: <PlusIcon />,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Products' }),
           path: '/catalogue',
-          icon: <Filter />,
+          icon: <ArchiveIcon />,
         },
       ],
     },
@@ -29,7 +29,7 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register customer' }),
           path: '/customers/register',
-          icon: <AddUser />,
+          icon: <PlusIcon />,
         },
       ],
     },
@@ -39,12 +39,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register invoice' }),
           path: '/invoices/register',
-          icon: <PaperPlus />,
+          icon: <PlusIcon />,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Invoices' }),
           path: '/invoices',
-          icon: <Paper />,
+          icon: <StackIcon />,
         },
       ],
     },
