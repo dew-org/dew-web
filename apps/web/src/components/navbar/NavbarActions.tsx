@@ -1,7 +1,8 @@
 import { NavLinkProps } from '@dew-org/components/nav-link'
 import { SidebarRoute } from '@dew-org/shared'
-import { Button, Grid, Popover } from '@nextui-org/react'
+import { Dropdown, Grid } from '@nextui-org/react'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import { FC, HTMLAttributes } from 'react'
 
 type Props = {
@@ -15,33 +16,34 @@ type NativeAttrs = Omit<HTMLAttributes<unknown>, keyof Props>
 export type NavbarActionsProps = Props & NativeAttrs
 
 const NavbarActions: FC<NavbarActionsProps> = ({ routes }) => {
+  const router = useRouter()
+
   return (
     <>
       {routes?.map(({ path, title, routes }) => {
         if (routes) {
           return (
             <Grid>
-              <Popover key={path}>
-                <Popover.Trigger>
-                  <Button size="sm" color="primary" flat>
-                    {title}
-                  </Button>
-                </Popover.Trigger>
-                <Popover.Content>
-                  <Grid.Container
-                    css={{
-                      mw: '270px',
-                      borderRadius: '$lg',
-                      borderStyle: 'solid',
-                      borderWidth: '$normal',
-                      borderColor: '$gray300',
-                      padding: '$sm',
-                    }}
-                  >
-                    <NavbarActions routes={routes} />
-                  </Grid.Container>
-                </Popover.Content>
-              </Popover>
+              <Dropdown key={path}>
+                <Dropdown.Button flat>{title}</Dropdown.Button>
+
+                <Dropdown.Menu
+                  variant="light"
+                  color="primary"
+                  items={routes}
+                  onAction={path => router.push(path as string)}
+                >
+                  {(item: SidebarRoute) => (
+                    <Dropdown.Item
+                      key={item.path}
+                      description={item.subtitle}
+                      icon={item.icon}
+                    >
+                      {item.title}
+                    </Dropdown.Item>
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>
             </Grid>
           )
         }
@@ -52,13 +54,9 @@ const NavbarActions: FC<NavbarActionsProps> = ({ routes }) => {
           pathname: path,
         } as NavLinkProps
         return (
-          <Grid key={title} xs={12} direction="column">
-            <NextLink href={route.href}>
-              <Button light size="sm">
-                {route.title}
-              </Button>
-            </NextLink>
-          </Grid>
+          <NextLink key={route.href} href={route.href}>
+            {route.title}
+          </NextLink>
         )
       })}
     </>
