@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AddUser, Filter, Paper, PaperPlus, Plus } from 'react-iconly'
 import { useIntl } from 'react-intl'
 
 import { SidebarRoute } from './types'
@@ -13,10 +14,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register product' }),
           path: '/catalogue/register',
+          icon: <Plus />,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Products' }),
           path: '/catalogue',
+          icon: <Filter />,
         },
       ],
     },
@@ -26,6 +29,7 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register customer' }),
           path: '/customers/register',
+          icon: <AddUser />,
         },
       ],
     },
@@ -35,10 +39,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register invoice' }),
           path: '/invoices/register',
+          icon: <PaperPlus />,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Invoices' }),
           path: '/invoices',
+          icon: <Paper />,
         },
       ],
     },
