@@ -1,5 +1,5 @@
-import { Moon, Sun } from '@dew-org/theme/icons'
 import { CSS, styled, useTheme } from '@nextui-org/react'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 import cn from 'classnames'
 import { useTheme as useNextTheme } from 'next-themes'
 import { FC } from 'react'
@@ -40,9 +40,9 @@ export const ThemeToggle: FC<Props> = ({ className, css }) => {
       css={css}
     >
       {isDark ? (
-        <Sun filled className="theme-selector-icon" size={20} />
+        <SunIcon height={20} width={20} />
       ) : (
-        <Moon filled className="theme-selector-icon" size={20} />
+        <MoonIcon height={20} width={20} />
       )}
     </StyledButton>
   )
