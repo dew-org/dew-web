@@ -1,75 +1,32 @@
 import { useUser } from '@auth0/nextjs-auth0'
-import {
-  Button,
-  Divider,
-  Grid,
-  Loading,
-  Popover,
-  Row,
-  Text,
-  User,
-} from '@nextui-org/react'
-import NextLink from 'next/link'
-import { Logout, Setting, User as UserIcon } from 'react-iconly'
+import { Dropdown, Loading, Text, User } from '@nextui-org/react'
+import { ExitIcon, GearIcon, PersonIcon } from '@radix-ui/react-icons'
+import { useRouter } from 'next/router'
+import { Key } from 'react'
 import { FormattedMessage } from 'react-intl'
 
 const AccountAvatar = () => {
   const { user, isLoading } = useUser()
+  const router = useRouter()
 
-  const content = (
-    <Grid.Container
-      css={{
-        mw: '270px',
-        borderRadius: '$lg',
-        padding: '$sm',
-      }}
-    >
-      <Grid xs={12} direction="column">
-        <Text h4>{user?.name}&nbsp;</Text>
-        <Text small>{user?.email}</Text>
-      </Grid>
-
-      <Divider y={1} />
-
-      <Grid xs={12}>
-        <Grid.Container gap={1}>
-          <Grid xs={12} direction="column">
-            <Button light icon={<UserIcon />} size="sm">
-              <FormattedMessage defaultMessage="Profile" />
-            </Button>
-          </Grid>
-
-          <Grid xs={12} direction="column">
-            <Button light icon={<Setting />} size="sm">
-              <FormattedMessage defaultMessage="Settings" />
-            </Button>
-          </Grid>
-        </Grid.Container>
-      </Grid>
-
-      <Divider y={1} />
-
-      <Row justify="flex-end">
-        <NextLink href="/api/auth/logout" passHref>
-          <Button auto color="error" icon={<Logout />}>
-            <FormattedMessage defaultMessage="Logout" />
-          </Button>
-        </NextLink>
-      </Row>
-    </Grid.Container>
-  )
+  const handleAction = (key: Key) => {
+    if (key === 'logout') {
+      router.push('/api/auth/logout')
+    }
+  }
 
   return (
     <>
       {isLoading && <Loading />}
 
       {user && (
-        <Popover placement="bottom-left">
-          <Popover.Trigger>
+        <Dropdown placement="bottom-left">
+          <Dropdown.Trigger>
             <User
               name={user.name}
               src={user.picture}
               pointer
+              size="sm"
               as="button"
               css={{
                 px: 0,
@@ -83,12 +40,48 @@ const AccountAvatar = () => {
                 },
               }}
             />
-          </Popover.Trigger>
+          </Dropdown.Trigger>
 
-          <Popover.Content css={{ px: '$4', py: '$2' }}>
-            {content}
-          </Popover.Content>
-        </Popover>
+          <Dropdown.Menu onAction={handleAction}>
+            <Dropdown.Section
+              title={<FormattedMessage defaultMessage="User info" />}
+            >
+              <Dropdown.Item
+                key="profile-info"
+                description={user.email}
+                css={{ height: '$24' }}
+              >
+                <Text b color="inherit" css={{ d: 'flex' }}>
+                  Signed in as
+                </Text>
+                <Text b color="inherit" css={{ d: 'flex' }}>
+                  {user.name}
+                </Text>
+              </Dropdown.Item>
+            </Dropdown.Section>
+
+            <Dropdown.Section
+              title={<FormattedMessage defaultMessage="Actions" />}
+            >
+              <Dropdown.Item key="profile" icon={<PersonIcon />}>
+                <FormattedMessage defaultMessage="Profile" />
+              </Dropdown.Item>
+
+              <Dropdown.Item key="settings" icon={<GearIcon />}>
+                <FormattedMessage defaultMessage="Settings" />
+              </Dropdown.Item>
+
+              <Dropdown.Item
+                key="logout"
+                color="error"
+                icon={<ExitIcon />}
+                withDivider
+              >
+                <FormattedMessage defaultMessage="Logout" />
+              </Dropdown.Item>
+            </Dropdown.Section>
+          </Dropdown.Menu>
+        </Dropdown>
       )}
     </>
   )
