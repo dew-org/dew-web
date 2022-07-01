@@ -994,6 +994,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@radix-ui/react-icons@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.1.1.tgz#38d2aa548035dd3b799c169bd17177b1cec3152b"
+  integrity sha512-xc3wQC59rsFylVbSusQCrrM+6695ppF730Q6yqzhRdqDcRNWIm2R6ngpzBoSOQMcwnq4p805F+Gr7xo4fmtN1A==
+
 "@react-aria/button@3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@react-aria/button/-/button-3.5.0.tgz#8b27d0bca98ccd6cd1999e3c21a89f907eafcfda"
