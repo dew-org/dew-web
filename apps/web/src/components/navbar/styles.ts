@@ -2,8 +2,7 @@ import { styled } from '@nextui-org/react'
 
 export const StyledNavMainContainer = styled('nav', {
   top: 0,
-  minHeight: '76px',
-  height: '100%',
+  height: '76px',
   position: 'sticky',
   background: 'transparent',
   zIndex: '$max',
@@ -14,12 +13,16 @@ export const StyledNavContainer = styled('div', {
   alignItems: 'center',
   size: '100%',
   '& .navbar__social-icon': {
-    fill: '$colors$headerIconColor',
+    fill: '$colors$accents6',
   },
   variants: {
     showBlur: {
       true: {
-        background: '$headerBackground',
+        background: '$background',
+        '@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none))':
+          {
+            background: '$headerBackground',
+          },
       },
     },
     detached: {

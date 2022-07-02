@@ -1,6 +1,6 @@
 import { NavLinkProps } from '@dew-org/components/nav-link'
 import { SidebarRoute } from '@dew-org/shared'
-import { Dropdown, Grid } from '@nextui-org/react'
+import { Dropdown, Spacer } from '@nextui-org/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { FC, HTMLAttributes } from 'react'
@@ -23,7 +23,7 @@ const NavbarActions: FC<NavbarActionsProps> = ({ routes }) => {
       {routes?.map(({ path, title, routes }) => {
         if (routes) {
           return (
-            <Grid>
+            <>
               <Dropdown key={path}>
                 <Dropdown.Button flat size="sm">
                   {title}
@@ -46,7 +46,9 @@ const NavbarActions: FC<NavbarActionsProps> = ({ routes }) => {
                   )}
                 </Dropdown.Menu>
               </Dropdown>
-            </Grid>
+
+              <Spacer x={0.2} />
+            </>
           )
         }
 
