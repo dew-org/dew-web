@@ -3,9 +3,11 @@ import AccountAvatar from '@dew-org/components/account-avatar'
 import Badge from '@dew-org/components/badge'
 import MenuToggle from '@dew-org/components/menu-toggle'
 import MobileNavigation from '@dew-org/components/mobile-navigation'
+import NavbarActions from '@dew-org/components/navbar/NavbarActions'
 import Box from '@dew-org/components/primitives/box'
 import ThemeToggle from '@dew-org/components/theme-toggle'
 import { useMediaQuery } from '@dew-org/hooks/use-media-query'
+import { useSidebarSettings } from '@dew-org/shared'
 import {
   Button,
   Col,
@@ -40,6 +42,8 @@ const NavbarMainContent = () => {
 
   const { user, isLoading } = useUser()
 
+  const [routes] = useSidebarSettings()
+
   return (
     <>
       <Col
@@ -68,6 +72,15 @@ const NavbarMainContent = () => {
           >
             Beta
           </Badge>
+        </Row>
+      </Col>
+      <Col
+        className="navbar__resources-container"
+        css={{ '@mdMax': { d: 'none' } }}
+      >
+        <Row align="center" justify="center">
+          {isLoading && <Loading />}
+          {!isLoading && user && <NavbarActions routes={routes} />}
         </Row>
       </Col>
       <Col className="navbar__search-container">
