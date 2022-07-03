@@ -3,15 +3,23 @@ import { FC, PropsWithChildren } from 'react'
 
 type Props = {}
 
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 200, y: 0 },
+}
+
 const SimpleAnimation: FC<PropsWithChildren<Props>> = ({ children }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+    <motion.section
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      variants={variants}
+      transition={{ type: 'linear' }}
     >
       {children}
-    </motion.div>
+    </motion.section>
   )
 }
 

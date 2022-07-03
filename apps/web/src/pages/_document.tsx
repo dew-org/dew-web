@@ -6,15 +6,14 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { Fragment, ReactFragment } from 'react'
+import { Children } from 'react'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     return {
       ...initialProps,
-      // @ts-ignore
-      styles: <Fragment>{initialProps.styles as ReactFragment}</Fragment>,
+      styles: Children.toArray([initialProps.styles]),
     }
   }
 

@@ -2,6 +2,7 @@ import { UserProvider } from '@auth0/nextjs-auth0'
 import DefaultLayout from '@dew-org/layouts/default'
 import { darkTheme, lightTheme } from '@dew-org/theme'
 import { NextUIProvider } from '@nextui-org/react'
+import { AnimatePresence, domAnimation, LazyMotion } from 'framer-motion'
 import { NextComponentType, NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
@@ -18,7 +19,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 
-const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+const App = ({ Component, pageProps, router }: AppPropsWithLayout) => {
   const { locale, defaultLocale } = useRouter()
 
   const Layout = Component.defaultProps?.Layout || DefaultLayout
@@ -40,7 +41,14 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         >
           <UserProvider>
             <Layout>
-              <Component {...pageProps} />
+              <LazyMotion features={domAnimation}>
+                <AnimatePresence
+                  exitBeforeEnter
+                  onExitComplete={() => window.scrollTo(0, 0)}
+                >
+                  <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
+              </LazyMotion>
             </Layout>
           </UserProvider>
         </IntlProvider>
