@@ -20,7 +20,6 @@ import {
 } from '@nextui-org/react'
 import NextLink from 'next/link'
 import { useEffect, useState } from 'react'
-import { Login } from 'react-iconly'
 import { FormattedMessage } from 'react-intl'
 
 const NavbarMainContent = () => {
@@ -128,7 +127,13 @@ const NavbarMainContent = () => {
             {!isLoading && user && <AccountAvatar />}
             {!isLoading && user === undefined && (
               <NextLink href="/api/auth/login" passHref>
-                <Button auto flat size="sm" icon={<Login />} as="a">
+                <Button
+                  auto
+                  flat
+                  size="sm"
+                  icon={<span className="material-symbols-rounded">login</span>}
+                  as="a"
+                >
                   <FormattedMessage defaultMessage="Sign In" />
                 </Button>
               </NextLink>
@@ -144,10 +149,13 @@ const NavbarMainContent = () => {
           '@mdMax': {
             display: 'flex',
             justifyContent: 'flex-end',
+            alignItems: 'center',
           },
         }}
       >
         <ThemeToggle className="navbar__social-icon-mobile" css={{ m: '0' }} />
+
+        <Spacer x={1} />
 
         <Box
           className="navbar__menu-arrow noselect"

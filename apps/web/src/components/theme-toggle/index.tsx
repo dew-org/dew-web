@@ -1,26 +1,18 @@
-import { CSS, styled, useTheme } from '@nextui-org/react'
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import cn from 'classnames'
+import { CSS, styled, Switch, Tooltip,useTheme } from '@nextui-org/react'
 import { useTheme as useNextTheme } from 'next-themes'
 import { FC } from 'react'
+import { FormattedMessage } from 'react-intl'
 
 type Props = {
   className?: string
   css?: CSS
 }
 
-const StyledButton = styled('button', {
-  dflex: 'center',
-  size: 'auto',
-  cursor: 'pointer',
-  background: 'transparent',
-  border: 'none',
-  padding: 0,
-  '& .theme-selector-icon': {
-    color: '$colors$headerIconColor',
-  },
-  '@xsMax': {
-    px: '$2',
+const StyledSwitch = styled(Switch, {
+  m: 0,
+  p: 0,
+  '& .material-symbols-rounded': {
+    fontSize: '14px',
   },
 })
 
@@ -33,18 +25,21 @@ export const ThemeToggle: FC<Props> = ({ className, css }) => {
   }
 
   return (
-    <StyledButton
-      aria-label="toggle a light and dark color scheme"
-      className={cn('theme-selector-container', className)}
-      onClick={handleToggleTheme}
-      css={css}
+    <Tooltip
+      placement="bottom"
+      color="secondary"
+      content={<FormattedMessage defaultMessage="Switch theme" />}
+      css={{ zIndex: '$max' }}
+      hideArrow
     >
-      {isDark ? (
-        <SunIcon height={20} width={20} />
-      ) : (
-        <MoonIcon height={20} width={20} />
-      )}
-    </StyledButton>
+      <StyledSwitch
+        aria-label="toggle a light and dark color scheme"
+        onChange={handleToggleTheme}
+        checked={isDark}
+        iconOn={<span className="material-symbols-rounded">light_mode</span>}
+        iconOff={<span className="material-symbols-rounded"> dark_mode </span>}
+      />
+    </Tooltip>
   )
 }
 

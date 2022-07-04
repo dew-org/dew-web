@@ -25,9 +25,7 @@ const NavbarActions: FC<NavbarActionsProps> = ({ routes }) => {
           return (
             <>
               <Dropdown key={path}>
-                <Dropdown.Button flat size="sm">
-                  {title}
-                </Dropdown.Button>
+                <Dropdown.Button light>{title}</Dropdown.Button>
 
                 <Dropdown.Menu
                   variant="light"

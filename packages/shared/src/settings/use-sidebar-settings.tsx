@@ -1,4 +1,3 @@
-import { ArchiveIcon, PlusIcon, StackIcon } from '@radix-ui/react-icons'
 import { useState } from 'react'
 import { useIntl } from 'react-intl'
 
@@ -14,12 +13,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register product' }),
           path: '/catalogue/register',
-          icon: <PlusIcon />,
+          icon: <span className="material-symbols-rounded">add_circle</span>,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Products' }),
           path: '/catalogue',
-          icon: <ArchiveIcon />,
+          icon: <span className="material-symbols-rounded">inventory_2</span>,
         },
       ],
     },
@@ -29,7 +28,7 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register customer' }),
           path: '/customers/register',
-          icon: <PlusIcon />,
+          icon: <span className="material-symbols-rounded">add_circle</span>,
         },
       ],
     },
@@ -39,12 +38,12 @@ export const useSidebarSettings = (): [SidebarRoute[]] => {
         {
           title: intl.formatMessage({ defaultMessage: 'Register invoice' }),
           path: '/invoices/register',
-          icon: <PlusIcon />,
+          icon: <span className="material-symbols-rounded">add_circle</span>,
         },
         {
           title: intl.formatMessage({ defaultMessage: 'Invoices' }),
           path: '/invoices',
-          icon: <StackIcon />,
+          icon: <span className="material-symbols-rounded">receipt</span>,
         },
       ],
     },

@@ -1,6 +1,5 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import { Dropdown, Loading, Text, User } from '@nextui-org/react'
-import { ExitIcon, GearIcon, PersonIcon } from '@radix-ui/react-icons'
 import { useRouter } from 'next/router'
 import { Key } from 'react'
 import { FormattedMessage } from 'react-intl'
@@ -63,18 +62,30 @@ const AccountAvatar = () => {
             <Dropdown.Section
               title={<FormattedMessage defaultMessage="Actions" />}
             >
-              <Dropdown.Item key="profile" icon={<PersonIcon />}>
+              <Dropdown.Item
+                key="profile"
+                icon={
+                  <span className="material-symbols-rounded">
+                    account_circle
+                  </span>
+                }
+              >
                 <FormattedMessage defaultMessage="Profile" />
               </Dropdown.Item>
 
-              <Dropdown.Item key="settings" icon={<GearIcon />}>
+              <Dropdown.Item
+                key="settings"
+                icon={
+                  <span className="material-symbols-rounded">settings</span>
+                }
+              >
                 <FormattedMessage defaultMessage="Settings" />
               </Dropdown.Item>
 
               <Dropdown.Item
                 key="logout"
                 color="error"
-                icon={<ExitIcon />}
+                icon={<span className="material-symbols-rounded">logout</span>}
                 withDivider
               >
                 <FormattedMessage defaultMessage="Logout" />
