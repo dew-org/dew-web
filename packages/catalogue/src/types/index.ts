@@ -15,4 +15,6 @@ export type Product = {
 
   createdAt?: number
   updatedAt?: number
+
+  userId: string
 }

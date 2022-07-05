@@ -28,4 +28,6 @@ export type Invoice = {
   discount?: number
   total?: number
   createdAt?: number
+
+  userId: string
 }

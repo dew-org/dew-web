@@ -1,4 +1,4 @@
-import { CSS, styled, Switch, Tooltip,useTheme } from '@nextui-org/react'
+import { CSS, styled, Switch, Tooltip, useTheme } from '@nextui-org/react'
 import { useTheme as useNextTheme } from 'next-themes'
 import { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
