@@ -1,4 +1,4 @@
-import { withApiAuthRequired } from '@auth0/nextjs-auth0'
+import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0'
 import { CatalogueService } from '@dew-org/catalogue/src/service'
 import withBearerToken from '@dew-org/utils/api/auth/with-bearer-token'
 import withErrorHandler from '@dew-org/utils/api/with-error-handler'
@@ -13,7 +13,9 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   }
 
   if (request.method === 'GET') {
-    const products = await CatalogueService.fetchAll()
+    const { user } = await getSession(request, response)
+
+    const products = await CatalogueService.fetchAll(user.sub)
     response.status(200).json(products)
     return
   }

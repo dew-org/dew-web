@@ -7,8 +7,10 @@ export const InvoiceService = {
     const { data } = await HttpClient.post('/invoices', invoice)
     return data
   },
-  fetchAll: async () => {
-    const { data } = await HttpClient.get<Invoice[]>('/invoices')
+  fetchAll: async (userId: string) => {
+    const { data } = await HttpClient.get<Invoice[]>(
+      `/invoices?userId=${userId}`,
+    )
     return data
   },
   find: async (id: string) => {

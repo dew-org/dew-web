@@ -11,8 +11,10 @@ export const CatalogueService = {
     const { data } = await HttpClient.get<Product>(`/catalogue/${codeOrSku}`)
     return data
   },
-  fetchAll: async () => {
-    const { data } = await HttpClient.get<Product[]>('/catalogue')
+  fetchAll: async (userId: string) => {
+    const { data } = await HttpClient.get<Product[]>(
+      `/catalogue?userId=${userId}`,
+    )
     return data
   },
 }

@@ -36,6 +36,8 @@ describe('invoice service', () => {
           discount: faker.datatype.number(),
         },
       ],
+      currency: faker.datatype.string(),
+      userId: faker.datatype.uuid(),
     }
 
     InvoiceService.save(invoice)
@@ -43,7 +45,7 @@ describe('invoice service', () => {
   })
 
   it('should be return all invoices', async () => {
-    const invoices = await InvoiceService.fetchAll()
+    const invoices = await InvoiceService.fetchAll('userId')
 
     expect(invoices).toEqual([])
   })

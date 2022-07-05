@@ -36,10 +36,17 @@ describe('catalogue service', () => {
       sku: faker.commerce.productName(),
       name: faker.commerce.productName(),
       description: faker.lorem.paragraph(),
-      regularPrice: faker.datatype.number(),
-      salePrice: faker.datatype.number(),
+      regularPrice: {
+        amount: faker.datatype.number(),
+        currency: faker.datatype.string(),
+      },
+      salePrice: {
+        amount: faker.datatype.number(),
+        currency: faker.datatype.string(),
+      },
       discount: faker.datatype.number(),
       tax: faker.datatype.number(),
+      userId: faker.datatype.uuid(),
     }
 
     CatalogueService.save(product)
@@ -48,7 +55,7 @@ describe('catalogue service', () => {
   })
 
   it('should be fetch all product in catalogue', async () => {
-    const products = await CatalogueService.fetchAll()
+    const products = await CatalogueService.fetchAll('userId')
     expect(products).toHaveLength(1)
   })
 })
