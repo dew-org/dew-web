@@ -9,7 +9,7 @@ import CodeField from './code.field'
 import DescriptionField from './description.field'
 import DiscountField from './discount.field'
 import NameField from './name.field'
-import RegularPriceField from './regular-price.field'
+import RetailPriceField from './retail-price.field'
 import SalePriceField from './sale-price.field'
 import SkuField from './sku.field'
 import TaxField from './tax.field'
@@ -25,11 +25,10 @@ const ProductForm: FC<Props> = ({ onSubmit }) => {
     defaultValues: {
       discount: 0,
       tax: 0,
-      regularPrice: {
+      price: {
         currency,
-      },
-      salePrice: {
-        currency,
+        retailPrice: 0,
+        salePrice: 0,
       },
     },
   })
@@ -54,7 +53,7 @@ const ProductForm: FC<Props> = ({ onSubmit }) => {
           </Grid>
 
           <Grid xs={12} md={6}>
-            <RegularPriceField />
+            <RetailPriceField />
           </Grid>
           <Grid xs={12} md={6}>
             <SalePriceField />

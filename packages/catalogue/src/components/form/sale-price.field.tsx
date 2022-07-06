@@ -9,7 +9,7 @@ const SalePriceField = () => {
     register,
     watch,
     formState: {
-      errors: { salePrice: salePriceError },
+      errors: { price },
     },
   } = useFormContext<Product>()
 
@@ -21,12 +21,12 @@ const SalePriceField = () => {
         defaultMessage: 'Sale price',
       })}
       type="number"
-      helperText={salePriceError?.amount?.message}
+      helperText={price?.salePrice?.message}
       helperColor="error"
-      labelLeft={watch('salePrice.currency')}
+      labelLeft={watch('price.currency')}
       fullWidth
       bordered
-      {...register('salePrice.amount', {
+      {...register('price.salePrice', {
         required: {
           value: true,
           message: intl.formatMessage({

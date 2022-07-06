@@ -19,8 +19,11 @@ describe('catalogue service', () => {
             sku: faker.commerce.productName(),
             name: faker.commerce.productName(),
             description: faker.lorem.paragraph(),
-            regularPrice: faker.datatype.number(),
-            salePrice: faker.datatype.number(),
+            price: {
+              retailPrice: faker.datatype.number(),
+              salePrice: faker.datatype.number(),
+              currency: faker.datatype.string(),
+            },
             discount: faker.datatype.number(),
             tax: faker.datatype.number(),
             createdAt: faker.date.past().getMilliseconds(),
@@ -36,12 +39,9 @@ describe('catalogue service', () => {
       sku: faker.commerce.productName(),
       name: faker.commerce.productName(),
       description: faker.lorem.paragraph(),
-      regularPrice: {
-        amount: faker.datatype.number(),
-        currency: faker.datatype.string(),
-      },
-      salePrice: {
-        amount: faker.datatype.number(),
+      price: {
+        retailPrice: faker.datatype.number(),
+        salePrice: faker.datatype.number(),
         currency: faker.datatype.string(),
       },
       discount: faker.datatype.number(),

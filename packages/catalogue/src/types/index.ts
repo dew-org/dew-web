@@ -1,5 +1,6 @@
-export type Price = {
-  amount: number
+export type ProductPrice = {
+  retailPrice: number
+  salePrice: number
   currency: string
 }
 
@@ -8,8 +9,7 @@ export type Product = {
   sku: string
   name: string
   description?: string
-  regularPrice: Price
-  salePrice: Price
+  price: ProductPrice
   discount: number
   tax: number
 
