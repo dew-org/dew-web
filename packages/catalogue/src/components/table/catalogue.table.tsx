@@ -5,7 +5,7 @@ import { Show } from 'react-iconly'
 import { FormattedMessage, FormattedNumber, useIntl } from 'react-intl'
 
 import useCatalogue from '../../hooks/use-catalogue'
-import { Product, ProductPrice } from '../../types'
+import { Product } from '../../types'
 
 const CatalogueTable = () => {
   const { products, isLoading, error } = useCatalogue()
@@ -22,7 +22,7 @@ const CatalogueTable = () => {
     },
     {
       key: 'retailPrice',
-      label: intl.formatMessage({ defaultMessage: 'Regular price' }),
+      label: intl.formatMessage({ defaultMessage: 'Retail price' }),
     },
     {
       key: 'salePrice',
@@ -44,13 +44,14 @@ const CatalogueTable = () => {
 
   const renderCell = (product: Product, columnKey: Key) => {
     const cellValue = product[columnKey as keyof Product]
+
     switch (columnKey) {
       case 'discount':
       case 'tax':
         return `${(cellValue as number) * 100}%`
       case 'retailPrice':
       case 'salePrice': {
-        const price = cellValue as ProductPrice
+        const price = product.price
 
         return (
           <FormattedNumber
