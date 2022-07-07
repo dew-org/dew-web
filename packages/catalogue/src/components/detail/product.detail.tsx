@@ -69,13 +69,13 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
             }}
           >
             <FormattedMessage
-              defaultMessage="Regular price: {regularPrice} $"
+              defaultMessage="Retail price: {regularPrice} $"
               values={{
                 regularPrice: (
                   <FormattedNumber
-                    value={product.regularPrice.amount}
+                    value={product.price.retailPrice}
                     style="currency"
-                    currency={product.regularPrice.currency}
+                    currency={product.price.currency}
                   />
                 ),
               }}
@@ -92,9 +92,9 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
               values={{
                 salePrice: (
                   <FormattedNumber
-                    value={product.salePrice.amount}
+                    value={product.price.salePrice}
                     style="currency"
-                    currency={product.salePrice.currency}
+                    currency={product.price.currency}
                   />
                 ),
               }}
@@ -138,12 +138,12 @@ const ProductDetail: FC<Props> = ({ codeOrSku }) => {
                 price: (
                   <FormattedNumber
                     value={
-                      product.salePrice.amount *
+                      product.price.salePrice *
                       (1 + product.tax) *
                       (1 - product.discount)
                     }
                     style="currency"
-                    currency={product.salePrice.currency}
+                    currency={product.price.currency}
                   />
                 ),
               }}

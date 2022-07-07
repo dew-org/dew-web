@@ -49,12 +49,12 @@ const ProductCard: FC<Props> = ({ product, onClick }) => {
                 <StyledPrice>
                   <FormattedNumber
                     value={
-                      product.salePrice.amount *
+                      product.price.salePrice *
                       (1 + product.tax) *
                       (1 - product.discount)
                     }
                     style="currency"
-                    currency={product.salePrice.currency}
+                    currency={product.price.currency}
                   />
                 </StyledPrice>
 
@@ -62,9 +62,9 @@ const ProductCard: FC<Props> = ({ product, onClick }) => {
                   <>
                     <StyledOldPrice>
                       <FormattedNumber
-                        value={product.salePrice.amount * (1 + product.tax)}
+                        value={product.price.salePrice * (1 + product.tax)}
                         style="currency"
-                        currency={product.salePrice.currency}
+                        currency={product.price.currency}
                       />
                     </StyledOldPrice>
 
