@@ -1,4 +1,4 @@
-import { Button,Card, styled } from '@nextui-org/react'
+import { Button, Card, styled } from '@nextui-org/react'
 
 export const StyledCard = styled(Card, {
   py: '$2',

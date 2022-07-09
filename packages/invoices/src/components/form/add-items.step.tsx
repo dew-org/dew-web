@@ -1,4 +1,3 @@
-import { Product } from '@dew-org/catalogue'
 import { Button, Grid, Spacer, Text } from '@nextui-org/react'
 import { FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
@@ -14,19 +13,25 @@ type Props = {
 }
 
 const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
-  const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
-    undefined,
-  )
   const [open, setOpen] = useState(false)
 
   const handleClose = () => {
     setOpen(false)
-    setSelectedProduct(undefined)
   }
 
   const [items, setItems] = useState<InvoiceItem[]>([])
 
   const handleSubmit = (item: InvoiceItem) => {
+    item.quantity = +item.quantity
+
+    if (items.filter(i => i.product.code === item.product.code).length > 0) {
+      setItems(
+        items.map(i => (i.product.code === item.product.code ? item : i)),
+      )
+      setOpen(false)
+      return
+    }
+
     setItems([...items, item])
     setOpen(false)
   }
@@ -57,13 +62,12 @@ const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
 
   return (
     <>
-      <Button>
+      <Button onClick={() => setOpen(true)}>
         <FormattedMessage defaultMessage="Add item" />
       </Button>
 
       <InvoiceItemModal
         open={open}
-        product={selectedProduct}
         onClose={handleClose}
         onSubmit={handleSubmit}
       />
