@@ -1,4 +1,4 @@
-import { Product, ProductCard } from '@dew-org/catalogue'
+import { Product } from '@dew-org/catalogue'
 import { Modal, Text } from '@nextui-org/react'
 import { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
@@ -24,13 +24,7 @@ const InvoiceItemModal: FC<Props> = ({ open, product, onSubmit, onClose }) => {
       </Modal.Header>
 
       <Modal.Body>
-        {product && (
-          <>
-            <ProductCard product={product} />
-
-            <InvoiceItemForm product={product} onSubmit={onSubmit} />
-          </>
-        )}
+        <InvoiceItemForm onSubmit={onSubmit} />
       </Modal.Body>
     </Modal>
   )

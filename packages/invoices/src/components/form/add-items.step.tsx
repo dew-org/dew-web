@@ -1,13 +1,4 @@
-import { Product, ProductCard, useCatalogue } from '@dew-org/catalogue'
-import {
-  Button,
-  Container,
-  Grid,
-  Loading,
-  Spacer,
-  Text,
-} from '@nextui-org/react'
-import { motion } from 'framer-motion'
+import { Button, Grid, Spacer, Text } from '@nextui-org/react'
 import { FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 
@@ -21,110 +12,96 @@ type Props = {
   currency: string
 }
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
-
 const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
-  const { products, isLoading, error } = useCatalogue()
-  const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
-    undefined,
-  )
   const [open, setOpen] = useState(false)
-
-  const handleSelectProduct = (product: Product) => {
-    setSelectedProduct(product)
-    setOpen(true)
-  }
 
   const handleClose = () => {
     setOpen(false)
-    setSelectedProduct(undefined)
   }
 
   const [items, setItems] = useState<InvoiceItem[]>([])
+
   const handleSubmit = (item: InvoiceItem) => {
+    item.quantity = +item.quantity
+
+    if (items.filter(i => i.product.code === item.product.code).length > 0) {
+      setItems(
+        items.map(i => (i.product.code === item.product.code ? item : i)),
+      )
+      setOpen(false)
+      return
+    }
+
     setItems([...items, item])
     setOpen(false)
   }
 
+  const handleIncrease = (code: string) => {
+    setItems(
+      items.map(item =>
+        item.product.code === code
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      ),
+    )
+  }
+
+  const handleDecrease = (code: string) => {
+    setItems(
+      items.map(item =>
+        item.product.code === code
+          ? { ...item, quantity: item.quantity - 1 }
+          : item,
+      ),
+    )
+  }
+
+  const handleRemove = (code: string) => {
+    setItems(items.filter(item => item.product.code !== code))
+  }
+
   return (
     <>
+      <Button onClick={() => setOpen(true)}>
+        <FormattedMessage defaultMessage="Add item" />
+      </Button>
+
       <InvoiceItemModal
         open={open}
-        product={selectedProduct}
         onClose={handleClose}
         onSubmit={handleSubmit}
       />
-      <Grid.Container gap={2}>
-        <Grid xs={12} md={8}>
-          {isLoading && <Loading />}
-          {error && <div>{error.message}</div>}
-          {products && (
-            <motion.div
-              className="container"
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
-              <Grid.Container gap={1} justify="space-around">
-                <Grid xs={12} justify="center">
-                  <Text h4>
-                    <FormattedMessage defaultMessage="Products" />
-                  </Text>
-                </Grid>
-                {products.map(product => (
-                  <Grid key={product.code}>
-                    <motion.div variants={item}>
-                      <ProductCard
-                        product={product}
-                        onClick={() => handleSelectProduct(product)}
-                      />
-                    </motion.div>
-                  </Grid>
-                ))}
-              </Grid.Container>
-            </motion.div>
-          )}
-        </Grid>
 
-        <Grid xs={12} md={4} justify="center">
-          <Container>
-            <Text h4>
-              <FormattedMessage defaultMessage="Items" />
-            </Text>
+      <Spacer y={1} />
 
-            {items.map(item => (
-              <ItemCard
-                item={item}
-                key={item.product.code}
-                currency={currency}
-              />
-            ))}
+      <Text h3>
+        <FormattedMessage defaultMessage="Items" />
+      </Text>
 
-            <Spacer y={1} />
-
-            <Button
-              onClick={() => onFinish(items)}
-              disabled={items.length === 0}
-              color="primary"
-            >
-              <FormattedMessage defaultMessage="Finish" />
-            </Button>
-          </Container>
-        </Grid>
+      <Grid.Container gap={1}>
+        {items.map(item => (
+          <Grid xs={12} key={item.product.code}>
+            <ItemCard
+              key={item.product.code}
+              item={item}
+              currency={currency}
+              onRemove={handleRemove}
+              onDecrease={handleDecrease}
+              onIncrease={handleIncrease}
+            />
+          </Grid>
+        ))}
       </Grid.Container>
+
+      <Spacer y={1} />
+
+      <Button
+        onClick={() => onFinish(items)}
+        disabled={items.length === 0}
+        color="primary"
+      >
+        <FormattedMessage defaultMessage="Finish" />
+      </Button>
     </>
   )
 }
