@@ -1,12 +1,11 @@
 import { useProductInventory } from '@dew-org/inventory'
 import { Container, Input, Row, Spacer, Text } from '@nextui-org/react'
-import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { FormattedMessage, useIntl } from 'react-intl'
 
 import { InvoiceItem } from '../../../../types'
 
-const QuantityField: FC = () => {
+const QuantityField = () => {
   const {
     register,
     watch,

@@ -1,9 +1,19 @@
-import { Button, Divider, Grid, Row, Spacer, Text } from '@nextui-org/react'
+import {
+  Button,
+  Col,
+  Container,
+  Divider,
+  Grid,
+  Row,
+  Spacer,
+  Text,
+} from '@nextui-org/react'
 import { useFormContext } from 'react-hook-form'
 import { FormattedMessage, FormattedNumber } from 'react-intl'
 
 import { Invoice } from '../../types'
-import ItemCard from './item/card'
+import { StyledSubtitle } from './item/card/styles'
+import ItemDetail from './item/detail'
 
 const GenerateInvoiceStep = () => {
   const { watch } = useFormContext<Invoice>()
@@ -13,74 +23,156 @@ const GenerateInvoiceStep = () => {
 
   return (
     <>
-      <Text b h4>
-        <FormattedMessage defaultMessage="Customer" />
-      </Text>
-      <Text>{`${customer.id}, ${customer.fullName}`}</Text>
+      <Grid.Container>
+        <Grid xs={12} md={8}>
+          <Container>
+            <Row>
+              <Text b h3>
+                <FormattedMessage defaultMessage="Items" />
+              </Text>
+            </Row>
 
-      <Spacer y={0.5} />
+            <Spacer y={1} />
 
-      <Text b h4>
-        <FormattedMessage defaultMessage="Items" />
-      </Text>
-      <Grid.Container gap={2}>
-        {items.map(item => (
-          <Grid xs={12} md={4} key={item.product.code}>
-            <ItemCard item={item} currency={watch('currency')} />
-          </Grid>
-        ))}
+            {items.map(item => (
+              <>
+                <Row>
+                  <ItemDetail
+                    key={item.product.code}
+                    item={item}
+                    currency={watch('currency')}
+                  />
+                </Row>
+                <Spacer y={0.5} />
+              </>
+            ))}
+          </Container>
+        </Grid>
+
+        <Grid xs={12} md={4}>
+          <Container>
+            <Row>
+              <Text b h3>
+                <FormattedMessage defaultMessage="Customer" />
+              </Text>
+            </Row>
+
+            <Row>
+              <StyledSubtitle>{`${customer.id}, ${customer.fullName}`}</StyledSubtitle>
+            </Row>
+
+            <Divider y={1} />
+
+            <Row>
+              <Text b h3>
+                <FormattedMessage defaultMessage="Summary" />
+              </Text>
+            </Row>
+
+            <Row>
+              <Col>
+                <StyledSubtitle>
+                  <FormattedMessage defaultMessage="Subtotal" />
+                </StyledSubtitle>
+              </Col>
+
+              <Col>
+                <Text>
+                  <FormattedNumber
+                    value={items.reduce(
+                      (acc, item) => acc + item.quantity * item.price,
+                      0,
+                    )}
+                    style="currency"
+                    currency={watch('currency')}
+                  />
+                </Text>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <StyledSubtitle>
+                  <FormattedMessage defaultMessage="Tax" />
+                </StyledSubtitle>
+              </Col>
+
+              <Col>
+                <Text>
+                  <FormattedNumber
+                    value={items.reduce(
+                      (acc, item) =>
+                        acc + item.quantity * item.price * item.tax,
+                      0,
+                    )}
+                    style="currency"
+                    currency={watch('currency')}
+                  />
+                </Text>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <StyledSubtitle>
+                  <FormattedMessage defaultMessage="Discount" />
+                </StyledSubtitle>
+              </Col>
+
+              <Col>
+                <Text>
+                  <FormattedNumber
+                    value={items.reduce(
+                      (acc, item) =>
+                        acc + item.quantity * item.price * item.discount,
+                      0,
+                    )}
+                    style="currency"
+                    currency={watch('currency')}
+                  />
+                </Text>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <StyledSubtitle>
+                  <FormattedMessage defaultMessage="Total" />
+                </StyledSubtitle>
+              </Col>
+
+              <Col>
+                <Text>
+                  <FormattedNumber
+                    value={items.reduce(
+                      (acc, item) =>
+                        acc +
+                        item.quantity *
+                          item.price *
+                          (1 + item.tax) *
+                          (1 - item.discount),
+                      0,
+                    )}
+                    style="currency"
+                    currency={watch('currency')}
+                  />
+                </Text>
+              </Col>
+            </Row>
+
+            <Divider y={2} />
+
+            <Row>
+              <Button
+                type="submit"
+                icon={<span className="material-symbols-rounded">sell</span>}
+              >
+                <FormattedMessage defaultMessage="Generate" />
+              </Button>
+            </Row>
+          </Container>
+        </Grid>
       </Grid.Container>
-
-      <Divider y={1.5} />
-
-      <Row wrap="wrap" justify="space-between">
-        <Text b>
-          <FormattedMessage
-            defaultMessage="Subtotal: {subTotal}"
-            values={{
-              subTotal: (
-                <FormattedNumber
-                  value={items.reduce(
-                    (acc, item) => acc + item.quantity * item.price,
-                    0,
-                  )}
-                  style="currency"
-                  currency={watch('currency')}
-                />
-              ),
-            }}
-          />
-        </Text>
-
-        <Text b>
-          <FormattedMessage
-            defaultMessage="Total: {total}"
-            values={{
-              total: (
-                <FormattedNumber
-                  value={items.reduce(
-                    (acc, item) =>
-                      acc +
-                      item.quantity *
-                        item.price *
-                        (1 + item.tax / 100) *
-                        (1 - item.discount / 100),
-                    0,
-                  )}
-                  style="currency"
-                  currency={watch('currency')}
-                />
-              ),
-            }}
-          />
-        </Text>
-      </Row>
-
-      <Divider y={1.5} />
-
-      <Button type="submit" css={{ w: '100%' }}>
-        <FormattedMessage defaultMessage="Generate" />
-      </Button>
     </>
   )
 }
