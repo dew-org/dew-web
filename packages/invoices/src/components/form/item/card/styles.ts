@@ -1,9 +1,7 @@
-import { Card, styled } from '@nextui-org/react'
+import { Button, Card, styled } from '@nextui-org/react'
 
 export const StyledCard = styled(Card, {
   py: '$2',
-  mt: '$8',
-  boxShadow: '$sm',
   ov: 'visible',
 })
 
@@ -41,4 +39,8 @@ export const StyledDiscount = styled(BaseText, {
   color: '$success',
   fontSize: '18px',
   fontWeight: '$semibold',
+})
+
+export const IconButton = styled(Button, {
+  minWidth: 'min-content !important',
 })
