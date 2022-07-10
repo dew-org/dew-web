@@ -1,18 +1,15 @@
 import { Button, Grid, Spacer, Text } from '@nextui-org/react'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 
 import { InvoiceItem } from '../../types'
+import InvoiceFormContext from './context/invoice-form.context'
 import ItemCard from './item/card'
 import InvoiceItemModal from './item/modal'
 
-type Props = {
-  onFinish: (items: InvoiceItem[]) => void
+type Props = {}
 
-  currency: string
-}
-
-const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
+const AddItemsStep: FC<Props> = () => {
   const [open, setOpen] = useState(false)
 
   const handleClose = () => {
@@ -60,6 +57,8 @@ const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
     setItems(items.filter(item => item.product.code !== code))
   }
 
+  const { handleAddItems, currency } = useContext(InvoiceFormContext)
+
   return (
     <>
       <Button onClick={() => setOpen(true)}>
@@ -96,7 +95,7 @@ const AddItemsStep: FC<Props> = ({ onFinish, currency }) => {
       <Spacer y={1} />
 
       <Button
-        onClick={() => onFinish(items)}
+        onClick={() => handleAddItems(items)}
         disabled={items.length === 0}
         color="primary"
       >

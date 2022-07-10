@@ -4,6 +4,7 @@ import {
   Container,
   Divider,
   Grid,
+  Loading,
   Row,
   Spacer,
   Text,
@@ -16,7 +17,10 @@ import { StyledSubtitle } from './item/card/styles'
 import ItemDetail from './item/detail'
 
 const GenerateInvoiceStep = () => {
-  const { watch } = useFormContext<Invoice>()
+  const {
+    watch,
+    formState: { isSubmitting },
+  } = useFormContext<Invoice>()
 
   const customer = watch('customer')
   const items = watch('items')
@@ -164,10 +168,15 @@ const GenerateInvoiceStep = () => {
 
             <Row>
               <Button
+                disabled={isSubmitting}
                 type="submit"
                 icon={<span className="material-symbols-rounded">sell</span>}
               >
-                <FormattedMessage defaultMessage="Generate" />
+                {isSubmitting ? (
+                  <Loading color="currentColor" size="sm" />
+                ) : (
+                  <FormattedMessage defaultMessage="Generate" />
+                )}
               </Button>
             </Row>
           </Container>

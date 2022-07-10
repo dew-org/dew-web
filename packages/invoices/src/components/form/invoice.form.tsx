@@ -1,12 +1,9 @@
-import { Customer } from '@dew-org/customers'
-import { useCurrency } from '@dew-org/shared'
-import { Spacer } from '@nextui-org/react'
 import { motion } from 'framer-motion'
-import { FC, useState } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
+import { FC, useContext } from 'react'
 
-import { Invoice, InvoiceItem } from '../../types'
+import { Invoice } from '../../types'
 import AddItemsStep from './add-items.step'
+import InvoiceFormContext from './context/invoice-form.context'
 import FindCustomerStep from './find-customer.step'
 import GenerateInvoiceStep from './generate-invoice.step'
 
@@ -15,68 +12,41 @@ type Props = {
 }
 
 const InvoiceForm: FC<Props> = ({ onSubmit }) => {
-  const currency = useCurrency()
-
-  const invoiceForm = useForm<Invoice>({
-    defaultValues: {
-      currency,
-    },
-  })
-
-  const [currentPage, setCurrentPage] = useState(1)
-
-  const handleSelectCustomer = (customer: Customer | null) => {
-    if (customer) {
-      invoiceForm.setValue('customer', {
-        id: customer.id,
-        fullName: `${customer.name} ${customer.lastName}`,
-      })
-
-      setCurrentPage(prevState => prevState + 1)
-    }
-  }
-
-  const handleAddItems = (items: InvoiceItem[]) => {
-    invoiceForm.setValue('items', items)
-    setCurrentPage(prevState => prevState + 1)
-  }
+  const { page, handleSubmit } = useContext(InvoiceFormContext)
 
   return (
     <>
-      <Spacer y={1} />
-      <FormProvider {...invoiceForm}>
-        {currentPage === 1 && (
+      {page === 1 && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+        >
+          <FindCustomerStep />
+        </motion.div>
+      )}
+
+      {page === 2 && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+        >
+          <AddItemsStep />
+        </motion.div>
+      )}
+
+      <form onSubmit={handleSubmit && handleSubmit(onSubmit)}>
+        {page === 3 && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
-            <FindCustomerStep onSelect={handleSelectCustomer} />
+            <GenerateInvoiceStep />
           </motion.div>
         )}
-
-        {currentPage === 2 && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-          >
-            <AddItemsStep onFinish={handleAddItems} currency={currency} />
-          </motion.div>
-        )}
-
-        <form onSubmit={invoiceForm.handleSubmit(onSubmit)}>
-          {currentPage === 3 && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-            >
-              <GenerateInvoiceStep />
-            </motion.div>
-          )}
-        </form>
-      </FormProvider>
+      </form>
     </>
   )
 }
