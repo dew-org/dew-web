@@ -1,9 +1,21 @@
-import { Card, Divider, Grid, Loading, Spacer, Text } from '@nextui-org/react'
-import { motion } from 'framer-motion'
+import {
+  Button,
+  Col,
+  Container,
+  Divider,
+  Grid,
+  Loading,
+  Row,
+  Spacer,
+  Text,
+  Tooltip,
+} from '@nextui-org/react'
 import { FC } from 'react'
 import { FormattedDate, FormattedMessage, FormattedNumber } from 'react-intl'
 
 import useInvoice from '../../hooks/use-invoice'
+import { StyledPrice, StyledSubtitle } from '../form/item/card/styles'
+import ItemDetail from '../form/item/detail'
 
 type Props = {
   id: string
@@ -14,185 +26,205 @@ const InvoiceDetail: FC<Props> = ({ id }) => {
 
   return (
     <>
-      {isLoading && <Loading />}
+      {isLoading && <Loading size="xl" />}
       {error && <div>{error.message}</div>}
       {!error && invoice && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Text h2>
-            <FormattedMessage defaultMessage="Invoice #{id}" values={{ id }} />
-          </Text>
-          <Text small css={{ color: '$accents4' }}>
-            <FormattedMessage
-              defaultMessage="Created at: {date}"
-              values={{
-                date: (
-                  <FormattedDate
-                    value={invoice.createdAt}
-                    year="numeric"
-                    month="long"
-                    day="2-digit"
-                  />
-                ),
-              }}
-            />
-          </Text>
-
-          <Spacer y={1} />
-
-          <Text h4>
-            <FormattedMessage defaultMessage="Customer" />
-          </Text>
-
-          <Text>
-            {invoice.customer.id} - {invoice.customer.fullName}
-          </Text>
-
-          <Spacer y={1} />
-
-          <Text h4>
-            <FormattedMessage defaultMessage="Items" />
-          </Text>
-
-          <Grid.Container gap={1}>
-            {invoice.items.map(item => (
-              <Grid key={item.product.code}>
-                <Card key={item.product.code}>
-                  <Text>
-                    <Text h5 css={{ fontWeight: '$bold' }}>
-                      <FormattedMessage
-                        defaultMessage="Product: {code} - {name}"
-                        values={{
-                          code: item.product.code,
-                          name: item.product.name,
-                        }}
-                      />
-                    </Text>
-                    {item.product.description && (
-                      <Text small css={{ color: '$accents4' }}>
-                        {item.product.description}
-                      </Text>
-                    )}
-
-                    <Spacer y={0.5} />
-
-                    <Text>
-                      <FormattedMessage
-                        defaultMessage="Quantity: {quantity}"
-                        values={{ quantity: item.quantity }}
-                      />
-                    </Text>
-
-                    <Text>
-                      <FormattedMessage
-                        defaultMessage="Price: {price}"
-                        values={{
-                          price: (
-                            <FormattedNumber
-                              value={item.price}
-                              style="currency"
-                              currency={invoice.currency}
-                            />
-                          ),
-                        }}
-                      />
-                    </Text>
-
-                    <Text>
-                      <FormattedMessage
-                        defaultMessage="Tax: {tax}"
-                        values={{
-                          tax: (
-                            <FormattedNumber value={item.tax} style="percent" />
-                          ),
-                        }}
-                      />
-                    </Text>
-
-                    <Text>
-                      <FormattedMessage
-                        defaultMessage="Discount: {discount}"
-                        values={{
-                          discount: (
-                            <FormattedNumber
-                              value={item.discount}
-                              style="percent"
-                            />
-                          ),
-                        }}
-                      />
-                    </Text>
+        <>
+          <Grid.Container>
+            <Grid xs={12} md={8}>
+              <Container gap={0}>
+                <Row>
+                  <Text h2>
+                    <FormattedMessage
+                      defaultMessage="Invoice #{id}"
+                      values={{ id }}
+                    />
                   </Text>
-                </Card>
-              </Grid>
-            ))}
+                </Row>
+
+                <Row>
+                  <Text css={{ color: '$accents6' }}>
+                    <FormattedMessage
+                      defaultMessage="Created at: {date}"
+                      values={{
+                        date: (
+                          <FormattedDate
+                            value={invoice.createdAt}
+                            year="numeric"
+                            month="long"
+                            day="2-digit"
+                            hour="2-digit"
+                            hour12={true}
+                            minute="2-digit"
+                          />
+                        ),
+                      }}
+                    />
+                  </Text>
+                </Row>
+
+                <Spacer y={1} />
+
+                <Row>
+                  <Text b h3>
+                    <FormattedMessage defaultMessage="Items" />
+                  </Text>
+                </Row>
+
+                <Spacer y={1} />
+
+                {invoice?.items.map(item => (
+                  <>
+                    <Row>
+                      <ItemDetail
+                        key={item.product.code}
+                        item={item}
+                        currency={invoice?.currency}
+                      />
+                    </Row>
+                    <Spacer y={0.5} />
+                  </>
+                ))}
+              </Container>
+            </Grid>
+
+            <Grid xs={12} md={4}>
+              <Container>
+                <Row>
+                  <Text b h3>
+                    <FormattedMessage defaultMessage="Customer" />
+                  </Text>
+                </Row>
+
+                <Row>
+                  <StyledSubtitle>
+                    {invoice.customer.id}, {invoice.customer.fullName}
+                  </StyledSubtitle>
+                </Row>
+
+                <Divider y={1} />
+
+                <Row>
+                  <Text b h3>
+                    <FormattedMessage defaultMessage="Summary" />
+                  </Text>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <StyledSubtitle>
+                      <FormattedMessage defaultMessage="Subtotal" />
+                    </StyledSubtitle>
+                  </Col>
+
+                  <Col>
+                    <StyledPrice>
+                      <FormattedNumber
+                        value={invoice.items.reduce(
+                          (acc, item) => acc + item.quantity * item.price,
+                          0,
+                        )}
+                        style="currency"
+                        currency={invoice.currency}
+                      />
+                    </StyledPrice>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <StyledSubtitle>
+                      <FormattedMessage defaultMessage="Tax" />
+                    </StyledSubtitle>
+                  </Col>
+
+                  <Col>
+                    <StyledPrice>
+                      <FormattedNumber
+                        value={invoice.items.reduce(
+                          (acc, item) =>
+                            acc + item.quantity * item.price * item.tax,
+                          0,
+                        )}
+                        style="currency"
+                        currency={invoice.currency}
+                      />
+                    </StyledPrice>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <StyledSubtitle>
+                      <FormattedMessage defaultMessage="Discount" />
+                    </StyledSubtitle>
+                  </Col>
+
+                  <Col>
+                    <StyledPrice>
+                      <FormattedNumber
+                        value={invoice.items.reduce(
+                          (acc, item) =>
+                            acc + item.quantity * item.price * item.discount,
+                          0,
+                        )}
+                        style="currency"
+                        currency={invoice.currency}
+                      />
+                    </StyledPrice>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <StyledSubtitle>
+                      <FormattedMessage defaultMessage="Total" />
+                    </StyledSubtitle>
+                  </Col>
+
+                  <Col>
+                    <StyledPrice>
+                      <FormattedNumber
+                        value={invoice.items.reduce(
+                          (acc, item) =>
+                            acc +
+                            item.quantity *
+                              item.price *
+                              (1 + item.tax) *
+                              (1 - item.discount),
+                          0,
+                        )}
+                        style="currency"
+                        currency={invoice.currency}
+                      />
+                    </StyledPrice>
+                  </Col>
+                </Row>
+
+                <Divider y={2} />
+
+                <Row>
+                  <Tooltip
+                    color="secondary"
+                    content={<FormattedMessage defaultMessage="Coming soon" />}
+                  >
+                    <Button
+                      disabled
+                      auto
+                      icon={
+                        <span className="material-symbols-rounded">
+                          file_download
+                        </span>
+                      }
+                    >
+                      <FormattedMessage defaultMessage="Download" />
+                    </Button>
+                  </Tooltip>
+                </Row>
+              </Container>
+            </Grid>
           </Grid.Container>
-
-          <Divider y={1.5} />
-
-          <Text>
-            <FormattedMessage
-              defaultMessage="Subtotal: {subtotal}"
-              values={{
-                subtotal: (
-                  <FormattedNumber
-                    value={invoice.subtotal || 0}
-                    style="currency"
-                    currency={invoice.currency}
-                  />
-                ),
-              }}
-            />
-          </Text>
-
-          <Text>
-            <FormattedMessage
-              defaultMessage="Tax: +{tax}"
-              values={{
-                tax: (
-                  <FormattedNumber
-                    value={invoice.tax || 0}
-                    style="currency"
-                    currency={invoice.currency}
-                  />
-                ),
-              }}
-            />
-          </Text>
-
-          <Text>
-            <FormattedMessage
-              defaultMessage="Discount: -{discount}"
-              values={{
-                discount: (
-                  <FormattedNumber
-                    value={invoice.discount || 0}
-                    style="currency"
-                    currency={invoice.currency}
-                  />
-                ),
-              }}
-            />
-          </Text>
-
-          <Text h3>
-            <FormattedMessage
-              defaultMessage="Total: {total}"
-              values={{
-                total: (
-                  <FormattedNumber
-                    value={invoice.total || 0}
-                    style="currency"
-                    currency={invoice.currency}
-                  />
-                ),
-              }}
-            />
-          </Text>
-        </motion.div>
+        </>
       )}
     </>
   )
