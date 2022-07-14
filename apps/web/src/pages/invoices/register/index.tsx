@@ -1,6 +1,6 @@
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0'
 import SimpleAnimation from '@dew-org/components/animations/simple'
-import { Invoice, InvoiceForm } from '@dew-org/invoices'
+import { Invoice, InvoiceForm, InvoiceFormProvider } from '@dew-org/invoices'
 import DashboardLayout from '@dew-org/layouts/dashboard'
 import withLayout from '@dew-org/utils/hocs/with-layout'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
@@ -37,7 +37,9 @@ const RegisterInvoicePage = () => {
         <FormattedMessage defaultMessage="Register Invoice" />
       </Text>
 
-      <InvoiceForm onSubmit={handleSubmit} />
+      <InvoiceFormProvider>
+        <InvoiceForm onSubmit={handleSubmit} />
+      </InvoiceFormProvider>
     </SimpleAnimation>
   )
 }

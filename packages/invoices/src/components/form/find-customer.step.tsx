@@ -6,20 +6,20 @@ import {
 import { Button, Grid, Input, Loading, Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
-import { FC, useEffect, useState } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Search } from 'react-iconly'
 import { FormattedMessage } from 'react-intl'
 
-type Props = {
-  onSelect: (customer: Customer | null) => void
-}
+import InvoiceFormContext from './context/invoice-form.context'
+
+type Props = {}
 
 type StepFormValues = {
   customerId: string
 }
 
-const FindCustomerStep: FC<Props> = ({ onSelect }) => {
+const FindCustomerStep: FC<Props> = () => {
   const { register, handleSubmit } = useForm<StepFormValues>()
 
   const [customerId, setCustomerId] = useState<string | undefined>(undefined)
@@ -42,6 +42,8 @@ const FindCustomerStep: FC<Props> = ({ onSelect }) => {
       setRegisterModalOpen(true)
     }
   }, [customerError])
+
+  const { handleSelectCustomer } = useContext(InvoiceFormContext)
 
   const onSubmit = (values: StepFormValues) => {
     setCustomerId(values.customerId)
@@ -93,7 +95,12 @@ const FindCustomerStep: FC<Props> = ({ onSelect }) => {
                 <Button
                   color="success"
                   size="sm"
-                  onClick={() => onSelect(customer)}
+                  onClick={() =>
+                    handleSelectCustomer({
+                      id: customer.id,
+                      fullName: `${customer.name} ${customer.lastName}`,
+                    })
+                  }
                 >
                   <FormattedMessage defaultMessage="Select" />
                 </Button>
