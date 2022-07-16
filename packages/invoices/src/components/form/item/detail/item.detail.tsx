@@ -1,4 +1,4 @@
-import { Card, Col, Grid, Row, Text } from '@nextui-org/react'
+import { Card, Col, Grid, Row, styled, Text } from '@nextui-org/react'
 import { FC } from 'react'
 import { FormattedMessage, FormattedNumber } from 'react-intl'
 
@@ -15,6 +15,12 @@ type Props = {
 
   currency: string
 }
+
+const ResponsiveRow = styled(Row, {
+  '@xsMax': {
+    justifyContent: 'flex-start !important',
+  },
+})
 
 const ItemDetail: FC<Props> = ({ item, currency }) => {
   return (
@@ -60,7 +66,7 @@ const ItemDetail: FC<Props> = ({ item, currency }) => {
 
           <Grid xs={12} md={3} alignItems="center">
             <Col>
-              <Row justify="center" align="center">
+              <Row justify="flex-start" align="center">
                 <Text>
                   <FormattedMessage
                     defaultMessage="Quantity: {quantity}"
@@ -73,7 +79,7 @@ const ItemDetail: FC<Props> = ({ item, currency }) => {
 
           <Grid xs={12} md={3} alignItems="center">
             <Col>
-              <Row justify="flex-end" align="center">
+              <ResponsiveRow justify="flex-end" align="center">
                 <StyledPrice>
                   <FormattedNumber
                     value={
@@ -86,7 +92,7 @@ const ItemDetail: FC<Props> = ({ item, currency }) => {
                     currency={currency}
                   />
                 </StyledPrice>
-              </Row>
+              </ResponsiveRow>
             </Col>
           </Grid>
         </Grid.Container>
