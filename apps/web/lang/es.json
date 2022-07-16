@@ -1,18 +1,9 @@
 {
-  "/7XQ/r": {
-    "defaultMessage": "Precio de venta: {salePrice} $"
-  },
   "/OzczE": {
     "defaultMessage": "Un software de facturación moderno, seguro y fácil de usar."
   },
   "/RLvL4": {
     "defaultMessage": "El impuesto es requerido"
-  },
-  "0J1Wxe": {
-    "defaultMessage": "Precio regular: {regularPrice} $"
-  },
-  "0XhgAx": {
-    "defaultMessage": "Total: {total}"
   },
   "1z+0TS": {
     "defaultMessage": "Id debe ser un número"
@@ -26,20 +17,8 @@
   "2O2sfp": {
     "defaultMessage": "Finalizar"
   },
-  "2aX2Q3": {
-    "defaultMessage": "Producto: {code} - {name}"
-  },
-  "4EzLc1": {
-    "defaultMessage": "Descuento: {discount}"
-  },
-  "4LRDBC": {
-    "defaultMessage": "Precio regular es requerido"
-  },
   "5WgK3Y": {
     "defaultMessage": "Dirección de email inválida"
-  },
-  "5Wwopw": {
-    "defaultMessage": "Precios"
   },
   "6KppbL": {
     "defaultMessage": "Item de factura"
@@ -80,11 +59,11 @@
   "HAyFhM": {
     "defaultMessage": "Precio de venta"
   },
-  "HgoO43": {
-    "defaultMessage": "Subtotal: {subTotal}"
-  },
   "HtNqED": {
     "defaultMessage": "El precio de venta debe ser un número"
+  },
+  "HwugaQ": {
+    "defaultMessage": "Cambiar tema"
   },
   "Iq0cJ9": {
     "defaultMessage": "El stock es requerido"
@@ -92,11 +71,8 @@
   "J3HQl7": {
     "defaultMessage": "Registrar factura"
   },
-  "Jm23bC": {
-    "defaultMessage": "Factura #{id}"
-  },
-  "KhKQjV": {
-    "defaultMessage": "Precio: {price}"
+  "KDO3hW": {
+    "defaultMessage": "Añadir item"
   },
   "L8seEc": {
     "defaultMessage": "Subtotal"
@@ -104,14 +80,8 @@
   "Lv0zJu": {
     "defaultMessage": "Detalles"
   },
-  "MEkTSF": {
-    "defaultMessage": "Impuesto y descuento"
-  },
   "MJ2jZQ": {
     "defaultMessage": "Total"
-  },
-  "MlzEfB": {
-    "defaultMessage": "Inventario"
   },
   "MqyZ5D": {
     "defaultMessage": "El impuesto debe ser mayor que 0"
@@ -122,6 +92,9 @@
   "Pc+tM3": {
     "defaultMessage": "Generar"
   },
+  "PgJGHT": {
+    "defaultMessage": "Disponible"
+  },
   "Q8Qw5B": {
     "defaultMessage": "Descripción"
   },
@@ -131,8 +104,14 @@
   "R3hmdN": {
     "defaultMessage": "Id es requerido"
   },
+  "RrCui3": {
+    "defaultMessage": "Resumen"
+  },
   "Ryr4CL": {
     "defaultMessage": "Cantidad debe ser un número"
+  },
+  "TYXQqX": {
+    "defaultMessage": "En stock: {stock}"
   },
   "Tbo377": {
     "defaultMessage": "Facturación"
@@ -140,8 +119,14 @@
   "TkYZBT": {
     "defaultMessage": "Clientes"
   },
+  "U/bLbD": {
+    "defaultMessage": "Información del usuario"
+  },
   "U2napd": {
     "defaultMessage": "Catálogo"
+  },
+  "U8JIG+": {
+    "defaultMessage": "El precio recomendado de venta debe ser un número"
   },
   "Ub+AGc": {
     "defaultMessage": "Iniciar sesión"
@@ -152,14 +137,8 @@
   "W6Tn0A": {
     "defaultMessage": "Cantidad debe ser menor que {max}"
   },
-  "XFKV5Z": {
-    "defaultMessage": "Creado el: {date}"
-  },
   "YT6TEY": {
     "defaultMessage": "{discount}% de descuento"
-  },
-  "YTI6Sn": {
-    "defaultMessage": "Impuesto: {tax}%"
   },
   "Z0kULb": {
     "defaultMessage": "Registrar producto"
@@ -167,11 +146,8 @@
   "bU+E9Z": {
     "defaultMessage": "Descuento requerido"
   },
-  "cCKaPK": {
-    "defaultMessage": "Detalle de factura"
-  },
-  "dD0IKh": {
-    "defaultMessage": "Impuesto: {tax}"
+  "buKW6Q": {
+    "defaultMessage": "Precio de venta recomendado"
   },
   "dSlWxb": {
     "defaultMessage": "Registrar cliente"
@@ -184,9 +160,6 @@
   },
   "hkENym": {
     "defaultMessage": "Cliente"
-  },
-  "hzF82H": {
-    "defaultMessage": "Subtotal: {subtotal}"
   },
   "itPgxd": {
     "defaultMessage": "Perfil"
@@ -209,9 +182,6 @@
   "l25Fiw": {
     "defaultMessage": "Código requerido"
   },
-  "l9Lq/A": {
-    "defaultMessage": "Descuento: {discount}%"
-  },
   "mE+NeJ": {
     "defaultMessage": "Registrar factura"
   },
@@ -221,17 +191,14 @@
   "nxGZ0T": {
     "defaultMessage": "Registrar cliente"
   },
-  "o8eQik": {
-    "defaultMessage": "Disponible: {available}"
-  },
   "oR2Zwh": {
     "defaultMessage": "Número de teléfono inválido"
   },
+  "q62Y7N": {
+    "defaultMessage": "El precio de venta recomendado es requerido"
+  },
   "qVGRIE": {
     "defaultMessage": "Cantidad"
-  },
-  "sAYNYt": {
-    "defaultMessage": "Precio final: {price} $"
   },
   "sy+pv5": {
     "defaultMessage": "Email"
@@ -239,8 +206,14 @@
   "t5a1IE": {
     "defaultMessage": "Sku"
   },
+  "ttqIsh": {
+    "defaultMessage": "Seleccione un producto"
+  },
   "txUL0F": {
     "defaultMessage": "Apellido"
+  },
+  "uSr6F0": {
+    "defaultMessage": "Por favor, seleccione un producto"
   },
   "ujzQLw": {
     "defaultMessage": "Cantidad debe ser mayor que 0"
@@ -248,20 +221,11 @@
   "vuKrlW": {
     "defaultMessage": "Stock"
   },
-  "wFMlsH": {
-    "defaultMessage": "Actualizado el"
-  },
   "wKrkcP": {
     "defaultMessage": "Cantidad es requerida"
   },
   "wL7VAE": {
     "defaultMessage": "Acciones"
-  },
-  "x3IBIW": {
-    "defaultMessage": "Precio regular debe ser un número"
-  },
-  "xD3Bn3": {
-    "defaultMessage": "Cantidad: {quantity}"
   },
   "yNmV/R": {
     "defaultMessage": "Items"
@@ -271,8 +235,5 @@
   },
   "ys89ix": {
     "defaultMessage": "Precio de venta requerido"
-  },
-  "ys8gnW": {
-    "defaultMessage": "Precio regular"
   }
 }
