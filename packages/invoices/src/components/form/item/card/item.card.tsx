@@ -1,13 +1,5 @@
 import { useProductInventory } from '@dew-org/inventory'
-import {
-  Card,
-  Col,
-  Container,
-  Loading,
-  Row,
-  Spacer,
-  Text,
-} from '@nextui-org/react'
+import { Card, Col, Grid, Loading, Row, Spacer, Text } from '@nextui-org/react'
 import { FC } from 'react'
 import { FormattedMessage, FormattedNumber } from 'react-intl'
 
@@ -45,13 +37,14 @@ const ItemCard: FC<Props> = ({
   return (
     <Card key={item.product.code}>
       <Card.Body>
-        <Container responsive wrap="wrap">
-          <Row align="center">
+        <Grid.Container gap={1}>
+          <Grid xs={12} md={6} alignItems="center">
             <Col>
               <Row justify="flex-start" align="center">
                 <StyledTitle>{item.product.name}</StyledTitle>
               </Row>
-              <Row>
+
+              <Row wrap="wrap">
                 <StyledPrice>
                   <FormattedNumber
                     value={item.price * (1 + item.tax) * (1 - item.discount)}
@@ -80,9 +73,19 @@ const ItemCard: FC<Props> = ({
                 )}
               </Row>
             </Col>
+          </Grid>
 
+          <Grid xs={12} md={3} alignItems="center">
             <Col>
-              <Row justify="center" align="center">
+              <Row
+                justify="center"
+                align="center"
+                css={{
+                  '@mdMax': {
+                    justifyContent: 'flex-end !important',
+                  },
+                }}
+              >
                 <IconButton
                   auto
                   flat
@@ -114,7 +117,15 @@ const ItemCard: FC<Props> = ({
 
               <Spacer y={0.3} />
 
-              <Row justify="center" align="center">
+              <Row
+                justify="center"
+                align="center"
+                css={{
+                  '@mdMax': {
+                    justifyContent: 'flex-end !important',
+                  },
+                }}
+              >
                 {isLoading && <Loading size="xs" />}
                 {error && <Text>{error.message}</Text>}
                 {!isLoading && productInventory && (
@@ -125,7 +136,9 @@ const ItemCard: FC<Props> = ({
                 )}
               </Row>
             </Col>
+          </Grid>
 
+          <Grid xs={12} md={3} alignItems="center">
             <Col>
               <Row justify="flex-end" align="center">
                 <StyledPrice>
@@ -154,8 +167,8 @@ const ItemCard: FC<Props> = ({
                 />
               </Row>
             </Col>
-          </Row>
-        </Container>
+          </Grid>
+        </Grid.Container>
       </Card.Body>
     </Card>
   )

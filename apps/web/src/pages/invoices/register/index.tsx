@@ -4,7 +4,7 @@ import { Invoice, InvoiceForm, InvoiceFormProvider } from '@dew-org/invoices'
 import DashboardLayout from '@dew-org/layouts/dashboard'
 import withLayout from '@dew-org/utils/hocs/with-layout'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
-import { Text } from '@nextui-org/react'
+import { Spacer, Text } from '@nextui-org/react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
@@ -36,6 +36,8 @@ const RegisterInvoicePage = () => {
       <Text h2>
         <FormattedMessage defaultMessage="Register Invoice" />
       </Text>
+
+      <Spacer y={1} />
 
       <InvoiceFormProvider>
         <InvoiceForm onSubmit={handleSubmit} />

@@ -27,7 +27,7 @@ const GenerateInvoiceStep = () => {
 
   return (
     <>
-      <Grid.Container>
+      <Grid.Container gap={1}>
         <Grid xs={12} md={8}>
           <Container>
             <Row>
@@ -171,6 +171,7 @@ const GenerateInvoiceStep = () => {
                 disabled={isSubmitting}
                 type="submit"
                 icon={<span className="material-symbols-rounded">sell</span>}
+                css={{ '@xsMax': { width: '100%' } }}
               >
                 {isSubmitting ? (
                   <Loading color="currentColor" size="sm" />
