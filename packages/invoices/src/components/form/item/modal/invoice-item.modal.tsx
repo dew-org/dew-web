@@ -1,4 +1,3 @@
-import { Product } from '@dew-org/catalogue'
 import { Modal, Text } from '@nextui-org/react'
 import { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
@@ -8,15 +7,14 @@ import InvoiceItemForm from '../form'
 
 type Props = {
   open: boolean
-  product?: Product
 
   onSubmit: (item: InvoiceItem) => void
   onClose: () => void
 }
 
-const InvoiceItemModal: FC<Props> = ({ open, product, onSubmit, onClose }) => {
+const InvoiceItemModal: FC<Props> = ({ open, onSubmit, onClose }) => {
   return (
-    <Modal open={open} onClose={onClose} closeButton blur>
+    <Modal open={open} onClose={onClose} closeButton blur fullScreen>
       <Modal.Header>
         <Text size={22}>
           <FormattedMessage defaultMessage="Invoice Item" />
@@ -24,7 +22,7 @@ const InvoiceItemModal: FC<Props> = ({ open, product, onSubmit, onClose }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <InvoiceItemForm onSubmit={onSubmit} />
+        <InvoiceItemForm onSubmit={onSubmit} onClose={onClose} />
       </Modal.Body>
     </Modal>
   )
