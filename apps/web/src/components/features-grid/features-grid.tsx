@@ -36,7 +36,7 @@ const FeaturesGrid: FC<FeaturesGridProps> = ({
   ...props
 }) => {
   return (
-    <Grid.Container gap={2} css={{ px: 0, ...(css as any) }} {...props}>
+    <Grid.Container css={{ px: 0, ...(css as any) }} gap={2} {...props}>
       {features.map((feat, index) => (
         <Grid key={`${feat.title}_${index}`} xs={xs} sm={sm} lg={lg}>
           <FeatureItem css={itemCss}>

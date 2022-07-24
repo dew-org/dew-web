@@ -23,11 +23,11 @@ export const StyledGradientTitle = styled(StyledTitle, {
 
 export const StyledSubtitle = styled('p', {
   pl: '$1',
-  fs: '$sm',
+  fs: '$xl',
   width: '100%',
   display: 'inline-flex',
   fontWeight: '$medium',
-  color: '$accents6',
+  color: '$accents7',
 })
 
 export const StyledContainer = styled('div', {

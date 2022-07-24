@@ -38,7 +38,10 @@ const App = () => (
     <Spacer y={2.5} />
 
     <Section>
-      <FeaturesGrid features={landing.features} />
+      <FeaturesGrid
+        features={landing.features}
+        css={{ justifyContent: 'center' }}
+      />
     </Section>
 
     <Spacer y={6} />
