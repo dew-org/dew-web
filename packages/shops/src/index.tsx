@@ -1,2 +1,3 @@
 export { default as ShopForm } from './components/form'
+export * from './service'
 export * from './types'
