@@ -5,6 +5,7 @@ const withTM = require('next-transpile-modules')([
   '@dew-org/catalogue',
   '@dew-org/inventory',
   '@dew-org/invoices',
+  '@dew-org/shops',
 ])
 
 /**

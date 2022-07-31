@@ -1,0 +1,21 @@
+{
+  "name": "@dew-org/shops",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nextui-org/react": "^1.0.0-beta.9",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "config": "*",
+    "react-hook-form": "^7.33.1",
+    "react-iconly": "^2.2.5",
+    "react-intl": "^6.0.5",
+    "swr": "^1.3.0",
+    "tsconfig": "*",
+    "typescript": "^4.7.4"
+  }
+}

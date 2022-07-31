@@ -1,5 +1,6 @@
 import { UserProvider } from '@auth0/nextjs-auth0'
 import DefaultLayout from '@dew-org/layouts/default'
+import { ShopProvider } from '@dew-org/shops'
 import { darkTheme, lightTheme } from '@dew-org/theme'
 import { NextUIProvider } from '@nextui-org/react'
 import { AnimatePresence, domAnimation, LazyMotion } from 'framer-motion'
@@ -40,16 +41,18 @@ const App = ({ Component, pageProps, router }: AppPropsWithLayout) => {
           messages={pageProps.intlMessages}
         >
           <UserProvider>
-            <Layout>
-              <LazyMotion features={domAnimation}>
-                <AnimatePresence
-                  exitBeforeEnter
-                  onExitComplete={() => window.scrollTo(0, 0)}
-                >
-                  <Component {...pageProps} key={router.route} />
-                </AnimatePresence>
-              </LazyMotion>
-            </Layout>
+            <ShopProvider>
+              <Layout>
+                <LazyMotion features={domAnimation}>
+                  <AnimatePresence
+                    exitBeforeEnter
+                    onExitComplete={() => window.scrollTo(0, 0)}
+                  >
+                    <Component {...pageProps} key={router.route} />
+                  </AnimatePresence>
+                </LazyMotion>
+              </Layout>
+            </ShopProvider>
           </UserProvider>
         </IntlProvider>
       </NextUIProvider>
