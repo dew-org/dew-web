@@ -1,6 +1,6 @@
 {
   "name": "turborepo-basic-shared",
-  "version": "0.0.5",
+  "version": "0.1.17",
   "private": true,
   "workspaces": [
     "apps/*",
