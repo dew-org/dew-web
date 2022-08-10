@@ -1,11 +1,13 @@
+import { useUser } from '@auth0/nextjs-auth0'
 import Community from '@dew-org/components/community'
+import Dashboard from '@dew-org/components/dashboard'
 import FeaturesGrid from '@dew-org/components/features-grid'
 import Hero from '@dew-org/components/hero'
 import { Section } from '@dew-org/components/primitives'
 import landing from '@dew-org/content/landing'
 import { levitating } from '@dew-org/utils/animations'
 import loadI18nMessages from '@dew-org/utils/i18n/load-intl-messages'
-import { Row, Spacer } from '@nextui-org/react'
+import { Loading, Row, Spacer } from '@nextui-org/react'
 import { ChevronDown } from 'react-iconly'
 
 export const getStaticProps = async context => {
@@ -19,39 +21,55 @@ export const getStaticProps = async context => {
   }
 }
 
-const App = () => (
-  <>
-    <Hero />
+const App = () => {
+  const { user, isLoading } = useUser()
 
-    <Spacer y={1.5} />
+  return (
+    <>
+      {isLoading && (
+        <Row align="center" justify="center">
+          <Loading size="lg"></Loading>
+        </Row>
+      )}
 
-    <Row
-      align="center"
-      justify="center"
-      css={{
-        animation: `${levitating} 3s ease infinite`,
-      }}
-    >
-      <ChevronDown size={50} set="bold" />
-    </Row>
+      {!isLoading && user && <Dashboard />}
 
-    <Spacer y={2.5} />
+      {!isLoading && !user && (
+        <>
+          <Hero />
 
-    <Section>
-      <FeaturesGrid
-        features={landing.features}
-        css={{ justifyContent: 'center' }}
-      />
-    </Section>
+          <Spacer y={1.5} />
 
-    <Spacer y={6} />
+          <Row
+            align="center"
+            justify="center"
+            css={{
+              animation: `${levitating} 3s ease infinite`,
+            }}
+          >
+            <ChevronDown size={50} set="bold" />
+          </Row>
 
-    <Section>
-      <Community />
-    </Section>
+          <Spacer y={2.5} />
 
-    <Spacer y={4} />
-  </>
-)
+          <Section>
+            <FeaturesGrid
+              features={landing.features}
+              css={{ justifyContent: 'center' }}
+            />
+          </Section>
+
+          <Spacer y={6} />
+
+          <Section>
+            <Community />
+          </Section>
+
+          <Spacer y={4} />
+        </>
+      )}
+    </>
+  )
+}
 
 export default App
