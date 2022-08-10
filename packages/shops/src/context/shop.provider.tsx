@@ -11,10 +11,14 @@ const ShopProvider: FC<PropsWithChildren<Props>> = ({ children }) => {
   const router = useRouter()
 
   useEffect(() => {
-    if (error) {
-      if (error?.response?.status === 404) {
-        router.push('/shops/register')
-      }
+    const redirectToRegisterShop =
+      error &&
+      error?.response?.status === 404 &&
+      router.pathname !== '/shops/register' &&
+      process.env.NEXT_REDIRECT_SHOPS
+
+    if (redirectToRegisterShop) {
+      router.push('/shops/register')
     }
   }, [error, router])
 
