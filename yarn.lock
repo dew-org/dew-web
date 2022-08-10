@@ -3429,10 +3429,10 @@ eslint-plugin-es@^4.1.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-formatjs@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-4.0.2.tgz#63e92f634bc2c824ee423ad30f29685c895ff555"
-  integrity sha512-6tEtLtH4N39pnYp5MjelxHDdohU6yMp5fmXqQq4Uu8MAbkAWAiufNKXfFdLSjuPa0lY5x/ExXKJHr1NJsZtzVA==
+eslint-plugin-formatjs@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-4.1.0.tgz#3dfcd6c44037414229d1e071817fc0496f36e213"
+  integrity sha512-r8qCy5SDwsCcUUdP6ua1gYFd6I+tj/5GORj7jTOGGvmOfzkDQk+6ieaUqZ8ZF7xFUubDvLJwaZLHVdHI4Cq6Yw==
   dependencies:
     "@formatjs/icu-messageformat-parser" "2.1.4"
     "@formatjs/ts-transformer" "3.9.9"
