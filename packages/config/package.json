@@ -12,12 +12,12 @@
     "eslint-plugin-react": "7.30.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.0",
     "eslint-config-next": "^12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-import-resolver-typescript": "^3.4.0",
+    "eslint-import-resolver-typescript": "^3.4.1",
     "eslint-plugin-formatjs": "^4.1.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.8.2",
