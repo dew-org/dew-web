@@ -22,7 +22,7 @@ const AccountAvatar = () => {
         <Dropdown placement="bottom-left">
           <Dropdown.Trigger>
             <User
-              name={user.name}
+              name={''}
               src={user.picture}
               pointer
               size="sm"
