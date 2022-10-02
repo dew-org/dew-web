@@ -1,40 +1,25 @@
-import { styled } from '@nextui-org/react'
+import { Dropdown, styled } from '@nextui-org/react'
 
-export const StyledNavMainContainer = styled('nav', {
-  top: 0,
-  height: '76px',
-  position: 'sticky',
-  background: 'transparent',
-  zIndex: '$max',
+export const StyledDropdownButton = styled(Dropdown.Button, {
+  px: 0,
+  dflex: 'center',
+  svg: { pe: 'none' },
 })
 
-export const StyledNavContainer = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  size: '100%',
-  '& .navbar__social-icon': {
-    fill: '$colors$accents6',
-  },
-  variants: {
-    showBlur: {
-      true: {
-        background: '$background',
-        '@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none))':
-          {
-            background: '$headerBackground',
-          },
-      },
+export const StyledDropdownMenu = styled(Dropdown.Menu, {
+  $$dropdownMenuWidth: '340px',
+  $$dropdownItemHeight: '70px',
+  '& .nextui-dropdown-item': {
+    py: '$4',
+    // dropdown item left icon
+    svg: {
+      color: '$secondary',
+      mr: '$4',
     },
-    detached: {
-      true: {
-        backdropFilter: 'saturate(180%) blur(10px)',
-        boxShadow: '0px 5px 20px -5px rgba(2, 1, 1, 0.1)',
-      },
-      false: {
-        backdropFilter: 'none',
-        boxShadow: 'none',
-        background: 'transparent',
-      },
+    // dropdown item title
+    '& .nextui-dropdown-item-content': {
+      w: '100%',
+      fontWeight: '$semibold',
     },
   },
 })
