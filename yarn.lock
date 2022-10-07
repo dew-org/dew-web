@@ -14,10 +14,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@auth0/nextjs-auth0@^1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-1.9.1.tgz#e7a0e8688b26cee490ed7599fba3b2550b7b698b"
-  integrity sha512-GvX1Ke9YzZRogIvSZhRRuZFwvw5DNuQv233VBUHrUwNi+z/XFE6ZRC0y22NgLsz4xsVdG9WicEwqoFT4rNL/Bw==
+"@auth0/nextjs-auth0@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-1.9.2.tgz#e308f136fd270b16a73007815b79e755734fe639"
+  integrity sha512-QsO6jtDBms0mAb2B1GSqQVEeoj5EIIvUtbWs02O8Tp6FtMXDIvfuJv/EFbPkP/d86e9T/399uiiaUbpgo1g0jg==
   dependencies:
     base64url "^3.0.1"
     cookie "^0.5.0"
@@ -1905,10 +1905,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@*", "@types/jest@^29.1.1":
-  version "29.1.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.1.1.tgz#cf21a0835a1ba9a30ea1966019f1261c6a114c92"
-  integrity sha512-U9Ey07dGWl6fUFaIaUQUKWG5NoKi/zizeVQCGV8s4nSU0jPgqphVZvS64+8BtWYvrc3ZGw6wo943NSYPxkrp/g==
+"@types/jest@*", "@types/jest@^29.1.2":
+  version "29.1.2"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.1.2.tgz#7ad8077043ab5f6c108c8111bcc1d224e5600a87"
+  integrity sha512-y+nlX0h87U0R+wsGn6EBuoRWYyv3KFtwRNP3QWp9+k2tJ2/bqcGS3UxD7jgT+tiwJWWq3UsyV4Y+T6rsMT4XMg==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -1949,10 +1949,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@18.8.2":
-  version "18.8.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.2.tgz#17d42c6322d917764dd3d2d3a10d7884925de067"
-  integrity sha512-cRMwIgdDN43GO4xMWAfJAecYn8wV4JbsOGHNfNUIDiuYkUYAR5ec4Rj7IO2SAhFPEfpPtLtUTbbny/TCT7aDwA==
+"@types/node@*", "@types/node@18.8.3":
+  version "18.8.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.3.tgz#ce750ab4017effa51aed6a7230651778d54e327c"
+  integrity sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==
 
 "@types/node@14 || 16 || 17":
   version "17.0.38"
@@ -3921,10 +3921,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^7.5.2:
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.5.2.tgz#6808f518fb5bcba3177ea377084b5a06d06f6a21"
-  integrity sha512-HKQetVN92thmbl5ALDkmdr0xcTP6JD80l6rASs2g5e92zFkWYBE7rZLy++sbCq0L6JSviusb5t0txt19K8xSwg==
+framer-motion@^7.5.3:
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.5.3.tgz#a1de7d6c4abbf7333619d4a6c8df74c12240be43"
+  integrity sha512-VvANga9Z7bYtKMAsM/je81FwJDHfThOYywN04xVQ4OGdMVY09Bowx/q7nZd6XtytLuv6byc6GT1mYwag+SQ/nw==
   dependencies:
     "@motionone/dom" "10.13.1"
     framesync "6.1.2"
@@ -6167,10 +6167,10 @@ react-error-boundary@^3.1.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-react-hook-form@^7.36.1:
-  version "7.36.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.36.1.tgz#82a311fe8cbe75e689fd4529f083b7c983da6520"
-  integrity sha512-EbYYkCG2p8ywe7ikOH2l02lAFMrrrslZi1I8fqd8ifDGNAkhomHZQzQsP6ksvzrWBKntRe8b5L5L7Zsd+Gm02Q==
+react-hook-form@^7.37.0:
+  version "7.37.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.37.0.tgz#4d1738f092d3d8a3ade34ee892d97350b1032b19"
+  integrity sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==
 
 react-iconly@^2.2.5:
   version "2.2.5"
