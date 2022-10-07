@@ -10,7 +10,6 @@ import {
   Navbar as NextUINavbar,
   Row,
   Spacer,
-  StyledDropdownMenu,
   Text,
   useTheme,
 } from '@nextui-org/react'
@@ -19,7 +18,7 @@ import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
 
 import NavbarBrand from './brand'
-import { StyledDropdownButton } from './styles'
+import { StyledDropdownButton, StyledDropdownMenu } from './styles'
 
 const Navbar = () => {
   const { isDark } = useTheme()
