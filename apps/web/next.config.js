@@ -12,6 +12,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 
 const sentryWebpackPluginOptions = {
   silent: true,
+  dryRun: process.env.VERCEL_ENV !== 'production',
 }
 
 /**
