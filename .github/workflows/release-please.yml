@@ -9,7 +9,6 @@ jobs:
 
     permissions:
       contents: write
-      pull_request: write
 
     steps:
       - uses: google-github-actions/release-please-action@v3

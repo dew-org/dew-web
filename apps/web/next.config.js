@@ -8,10 +8,17 @@ const withTM = require('next-transpile-modules')([
   '@dew-org/shops',
 ])
 
+const { withSentryConfig } = require('@sentry/nextjs')
+
+const sentryWebpackPluginOptions = {
+  silent: true,
+  dryRun: process.env.VERCEL_ENV !== 'production',
+}
+
 /**
  * @type {import('next').NextConfig}
- **/
-module.exports = withTM({
+ */
+const moduleExports = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
@@ -20,4 +27,14 @@ module.exports = withTM({
     locales: ['en', 'es'],
     defaultLocale: 'en',
   },
-})
+
+  sentry: {
+    hideSourceMaps: true,
+    autoInstrumentServerFunctions: true,
+  },
+}
+
+module.exports = withSentryConfig(
+  withTM(moduleExports),
+  sentryWebpackPluginOptions,
+)
