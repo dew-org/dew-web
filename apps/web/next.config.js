@@ -13,6 +13,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const sentryWebpackPluginOptions = {
   silent: true,
   dryRun: process.env.VERCEL_ENV !== 'production',
+  authToken: process.env.SENTRY_AUTH_TOKEN,
 }
 
 /**
