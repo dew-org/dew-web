@@ -39,7 +39,7 @@
     "babel-plugin-formatjs": "^10.3.29",
     "config": "*",
     "eslint": "^8.24.0",
-    "next-transpile-modules": "9.0.0",
+    "next-transpile-modules": "9.1.0",
     "tsconfig": "*",
     "typescript": "4.8.4"
   }
