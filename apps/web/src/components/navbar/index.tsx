@@ -1,11 +1,12 @@
 import { useUser } from '@auth0/nextjs-auth0'
 import AccountAvatar from '@dew-org/components/account-avatar'
+import NavbarMenu from '@dew-org/components/navbar/navbar-menu'
+import SimpleLink from '@dew-org/components/navbar/simple-link'
 import ThemeToggle from '@dew-org/components/theme-toggle'
 import { useSidebarSettings } from '@dew-org/shared'
 import {
   Button,
   Collapse,
-  Dropdown,
   Loading,
   Navbar as NextUINavbar,
   Row,
@@ -14,21 +15,18 @@ import {
   useTheme,
 } from '@nextui-org/react'
 import NextLink from 'next/link'
-import { useRouter } from 'next/router'
 import { FormattedMessage } from 'react-intl'
 
 import NavbarBrand from './brand'
-import { StyledDropdownButton, StyledDropdownMenu } from './styles'
 
 const Navbar = () => {
   const { isDark } = useTheme()
-  const router = useRouter()
 
   const { user, isLoading } = useUser()
   const [routes] = useSidebarSettings()
 
   return (
-    <NextUINavbar isBordered={isDark} variant="sticky">
+    <NextUINavbar isBordered={isDark} variant="sticky" css={{ zIndex: 1000 }}>
       <NextUINavbar.Brand>
         <NextUINavbar.Toggle aria-label="toggle navigation" showIn="xs" />
 
@@ -42,42 +40,25 @@ const Navbar = () => {
         hideIn="xs"
         variant="underline"
       >
-        {routes.map(route => {
-          if (route.routes) {
-            return (
-              <Dropdown isBordered key={route.title}>
-                <NextUINavbar.Item>
-                  <StyledDropdownButton auto light ripple={false}>
-                    {route.title}
-                  </StyledDropdownButton>
-                </NextUINavbar.Item>
-
-                <StyledDropdownMenu
-                  onAction={path => router.push(path as string)}
-                >
-                  {route.routes.map(subRoute => {
-                    return (
-                      <Dropdown.Item
-                        key={subRoute.path}
-                        showFullDescription
-                        description={subRoute.subtitle}
-                        icon={subRoute.icon}
-                      >
-                        {subRoute.title}
-                      </Dropdown.Item>
-                    )
-                  })}
-                </StyledDropdownMenu>
-              </Dropdown>
-            )
-          }
-
-          return (
-            <NextUINavbar.Link href={route.path} key={route.path}>
-              {route.title}
-            </NextUINavbar.Link>
-          )
-        })}
+        {!isLoading && user && (
+          <>
+            {routes.map(route => {
+              return route.routes ? (
+                <NavbarMenu
+                  key={route.id}
+                  title={route.title}
+                  routes={route.routes}
+                />
+              ) : (
+                <SimpleLink
+                  key={route.id}
+                  path={route.path}
+                  title={route.title}
+                />
+              )
+            })}
+          </>
+        )}
       </NextUINavbar.Content>
 
       <NextUINavbar.Content
@@ -124,11 +105,11 @@ const Navbar = () => {
         {routes.map(route => {
           if (route.routes) {
             return (
-              <Collapse.Group key={route.path}>
+              <Collapse.Group key={route.id}>
                 <Collapse title={route.title}>
                   {route.routes.map(subRoute => {
                     return (
-                      <Row key={subRoute.path}>
+                      <Row key={subRoute.id}>
                         <NextLink href={subRoute.path} key={subRoute.path}>
                           <Text>{subRoute.title}</Text>
                         </NextLink>
@@ -141,7 +122,7 @@ const Navbar = () => {
           }
 
           return (
-            <NextUINavbar.CollapseItem key={route.path}>
+            <NextUINavbar.CollapseItem key={route.id}>
               <NextLink href={route.path || '/'}>{route.title}</NextLink>
             </NextUINavbar.CollapseItem>
           )

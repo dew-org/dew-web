@@ -1,4 +1,4 @@
-import { Card, Col, Row, styled, Text } from '@nextui-org/react'
+import { Card, Col, Row, Spacer, styled, Text } from '@nextui-org/react'
 import { FC, ReactNode } from 'react'
 
 type ReportCardProps = {
@@ -10,8 +10,7 @@ type ReportCardProps = {
 }
 
 const ReportCardIcon = styled('span', {
-  fontSize: '70px !important',
-  verticalAlignment: 'middle',
+  fontSize: '56px !important',
   variants: {
     color: {
       primary: {
@@ -29,29 +28,30 @@ const ReportCardIcon = styled('span', {
 
 const ReportCard: FC<ReportCardProps> = ({ title, info, icon, color }) => {
   return (
-    <Card>
+    <Card variant="bordered">
       <Card.Body css={{ p: 24 }}>
-        <Row>
-          <Col span={8}>
-            <Row>
-              <Text b size={14} css={{ color: '$accents8' }}>
-                {title}
-              </Text>
-            </Row>
-            <Row>
-              <Text b size={30}>
-                {info}
-              </Text>
-            </Row>
-          </Col>
-          <Col span={4}>
-            <Row justify="flex-end">
+        <Row align="center">
+          <Col span={2}>
+            <Row justify="flex-start">
               <ReportCardIcon
                 color={color}
                 className="material-symbols-rounded"
               >
                 {icon}
               </ReportCardIcon>
+            </Row>
+          </Col>
+
+          <Spacer x={1} />
+
+          <Col>
+            <Row justify="flex-start">
+              <Text size={14} css={{ color: '$accents8' }}>
+                {title}
+              </Text>
+            </Row>
+            <Row>
+              <Text size={30}>{info}</Text>
             </Row>
           </Col>
         </Row>
