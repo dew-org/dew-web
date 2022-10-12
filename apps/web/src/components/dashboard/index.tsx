@@ -6,8 +6,10 @@ import { FormattedMessage, FormattedNumber } from 'react-intl'
 const Dashboard = () => {
   return (
     <Container fluid>
+      <Spacer y={1} />
+
       <Row>
-        <Text h1>
+        <Text h1 css={{ fontWeight: 100 }}>
           <FormattedMessage defaultMessage="Dashboard" />
         </Text>
       </Row>
