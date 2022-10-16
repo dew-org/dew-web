@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.5](https://github.com/dew-org/dew-web/compare/v0.2.4...v0.2.5) (2022-10-16)
+
+
+### Bug Fixes
+
+* **shops:** add '/' on swr call ([4e72615](https://github.com/dew-org/dew-web/commit/4e72615ef462025728829177f43fd02f61567f7b))
+* **shops:** add missing then ([cfd71f7](https://github.com/dew-org/dew-web/commit/cfd71f777b6c731a17dd51508abc8f53b06ec79a))
+
 ## [0.2.0](https://github.com/dew-org/dew-web/compare/v0.1.16...v0.2.0) (2022-10-02)
 
 ### [0.1.16](https://github.com/dew-org/dew-web/compare/v0.1.15...v0.1.16) (2022-08-10)
