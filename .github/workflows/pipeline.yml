@@ -10,7 +10,7 @@ on:
       - main
       - develop
   release:
-    types: [ published ]
+    types: [ released ]
 
 env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
