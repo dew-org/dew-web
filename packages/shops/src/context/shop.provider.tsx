@@ -15,7 +15,7 @@ const ShopProvider: FC<PropsWithChildren<Props>> = ({ children }) => {
       error &&
       error?.response?.status === 404 &&
       router.pathname !== '/shops/register' &&
-      process.env.NEXT_REDIRECT_SHOPS
+      process.env.NEXT_PUBLIC_REDIRECT_SHOPS
 
     if (redirectToRegisterShop) {
       router.push('/shops/register').then()
