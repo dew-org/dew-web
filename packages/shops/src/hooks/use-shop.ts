@@ -10,7 +10,7 @@ type UseShopHook = {
 }
 
 const useShop = (): UseShopHook => {
-  const { data, isValidating, error } = useSWR<Shop>('api/shops', fetcher)
+  const { data, isValidating, error } = useSWR<Shop>('/api/shops', fetcher)
 
   return {
     shop: data,
