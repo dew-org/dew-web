@@ -1,9 +1,15 @@
 {
+  "/7XQ/r": {
+    "defaultMessage": "Precio de venta: {salePrice} $"
+  },
   "/OzczE": {
     "defaultMessage": "Un software de facturación moderno, seguro y fácil de usar."
   },
   "/RLvL4": {
     "defaultMessage": "El impuesto es requerido"
+  },
+  "0833qA": {
+    "defaultMessage": "Registrar tienda"
   },
   "1z+0TS": {
     "defaultMessage": "Id debe ser un número"
@@ -17,8 +23,17 @@
   "2O2sfp": {
     "defaultMessage": "Finalizar"
   },
+  "47FYwb": {
+    "defaultMessage": "Cancelar"
+  },
   "5WgK3Y": {
     "defaultMessage": "Dirección de email inválida"
+  },
+  "5Wwopw": {
+    "defaultMessage": "Precios"
+  },
+  "5q3qC0": {
+    "defaultMessage": "Descargar"
   },
   "6KppbL": {
     "defaultMessage": "Item de factura"
@@ -59,6 +74,9 @@
   "HAyFhM": {
     "defaultMessage": "Precio de venta"
   },
+  "HKUbi1": {
+    "defaultMessage": "Facturas generadas"
+  },
   "HtNqED": {
     "defaultMessage": "El precio de venta debe ser un número"
   },
@@ -71,6 +89,9 @@
   "J3HQl7": {
     "defaultMessage": "Registrar factura"
   },
+  "Jm23bC": {
+    "defaultMessage": "Factura #{id}"
+  },
   "KDO3hW": {
     "defaultMessage": "Añadir item"
   },
@@ -80,14 +101,29 @@
   "Lv0zJu": {
     "defaultMessage": "Detalles"
   },
+  "MEkTSF": {
+    "defaultMessage": "Impuesto y descuento"
+  },
   "MJ2jZQ": {
     "defaultMessage": "Total"
+  },
+  "MlzEfB": {
+    "defaultMessage": "Inventario"
   },
   "MqyZ5D": {
     "defaultMessage": "El impuesto debe ser mayor que 0"
   },
+  "O95R3Z": {
+    "defaultMessage": "Teléfono"
+  },
+  "OPjEjH": {
+    "defaultMessage": "NIT"
+  },
   "PVN7PL": {
     "defaultMessage": "Registrar stock"
+  },
+  "PWe6/f": {
+    "defaultMessage": "La dirección es requerida"
   },
   "Pc+tM3": {
     "defaultMessage": "Generar"
@@ -109,6 +145,9 @@
   },
   "Ryr4CL": {
     "defaultMessage": "Cantidad debe ser un número"
+  },
+  "Si+4V5": {
+    "defaultMessage": "El NIT es requerido"
   },
   "TYXQqX": {
     "defaultMessage": "En stock: {stock}"
@@ -137,8 +176,14 @@
   "W6Tn0A": {
     "defaultMessage": "Cantidad debe ser menor que {max}"
   },
+  "XFKV5Z": {
+    "defaultMessage": "Creado el: {date}"
+  },
   "YT6TEY": {
     "defaultMessage": "{discount}% de descuento"
+  },
+  "YTI6Sn": {
+    "defaultMessage": "Impuesto: {tax}%"
   },
   "Z0kULb": {
     "defaultMessage": "Registrar producto"
@@ -149,8 +194,23 @@
   "buKW6Q": {
     "defaultMessage": "Precio de venta recomendado"
   },
+  "bylaAF": {
+    "defaultMessage": "Nueva factura"
+  },
+  "cU/aSG": {
+    "defaultMessage": "El email es requerido"
+  },
   "dSlWxb": {
     "defaultMessage": "Registrar cliente"
+  },
+  "e61Jf3": {
+    "defaultMessage": "Próximamente"
+  },
+  "e6Ph5+": {
+    "defaultMessage": "Dirección"
+  },
+  "gWiseT": {
+    "defaultMessage": "Productos vendidos"
   },
   "h2vipu": {
     "defaultMessage": "Código"
@@ -160,6 +220,9 @@
   },
   "hkENym": {
     "defaultMessage": "Cliente"
+  },
+  "hzSNj4": {
+    "defaultMessage": "Dashboard"
   },
   "itPgxd": {
     "defaultMessage": "Perfil"
@@ -179,8 +242,14 @@
   "kQAf2d": {
     "defaultMessage": "Seleccionar"
   },
+  "kZ7kzU": {
+    "defaultMessage": "El email es requerido"
+  },
   "l25Fiw": {
     "defaultMessage": "Código requerido"
+  },
+  "l9Lq/A": {
+    "defaultMessage": "Descuento: {discount}%"
   },
   "mE+NeJ": {
     "defaultMessage": "Registrar factura"
@@ -191,14 +260,23 @@
   "nxGZ0T": {
     "defaultMessage": "Registrar cliente"
   },
+  "o8eQik": {
+    "defaultMessage": "Disponible: {available}"
+  },
   "oR2Zwh": {
     "defaultMessage": "Número de teléfono inválido"
+  },
+  "pEzmHS": {
+    "defaultMessage": "Ganancias del mes"
   },
   "q62Y7N": {
     "defaultMessage": "El precio de venta recomendado es requerido"
   },
   "qVGRIE": {
     "defaultMessage": "Cantidad"
+  },
+  "sAYNYt": {
+    "defaultMessage": "Precio final: {price} $"
   },
   "sy+pv5": {
     "defaultMessage": "Email"
@@ -221,11 +299,26 @@
   "vuKrlW": {
     "defaultMessage": "Stock"
   },
+  "vzqS9m": {
+    "defaultMessage": "El teléfono es requerido"
+  },
+  "wFMlsH": {
+    "defaultMessage": "Actualizado el"
+  },
   "wKrkcP": {
     "defaultMessage": "Cantidad es requerida"
   },
   "wL7VAE": {
     "defaultMessage": "Acciones"
+  },
+  "wRZ3rX": {
+    "defaultMessage": "El número de teléfono es inválido"
+  },
+  "wkXr+U": {
+    "defaultMessage": "Precio recomendado: {regularPrice} $"
+  },
+  "xD3Bn3": {
+    "defaultMessage": "Cantidad: {quantity}"
   },
   "yNmV/R": {
     "defaultMessage": "Items"

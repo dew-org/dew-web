@@ -1,9 +1,15 @@
 {
+  "/7XQ/r": {
+    "defaultMessage": "Sale price: {salePrice} $"
+  },
   "/OzczE": {
     "defaultMessage": "A modern, secure, and easy to use billing software."
   },
   "/RLvL4": {
     "defaultMessage": "Tax is required"
+  },
+  "0833qA": {
+    "defaultMessage": "Register Shop"
   },
   "1z+0TS": {
     "defaultMessage": "Id must be a number"
@@ -17,8 +23,17 @@
   "2O2sfp": {
     "defaultMessage": "Finish"
   },
+  "47FYwb": {
+    "defaultMessage": "Cancel"
+  },
   "5WgK3Y": {
     "defaultMessage": "Invalid email address"
+  },
+  "5Wwopw": {
+    "defaultMessage": "Pricing"
+  },
+  "5q3qC0": {
+    "defaultMessage": "Download"
   },
   "6KppbL": {
     "defaultMessage": "Invoice Item"
@@ -59,6 +74,9 @@
   "HAyFhM": {
     "defaultMessage": "Sale price"
   },
+  "HKUbi1": {
+    "defaultMessage": "Generated invoices"
+  },
   "HtNqED": {
     "defaultMessage": "Sale price must be a number"
   },
@@ -71,6 +89,9 @@
   "J3HQl7": {
     "defaultMessage": "Register invoice"
   },
+  "Jm23bC": {
+    "defaultMessage": "Invoice #{id}"
+  },
   "KDO3hW": {
     "defaultMessage": "Add item"
   },
@@ -80,14 +101,29 @@
   "Lv0zJu": {
     "defaultMessage": "Details"
   },
+  "MEkTSF": {
+    "defaultMessage": "Tax and discount"
+  },
   "MJ2jZQ": {
     "defaultMessage": "Total"
+  },
+  "MlzEfB": {
+    "defaultMessage": "Inventory"
   },
   "MqyZ5D": {
     "defaultMessage": "Tax must be greater than 0"
   },
+  "O95R3Z": {
+    "defaultMessage": "Phone"
+  },
+  "OPjEjH": {
+    "defaultMessage": "NIT"
+  },
   "PVN7PL": {
     "defaultMessage": "Register stock"
+  },
+  "PWe6/f": {
+    "defaultMessage": "Address is required"
   },
   "Pc+tM3": {
     "defaultMessage": "Generate"
@@ -109,6 +145,9 @@
   },
   "Ryr4CL": {
     "defaultMessage": "Quantity must be a number"
+  },
+  "Si+4V5": {
+    "defaultMessage": "NIT is required"
   },
   "TYXQqX": {
     "defaultMessage": "In stock: {stock}"
@@ -137,8 +176,14 @@
   "W6Tn0A": {
     "defaultMessage": "Quantity must be less than {max}"
   },
+  "XFKV5Z": {
+    "defaultMessage": "Created at: {date}"
+  },
   "YT6TEY": {
     "defaultMessage": "{discount}% off"
+  },
+  "YTI6Sn": {
+    "defaultMessage": "Tax: {tax}%"
   },
   "Z0kULb": {
     "defaultMessage": "Register Product"
@@ -149,8 +194,23 @@
   "buKW6Q": {
     "defaultMessage": "Retail price"
   },
+  "bylaAF": {
+    "defaultMessage": "New invoice"
+  },
+  "cU/aSG": {
+    "defaultMessage": "Email is required"
+  },
   "dSlWxb": {
     "defaultMessage": "Register Customer"
+  },
+  "e61Jf3": {
+    "defaultMessage": "Coming soon"
+  },
+  "e6Ph5+": {
+    "defaultMessage": "Address"
+  },
+  "gWiseT": {
+    "defaultMessage": "Sold products"
   },
   "h2vipu": {
     "defaultMessage": "Code"
@@ -160,6 +220,9 @@
   },
   "hkENym": {
     "defaultMessage": "Customer"
+  },
+  "hzSNj4": {
+    "defaultMessage": "Dashboard"
   },
   "itPgxd": {
     "defaultMessage": "Profile"
@@ -179,8 +242,14 @@
   "kQAf2d": {
     "defaultMessage": "Select"
   },
+  "kZ7kzU": {
+    "defaultMessage": "Email is invalid"
+  },
   "l25Fiw": {
     "defaultMessage": "Code is required"
+  },
+  "l9Lq/A": {
+    "defaultMessage": "Discount: {discount}%"
   },
   "mE+NeJ": {
     "defaultMessage": "Register Invoice"
@@ -191,14 +260,23 @@
   "nxGZ0T": {
     "defaultMessage": "Register customer"
   },
+  "o8eQik": {
+    "defaultMessage": "Available: {available}"
+  },
   "oR2Zwh": {
     "defaultMessage": "Phone number is invalid"
+  },
+  "pEzmHS": {
+    "defaultMessage": "Month profits"
   },
   "q62Y7N": {
     "defaultMessage": "Retail price is required"
   },
   "qVGRIE": {
     "defaultMessage": "Quantity"
+  },
+  "sAYNYt": {
+    "defaultMessage": "Final price: {price} $"
   },
   "sy+pv5": {
     "defaultMessage": "Email"
@@ -221,11 +299,26 @@
   "vuKrlW": {
     "defaultMessage": "Stock"
   },
+  "vzqS9m": {
+    "defaultMessage": "Phone is required"
+  },
+  "wFMlsH": {
+    "defaultMessage": "Updated at"
+  },
   "wKrkcP": {
     "defaultMessage": "Quantity is required"
   },
   "wL7VAE": {
     "defaultMessage": "Actions"
+  },
+  "wRZ3rX": {
+    "defaultMessage": "Phone is invalid"
+  },
+  "wkXr+U": {
+    "defaultMessage": "Retail price: {regularPrice} $"
+  },
+  "xD3Bn3": {
+    "defaultMessage": "Quantity: {quantity}"
   },
   "yNmV/R": {
     "defaultMessage": "Items"
