@@ -93,8 +93,8 @@ jobs:
         uses: codecov/codecov-action@v1
 
   deploy:
-
-    if: github.event_name == 'release'
+    # Release on push on main branch
+    if: github.ref == 'refs/heads/main'
 
     needs: [ test ]
 
