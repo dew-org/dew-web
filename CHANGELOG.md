@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/dew-org/dew-web/compare/v0.2.5...v0.3.0) (2022-10-16)
+
+
+### Features
+
+* add new intl messages [skip ci] ([5c0aa5a](https://github.com/dew-org/dew-web/commit/5c0aa5a45d4e41e9551e8303197f97f0b4030f1e))
+
+
+### Bug Fixes
+
+* update formatjs extract command ([aef6835](https://github.com/dew-org/dew-web/commit/aef6835cc9b50cd140bc03dae767db9944a78ebc))
+
 ## [0.2.5](https://github.com/dew-org/dew-web/compare/v0.2.4...v0.2.5) (2022-10-16)
 
 
