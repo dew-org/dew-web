@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.1](https://github.com/dew-org/dew-web/compare/v0.3.0...v0.3.1) (2022-10-16)
+
+
+### Bug Fixes
+
+* **shops:** change bad variable naming ([#451](https://github.com/dew-org/dew-web/issues/451)) ([#452](https://github.com/dew-org/dew-web/issues/452)) ([9532ef0](https://github.com/dew-org/dew-web/commit/9532ef08c60a3a3952ca0f3b7b8e157bc5f590fa))
+
+## [0.3.0](https://github.com/dew-org/dew-web/compare/v0.2.5...v0.3.0) (2022-10-16)
+
+
+### Features
+
+* add new intl messages [skip ci] ([5c0aa5a](https://github.com/dew-org/dew-web/commit/5c0aa5a45d4e41e9551e8303197f97f0b4030f1e))
+
+
+### Bug Fixes
+
+* update formatjs extract command ([aef6835](https://github.com/dew-org/dew-web/commit/aef6835cc9b50cd140bc03dae767db9944a78ebc))
+
+## [0.2.5](https://github.com/dew-org/dew-web/compare/v0.2.4...v0.2.5) (2022-10-16)
+
+
+### Bug Fixes
+
+* **shops:** add '/' on swr call ([4e72615](https://github.com/dew-org/dew-web/commit/4e72615ef462025728829177f43fd02f61567f7b))
+* **shops:** add missing then ([cfd71f7](https://github.com/dew-org/dew-web/commit/cfd71f777b6c731a17dd51508abc8f53b06ec79a))
+
 ## [0.2.0](https://github.com/dew-org/dew-web/compare/v0.1.16...v0.2.0) (2022-10-02)
 
 ### [0.1.16](https://github.com/dew-org/dew-web/compare/v0.1.15...v0.1.16) (2022-08-10)
