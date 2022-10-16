@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.1](https://github.com/dew-org/dew-web/compare/v0.3.0...v0.3.1) (2022-10-16)
+
+
+### Bug Fixes
+
+* **shops:** change bad variable naming ([#451](https://github.com/dew-org/dew-web/issues/451)) ([#452](https://github.com/dew-org/dew-web/issues/452)) ([9532ef0](https://github.com/dew-org/dew-web/commit/9532ef08c60a3a3952ca0f3b7b8e157bc5f590fa))
+
 ## [0.3.0](https://github.com/dew-org/dew-web/compare/v0.2.5...v0.3.0) (2022-10-16)
 
 
