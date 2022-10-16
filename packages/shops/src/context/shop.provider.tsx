@@ -18,7 +18,7 @@ const ShopProvider: FC<PropsWithChildren<Props>> = ({ children }) => {
       process.env.NEXT_REDIRECT_SHOPS
 
     if (redirectToRegisterShop) {
-      router.push('/shops/register')
+      router.push('/shops/register').then()
     }
   }, [error, router])
 
