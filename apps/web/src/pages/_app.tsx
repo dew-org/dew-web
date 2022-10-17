@@ -57,7 +57,7 @@ const App = ({ Component, pageProps, router }: AppPropsWithLayout) => {
                 <Layout>
                   <LazyMotion features={domAnimation}>
                     <AnimatePresence
-                      exitBeforeEnter
+                      mode="wait"
                       onExitComplete={() => window.scrollTo(0, 0)}
                     >
                       <Component {...pageProps} key={router.route} />
