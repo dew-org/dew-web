@@ -1,5 +1,6 @@
 import { UserProvider } from '@auth0/nextjs-auth0'
 import DefaultLayout from '@dew-org/layouts/default'
+import { fetcher } from '@dew-org/shared'
 import { ShopProvider } from '@dew-org/shops'
 import { darkTheme, lightTheme } from '@dew-org/theme'
 import { NextUIProvider } from '@nextui-org/react'
@@ -9,6 +10,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { IntlProvider } from 'react-intl'
+import { SWRConfig, SWRConfiguration } from 'swr'
 
 type NextPageWithLayout = NextPage & {
   defaultProps?: {
@@ -18,6 +20,15 @@ type NextPageWithLayout = NextPage & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
+}
+
+const SWRConfigOptions: SWRConfiguration = {
+  fetcher: (url: string) => fetcher(url),
+  revalidateOnFocus: false,
+  revalidateOnReconnect: true,
+  errorRetryCount: Number(process.env.NEXT_PUBLIC_SWR_ERROR_RETRY_COUNT) || 3,
+  errorRetryInterval:
+    Number(process.env.NEXT_PUBLIC_SWR_ERROR_RETRY_INTERVAL) || 1000,
 }
 
 const App = ({ Component, pageProps, router }: AppPropsWithLayout) => {
@@ -40,20 +51,22 @@ const App = ({ Component, pageProps, router }: AppPropsWithLayout) => {
           defaultLocale={defaultLocale}
           messages={pageProps.intlMessages}
         >
-          <UserProvider>
-            <ShopProvider>
-              <Layout>
-                <LazyMotion features={domAnimation}>
-                  <AnimatePresence
-                    exitBeforeEnter
-                    onExitComplete={() => window.scrollTo(0, 0)}
-                  >
-                    <Component {...pageProps} key={router.route} />
-                  </AnimatePresence>
-                </LazyMotion>
-              </Layout>
-            </ShopProvider>
-          </UserProvider>
+          <SWRConfig value={SWRConfigOptions}>
+            <UserProvider>
+              <ShopProvider>
+                <Layout>
+                  <LazyMotion features={domAnimation}>
+                    <AnimatePresence
+                      mode="wait"
+                      onExitComplete={() => window.scrollTo(0, 0)}
+                    >
+                      <Component {...pageProps} key={router.route} />
+                    </AnimatePresence>
+                  </LazyMotion>
+                </Layout>
+              </ShopProvider>
+            </UserProvider>
+          </SWRConfig>
         </IntlProvider>
       </NextUIProvider>
     </NextThemesProvider>
