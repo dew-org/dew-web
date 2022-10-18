@@ -14,4 +14,5 @@ jobs:
         with:
           release-type: node
           package-name: dew-web
+          token: ${{ secrets.PAT }}
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type": "build", "section": "Build System", "hidden": false}]'
