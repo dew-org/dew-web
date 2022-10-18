@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.1](https://github.com/dew-org/dew-web/compare/v0.4.0...v0.4.1) (2022-10-18)
+
+
+### Build System
+
+* **deps-dev:** bump @types/node from 18.8.5 to 18.11.0 ([#463](https://github.com/dew-org/dew-web/issues/463)) ([cda6b10](https://github.com/dew-org/dew-web/commit/cda6b105d9bf6be6e0d8121040917bba0f50b0cf))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#461](https://github.com/dew-org/dew-web/issues/461)) ([f116fb4](https://github.com/dew-org/dew-web/commit/f116fb4368f0d53c5496fd323a1b75f3ba32ef55))
+* **deps-dev:** bump @typescript-eslint/parser from 5.40.0 to 5.40.1 ([#465](https://github.com/dew-org/dew-web/issues/465)) ([4a77d56](https://github.com/dew-org/dew-web/commit/4a77d56d0faebd07b48a934af13f41f47eee3dd6))
+* **deps-dev:** bump babel-plugin-formatjs from 10.3.30 to 10.3.31 ([#458](https://github.com/dew-org/dew-web/issues/458)) ([2a38959](https://github.com/dew-org/dew-web/commit/2a389594f554ebffacb8e6ae24bf5e3ef61d6b07))
+* **deps-dev:** bump eslint-plugin-formatjs from 4.3.3 to 4.3.4 ([#462](https://github.com/dew-org/dew-web/issues/462)) ([2498604](https://github.com/dew-org/dew-web/commit/2498604a8d3c9919e9b5439e3e1a55f8250d0c49))
+* **deps-dev:** bump eslint-plugin-jest from 27.1.1 to 27.1.2 ([#457](https://github.com/dew-org/dew-web/issues/457)) ([7185e95](https://github.com/dew-org/dew-web/commit/7185e959e4475925b3629c2841b1f58d7ba33187))
+* **deps-dev:** bump eslint-plugin-jest from 27.1.2 to 27.1.3 ([#470](https://github.com/dew-org/dew-web/issues/470)) ([5a5b220](https://github.com/dew-org/dew-web/commit/5a5b22075f3441b91ba0d47923b0cd200bbda360))
+* **deps-dev:** bump eslint-plugin-testing-library from 5.7.2 to 5.7.3 ([#468](https://github.com/dew-org/dew-web/issues/468)) ([a2ba7a1](https://github.com/dew-org/dew-web/commit/a2ba7a198b695efc22a889240245c1dfe2aa4610))
+* **deps-dev:** bump jest and @types/jest ([#467](https://github.com/dew-org/dew-web/issues/467)) ([a4b9ab4](https://github.com/dew-org/dew-web/commit/a4b9ab4c9f02296a0728f244b7173b20ee83d553))
+* **deps-dev:** bump jest-environment-jsdom from 29.2.0 to 29.2.1 ([#471](https://github.com/dew-org/dew-web/issues/471)) ([549922a](https://github.com/dew-org/dew-web/commit/549922a09d535a95acb8aba61ade667571ae52cb))
+* **deps:** bump @formatjs/cli from 5.1.2 to 5.1.3 ([#466](https://github.com/dew-org/dew-web/issues/466)) ([c1a3296](https://github.com/dew-org/dew-web/commit/c1a3296eb9359e9e70bd253ce2f1f3124809ff7f))
+* **deps:** bump axios from 0.27.2 to 1.1.3 ([#460](https://github.com/dew-org/dew-web/issues/460)) ([4cbdb6b](https://github.com/dew-org/dew-web/commit/4cbdb6bef93f03af210825c6bcddc1120508e266))
+* **deps:** bump framer-motion from 7.5.3 to 7.5.4 ([#459](https://github.com/dew-org/dew-web/issues/459)) ([3134054](https://github.com/dew-org/dew-web/commit/3134054b37c27d857c4c56398e0701ede2c8eeb8))
+* **deps:** bump framer-motion from 7.5.4 to 7.6.1 ([#469](https://github.com/dew-org/dew-web/issues/469)) ([e09c83a](https://github.com/dew-org/dew-web/commit/e09c83a24a7f60c419b96e4818d63f9016cb0a19))
+* **deps:** bump nextjs-progressbar from 0.0.15 to 0.0.16 ([#464](https://github.com/dew-org/dew-web/issues/464)) ([ac32b69](https://github.com/dew-org/dew-web/commit/ac32b69675b08b85681b2e9cf0b0efcf8e700b30))
+* **deps:** bump react-intl from 6.2.0 to 6.2.1 ([#456](https://github.com/dew-org/dew-web/issues/456)) ([51414e5](https://github.com/dew-org/dew-web/commit/51414e53247c7afbd3312c53c2286a2f063dc1a2))
+
 ## [0.4.0](https://github.com/dew-org/dew-web/compare/v0.3.1...v0.4.0) (2022-10-17)
 
 
