@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/dew-org/dew-web/compare/v0.5.0...v0.6.0) (2022-10-26)
+
+
+### Features
+
+* add api routes ([3e61a90](https://github.com/dew-org/dew-web/commit/3e61a90da7f793f8e77af696a147ba74b2312f7e))
+* **analytics:** add initial package files ([aa6a2a5](https://github.com/dew-org/dew-web/commit/aa6a2a54f9ebf6130a28d06e1197fb70ad6463ad))
+* **analytics:** add package exports ([af3707f](https://github.com/dew-org/dew-web/commit/af3707fe3d43897b366101f67e4f74dca6a1035e))
+* **analytics:** add report card component ([34b8188](https://github.com/dew-org/dew-web/commit/34b81882b824c00588eff51a528a8c0c7f34ea1f))
+* **analytics:** add types and service ([415dd4e](https://github.com/dew-org/dew-web/commit/415dd4e9dca12e308b561a37b0feb80bed22cb7a))
+* **analytics:** add use analytics and use now analytics hooks ([eeabbdd](https://github.com/dew-org/dew-web/commit/eeabbdd97f4cd222b365b3264b86936f5b701fce))
+* **analytics:** load analytics on dashboard ([1256d14](https://github.com/dew-org/dew-web/commit/1256d149fdf565294203818e3d345b63736b21aa))
+
+
+### Build System
+
+* **deps-dev:** bump @types/node from 18.11.0 to 18.11.3 ([#481](https://github.com/dew-org/dew-web/issues/481)) ([e66deb1](https://github.com/dew-org/dew-web/commit/e66deb1289dffa7a12095d234f96a17db146d809))
+* **deps-dev:** bump @types/node from 18.11.3 to 18.11.5 ([#491](https://github.com/dew-org/dew-web/issues/491)) ([d2449b6](https://github.com/dew-org/dew-web/commit/d2449b6ee3bf840a581038df74bacc428ce4515c))
+* **deps-dev:** bump @types/node from 18.11.5 to 18.11.6 ([#497](https://github.com/dew-org/dew-web/issues/497)) ([0e623f6](https://github.com/dew-org/dew-web/commit/0e623f6644b1beeec23f0566f09ca08f4be48ab6))
+* **deps-dev:** bump @types/react from 18.0.21 to 18.0.22 ([#488](https://github.com/dew-org/dew-web/issues/488)) ([8b943ae](https://github.com/dew-org/dew-web/commit/8b943ae465475c00ff5a31e29d0e746d4081162b))
+* **deps-dev:** bump @types/react from 18.0.22 to 18.0.23 ([#495](https://github.com/dew-org/dew-web/issues/495)) ([4eb27be](https://github.com/dew-org/dew-web/commit/4eb27bed6144841c2c588e2518347626b6406a22))
+* **deps-dev:** bump @types/react-dom from 18.0.6 to 18.0.7 ([#494](https://github.com/dew-org/dew-web/issues/494)) ([4e1354c](https://github.com/dew-org/dew-web/commit/4e1354c034bae1106ca92eb0d95523eb90c4a331))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([#490](https://github.com/dew-org/dew-web/issues/490)) ([f73264c](https://github.com/dew-org/dew-web/commit/f73264cb7196da3a4338eece758361f877ef4561))
+* **deps-dev:** bump @typescript-eslint/parser from 5.40.1 to 5.41.0 ([#492](https://github.com/dew-org/dew-web/issues/492)) ([5f40a47](https://github.com/dew-org/dew-web/commit/5f40a47bce89da1fcee2b9996145b4afed94505a))
+* **deps-dev:** bump esbuild from 0.15.11 to 0.15.12 ([#477](https://github.com/dew-org/dew-web/issues/477)) ([50e876c](https://github.com/dew-org/dew-web/commit/50e876cc8fd0c74146d121d7007fccc88c9b156c))
+* **deps-dev:** bump eslint from 8.25.0 to 8.26.0 ([#486](https://github.com/dew-org/dew-web/issues/486)) ([564256c](https://github.com/dew-org/dew-web/commit/564256c6d8dd99651cf625bfa1f432ba96cd4910))
+* **deps-dev:** bump eslint-import-resolver-typescript ([#483](https://github.com/dew-org/dew-web/issues/483)) ([7c96b18](https://github.com/dew-org/dew-web/commit/7c96b182cff221cac22f0d60a717df3fa0b42f56))
+* **deps-dev:** bump eslint-plugin-promise from 6.1.0 to 6.1.1 ([#485](https://github.com/dew-org/dew-web/issues/485)) ([719e9b2](https://github.com/dew-org/dew-web/commit/719e9b21a3016ee6fbb716997eb602cfce08eed5))
+* **deps-dev:** bump eslint-plugin-testing-library from 5.7.3 to 5.8.0 ([#480](https://github.com/dew-org/dew-web/issues/480)) ([e740cbd](https://github.com/dew-org/dew-web/commit/e740cbd743b9aa89c832e757e8edcdd676980bc3))
+* **deps-dev:** bump eslint-plugin-testing-library from 5.8.0 to 5.9.1 ([#482](https://github.com/dew-org/dew-web/issues/482)) ([4a98151](https://github.com/dew-org/dew-web/commit/4a981518aefd07615a4fff5178024b6fe19c311c))
+* **deps-dev:** bump jest from 29.2.1 to 29.2.2 ([#496](https://github.com/dew-org/dew-web/issues/496)) ([f056e05](https://github.com/dew-org/dew-web/commit/f056e05fc6de5502fa422e5fa52b558399f192ec))
+* **deps-dev:** bump jest-environment-jsdom from 29.2.1 to 29.2.2 ([#499](https://github.com/dew-org/dew-web/issues/499)) ([f5cdebf](https://github.com/dew-org/dew-web/commit/f5cdebf41f5c79dafb6b9b2705f49949b19294d5))
+* **deps-dev:** bump turbo from 1.5.6 to 1.6.0 ([#484](https://github.com/dew-org/dew-web/issues/484)) ([096d187](https://github.com/dew-org/dew-web/commit/096d187cd737f2d906d36418fe2f5d959d9f93ba))
+* **deps-dev:** bump turbo from 1.6.0 to 1.6.1 ([#489](https://github.com/dew-org/dew-web/issues/489)) ([4270227](https://github.com/dew-org/dew-web/commit/4270227b5f8b3622227c350f5b7e2d6be0a66bc9))
+* **deps:** bump @sentry/nextjs from 7.15.0 to 7.16.0 ([#479](https://github.com/dew-org/dew-web/issues/479)) ([8c223fe](https://github.com/dew-org/dew-web/commit/8c223fe5fc852fcd9e3e82acaa60175122b5c361))
+* **deps:** bump eslint-config-next from 12.3.1 to 13.0.0 ([#493](https://github.com/dew-org/dew-web/issues/493)) ([cc4e483](https://github.com/dew-org/dew-web/commit/cc4e483d1fd8959e0cc6e7053bb92bac967a9ba8))
+* **deps:** bump react-hook-form from 7.37.0 to 7.38.0 ([#476](https://github.com/dew-org/dew-web/issues/476)) ([5ee85c1](https://github.com/dew-org/dew-web/commit/5ee85c1e33c5923a755f32a951c436eff990460f))
+* include analytics module ([c78b093](https://github.com/dew-org/dew-web/commit/c78b0933b6e00e6e2bee1ba00c57511e437ff092))
+
 ## [0.5.0](https://github.com/dew-org/dew-web/compare/v0.4.1...v0.5.0) (2022-10-18)
 
 
