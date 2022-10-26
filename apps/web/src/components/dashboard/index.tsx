@@ -1,9 +1,19 @@
-import ReportCard from '@dew-org/components/dashboard/report-card'
-import { Button, Container, Grid, Row, Spacer, Text } from '@nextui-org/react'
+import { ReportCard, useNowAnalytics } from '@dew-org/analytics'
+import {
+  Button,
+  Container,
+  Grid,
+  Loading,
+  Row,
+  Spacer,
+  Text,
+} from '@nextui-org/react'
 import NextLink from 'next/link'
 import { FormattedMessage, FormattedNumber } from 'react-intl'
 
 const Dashboard = () => {
+  const { analytics, isLoading, error } = useNowAnalytics()
+
   return (
     <Container fluid>
       <Spacer y={1} />
@@ -26,40 +36,50 @@ const Dashboard = () => {
 
       <Spacer y={1} />
 
-      <Grid.Container gap={2}>
-        <Grid xs={12} md={4}>
-          <ReportCard
-            title={<FormattedMessage defaultMessage="Generated invoices" />}
-            info="209"
-            icon="receipt"
-            color="primary"
-          />
-        </Grid>
+      {isLoading && <Loading size="xl" />}
 
-        <Grid xs={12} md={4}>
-          <ReportCard
-            title={<FormattedMessage defaultMessage="Month profits" />}
-            info={
-              <FormattedNumber
-                value={2050023}
-                style="currency"
-                currency="COP"
-              />
-            }
-            icon="payments"
-            color="success"
-          />
-        </Grid>
+      {error && (
+        <Text h3>
+          <FormattedMessage defaultMessage="Error loading analytics" />
+        </Text>
+      )}
 
-        <Grid xs={12} md={4}>
-          <ReportCard
-            title={<FormattedMessage defaultMessage="Sold products" />}
-            info="200"
-            icon="sell"
-            color="secondary"
-          />
-        </Grid>
-      </Grid.Container>
+      {analytics && (
+        <Grid.Container gap={2}>
+          <Grid xs={12} md={4}>
+            <ReportCard
+              title={<FormattedMessage defaultMessage="Generated invoices" />}
+              info={<FormattedNumber value={analytics.invoices} style="unit" />}
+              icon="receipt"
+              color="primary"
+            />
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <ReportCard
+              title={<FormattedMessage defaultMessage="Month profits" />}
+              info={
+                <FormattedNumber
+                  value={analytics.sales}
+                  style="currency"
+                  currency="COP"
+                />
+              }
+              icon="payments"
+              color="success"
+            />
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <ReportCard
+              title={<FormattedMessage defaultMessage="Sold products" />}
+              info={<FormattedNumber value={analytics.products} style="unit" />}
+              icon="sell"
+              color="secondary"
+            />
+          </Grid>
+        </Grid.Container>
+      )}
     </Container>
   )
 }

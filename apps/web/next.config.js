@@ -6,6 +6,7 @@ const withTM = require('next-transpile-modules')([
   '@dew-org/inventory',
   '@dew-org/invoices',
   '@dew-org/shops',
+  '@dew-org/analytics',
 ])
 
 const { withSentryConfig } = require('@sentry/nextjs')
