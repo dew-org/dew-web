@@ -23,11 +23,7 @@ describe('use now analytics hook', () => {
   })
 
   it('should be return analytics', async () => {
-    const userId = faker.datatype.uuid()
-
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useNowAnalytics(userId),
-    )
+    const { result, waitForNextUpdate } = renderHook(() => useNowAnalytics())
 
     expect(result.current.analytics).toEqual(undefined)
     expect(result.current.isLoading).toEqual(true)

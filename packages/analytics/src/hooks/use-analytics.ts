@@ -12,10 +12,9 @@ type UseAnalytics = {
 export const useAnalytics = (
   date: string,
   frequency: Frequency,
-  userId: string,
 ): UseAnalytics => {
   const { data, isValidating, error } = useSWR<Analytics>(
-    `/api/analytics/${date}/${frequency}?userId=${userId}`,
+    `/api/analytics/${date}/${frequency}`,
     fetcher,
   )
 

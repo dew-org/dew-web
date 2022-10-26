@@ -25,10 +25,9 @@ describe('use analytics hook', () => {
   it('should be return analytics', async () => {
     const date = faker.date.past().toISOString()
     const frequency = Frequency.DAILY
-    const userId = faker.datatype.uuid()
 
     const { result, waitForNextUpdate } = renderHook(() =>
-      useAnalytics(date, frequency, userId),
+      useAnalytics(date, frequency),
     )
 
     expect(result.current.analytics).toEqual(undefined)
