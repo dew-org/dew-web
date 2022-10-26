@@ -1,9 +1,9 @@
 {
-  "name": "@dew-org/inventory",
-  "version": "0.0.5",
+  "name": "@dew-org/analytics",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "license": "MIT",
   "devDependencies": {

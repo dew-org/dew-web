@@ -33,10 +33,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [0.4.0](https://github.com/dew-org/dew-web/compare/v0.3.1...v0.4.0) (2022-10-17)
 
-
 ### Features
 
-* add SWR config options ([8dd65d1](https://github.com/dew-org/dew-web/commit/8dd65d1c1e3a5aef9ed1a6f8b710dab72dc4a6cd))
+- add SWR config options ([8dd65d1](https://github.com/dew-org/dew-web/commit/8dd65d1c1e3a5aef9ed1a6f8b710dab72dc4a6cd))
 
 ## [0.3.1](https://github.com/dew-org/dew-web/compare/v0.3.0...v0.3.1) (2022-10-16)
 
