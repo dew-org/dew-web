@@ -9,9 +9,9 @@ type UseNowAnalytics = {
   error?: Error
 }
 
-export const useNowAnalytics = (userId: string): UseNowAnalytics => {
+export const useNowAnalytics = (): UseNowAnalytics => {
   const { data, isValidating, error } = useSWR<Analytics>(
-    `/api/analytics/now?userId=${userId}`,
+    `/api/analytics/now`,
     fetcher,
   )
 
