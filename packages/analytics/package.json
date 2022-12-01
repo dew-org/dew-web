@@ -8,14 +8,14 @@
   "license": "MIT",
   "devDependencies": {
     "@nextui-org/react": "^1.0.0-beta.10",
-    "@types/react": "18.0.23",
-    "@types/react-dom": "18.0.7",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
     "config": "*",
-    "react-hook-form": "^7.38.0",
+    "react-hook-form": "^7.39.7",
     "react-iconly": "^2.2.5",
     "react-intl": "^6.2.1",
     "swr": "^1.3.0",
     "tsconfig": "*",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.3"
   }
 }
