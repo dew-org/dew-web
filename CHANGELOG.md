@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.2](https://github.com/dew-org/dew-web/compare/v0.6.1...v0.6.2) (2022-12-10)
+
+
+### Build System
+
+* **deps:** bump decode-uri-component from 0.2.0 to 0.2.2 ([#596](https://github.com/dew-org/dew-web/issues/596)) ([f08768c](https://github.com/dew-org/dew-web/commit/f08768c4a3794122b2d63a752011bea7a8b8133a))
+
 ## [0.6.1](https://github.com/dew-org/dew-web/compare/v0.6.0...v0.6.1) (2022-12-01)
 
 
