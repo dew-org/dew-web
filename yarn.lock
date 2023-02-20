@@ -503,10 +503,10 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
   integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
 
-"@formatjs/cli@^5.1.7":
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-5.1.7.tgz#0541dcda883bb4b8fa267f39ff962ef9b4c6f211"
-  integrity sha512-llUllBZw+MAOF51sTo5mSlpFLbvtKFPSa5BqNwAwFS6rl/DXI65bzV8JBjawQujiy0tTS38ZWXVJMDoiZ5trwA==
+"@formatjs/cli@^6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/cli/-/cli-6.0.3.tgz#6bb4780db3026566f0ce7d4b2ea357b9e422c159"
+  integrity sha512-YPhDUw5zQwufAZRUlk054Z/J9jeZWH4LEbAVnQFrfJ8NNgOziDqn9SSTEfRB4W0w8JBGgte4x1SwwJjH/HGoRA==
 
 "@formatjs/ecma402-abstract@1.14.3":
   version "1.14.3"
